@@ -1138,9 +1138,9 @@ h2{
 
 /* =========================================================
 
-   CLUB CAREER — DYNAMIC LOGO SHOWCASE
+   CLUB CAREER — CINEMATIC CLUB IDENTITY
 
-   Premium animated club identity system
+   Same card dimensions / new animated typography system
 
    ========================================================= */
 
@@ -1153,8 +1153,6 @@ h2{
     gap:18px;
 
 }
-
-/* Main club card */
 
 .club{
 
@@ -1200,7 +1198,7 @@ h2{
 
 }
 
-/* Animated premium border */
+/* Animated border */
 
 .club::before{
 
@@ -1220,11 +1218,11 @@ h2{
 
             transparent 0%,
 
-            rgba(214,179,106,.0) 25%,
+            rgba(255,255,255,0) 25%,
 
-            rgba(214,179,106,.42) 50%,
+            var(--club-light) 50%,
 
-            rgba(214,179,106,.0) 75%,
+            rgba(255,255,255,0) 75%,
 
             transparent 100%
 
@@ -1232,11 +1230,9 @@ h2{
 
     background-size:220% 100%;
 
-    opacity:.45;
+    opacity:.34;
 
-    animation:
-
-        clubBorderFlow 7s linear infinite;
+    animation:clubBorderFlow 6s linear infinite;
 
     pointer-events:none;
 
@@ -1268,7 +1264,7 @@ h2{
 
     left:17px;
 
-    z-index:8;
+    z-index:20;
 
     font-size:9px;
 
@@ -1276,15 +1272,13 @@ h2{
 
     letter-spacing:3px;
 
-    color:rgba(255,255,255,.58);
+    color:rgba(255,255,255,.62);
 
-    text-shadow:
-
-        0 0 12px rgba(255,255,255,.08);
+    text-shadow:0 0 12px rgba(255,255,255,.08);
 
 }
 
-/* Logo stage */
+/* Main identity stage */
 
 .club-logo{
 
@@ -1312,7 +1306,7 @@ h2{
 
 }
 
-/* Large color aura */
+/* Moving club atmosphere */
 
 .club-logo::before{
 
@@ -1328,27 +1322,27 @@ h2{
 
     top:-40%;
 
-    z-index:-3;
+    z-index:-4;
 
     background:
 
         radial-gradient(
 
-            ellipse at 25% 35%,
+            ellipse at 20% 25%,
 
             var(--club-light),
 
-            transparent 32%
+            transparent 28%
 
         ),
 
         radial-gradient(
 
-            ellipse at 75% 65%,
+            ellipse at 80% 75%,
 
             var(--club-dark),
 
-            transparent 38%
+            transparent 36%
 
         ),
 
@@ -1386,7 +1380,7 @@ h2{
 
 }
 
-/* Fabric folds */
+/* Cinematic folds */
 
 .club-logo::after{
 
@@ -1396,7 +1390,7 @@ h2{
 
     inset:-45%;
 
-    z-index:-2;
+    z-index:-3;
 
     background:
 
@@ -1406,7 +1400,7 @@ h2{
 
             transparent 0%,
 
-            rgba(255,255,255,.00) 18%,
+            rgba(255,255,255,0) 18%,
 
             rgba(255,255,255,.14) 28%,
 
@@ -1438,17 +1432,11 @@ h2{
 
         );
 
-    transform:
-
-        rotate(-3deg)
-
-        translateX(-8%);
+    transform:rotate(-3deg) translateX(-8%);
 
     opacity:.75;
 
-    animation:
-
-        fabricFold 5.5s ease-in-out infinite;
+    animation:fabricFold 5.5s ease-in-out infinite;
 
     mix-blend-mode:screen;
 
@@ -1554,75 +1542,275 @@ h2{
 
 }
 
-/* Soft moving light */
+/* Moving scan line */
 
-.club-logo{
+.club-logo .club-scan{
 
-    --shine:rgba(255,255,255,.12);
+    position:absolute;
+
+    left:-30%;
+
+    top:0;
+
+    width:22%;
+
+    height:100%;
+
+    z-index:2;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255,255,255,.18),
+
+            transparent
+
+        );
+
+    transform:skewX(-18deg);
+
+    animation:clubScan 4.8s ease-in-out infinite;
+
+    pointer-events:none;
 
 }
 
-.club-logo > img{
+@keyframes clubScan{
 
-    position:relative;
+    0%,55%{
+
+        left:-35%;
+
+        opacity:0;
+
+    }
+
+    65%{
+
+        opacity:.75;
+
+    }
+
+    100%{
+
+        left:125%;
+
+        opacity:0;
+
+    }
 
 }
 
-/* Logo itself */
+/* Fine technical grid */
 
-.club-logo img{
+.club-logo .club-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    opacity:.12;
+
+    background-image:
+
+        linear-gradient(
+
+            rgba(255,255,255,.18) 1px,
+
+            transparent 1px
+
+        ),
+
+        linear-gradient(
+
+            90deg,
+
+            rgba(255,255,255,.18) 1px,
+
+            transparent 1px
+
+        );
+
+    background-size:26px 26px;
+
+    mask-image:
+
+        linear-gradient(
+
+            180deg,
+
+            transparent,
+
+            black 25%,
+
+            black 75%,
+
+            transparent
+
+        );
+
+    pointer-events:none;
+
+}
+
+/* Main club name */
+
+.club-identity{
 
     position:relative;
 
-    z-index:5;
+    z-index:8;
 
-    width:auto;
+    width:100%;
 
-    height:auto;
+    text-align:center;
 
-    max-width:145px;
+    padding:0 28px;
 
-    max-height:105px;
+    transform:translateY(2px);
 
-    object-fit:contain;
+}
 
-    object-position:center;
+.club-code{
 
     display:block;
 
-    margin:auto;
+    color:rgba(255,255,255,.58);
 
-    /*
+    font-size:9px;
 
-       The source image remains untouched.
+    font-weight:900;
 
-       No crop / no stretch.
+    letter-spacing:5px;
 
-    */
+    text-transform:uppercase;
 
-    filter:
+    margin-bottom:9px;
 
-        drop-shadow(0 8px 12px rgba(0,0,0,.55))
+    opacity:.9;
 
-        drop-shadow(0 0 18px var(--club-glow));
+}
+
+.club-title{
+
+    position:relative;
+
+    display:inline-block;
+
+    color:#ffffff;
+
+    font-size:clamp(25px,3.3vw,38px);
+
+    font-weight:950;
+
+    line-height:.98;
+
+    letter-spacing:-1.7px;
+
+    text-transform:uppercase;
+
+    text-shadow:
+
+        0 3px 15px rgba(0,0,0,.65),
+
+        0 0 28px var(--club-glow);
 
     transition:
 
-        transform .65s cubic-bezier(.2,.8,.2,1),
+        transform .55s cubic-bezier(.2,.8,.2,1),
 
-        filter .65s ease;
+        letter-spacing .55s ease,
+
+        text-shadow .55s ease;
 
 }
 
-/* Logo floating light */
+/* Animated underline */
 
-.club-logo img::after{
+.club-title::after{
 
     content:"";
 
+    position:absolute;
+
+    left:50%;
+
+    bottom:-12px;
+
+    width:42%;
+
+    height:2px;
+
+    transform:translateX(-50%);
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            var(--club-light),
+
+            transparent
+
+        );
+
+    box-shadow:
+
+        0 0 12px var(--club-glow);
+
+    animation:clubTitleLine 2.8s ease-in-out infinite;
+
 }
 
-/* Reflection beneath logo */
+@keyframes clubTitleLine{
+
+    0%,100%{
+
+        width:34%;
+
+        opacity:.45;
+
+    }
+
+    50%{
+
+        width:70%;
+
+        opacity:1;
+
+    }
+
+}
+
+/* Small location / identity subtitle */
+
+.club-subtitle{
+
+    margin-top:24px;
+
+    color:rgba(255,255,255,.68);
+
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:2.5px;
+
+    text-transform:uppercase;
+
+}
+
+/* Reflection / glow under title */
 
 .club-logo .logo-reflection{
 
@@ -1630,17 +1818,13 @@ h2{
 
     left:50%;
 
-    bottom:17px;
+    bottom:14px;
 
-    width:115px;
+    width:150px;
 
-    height:20px;
+    height:22px;
 
-    transform:
-
-        translateX(-50%)
-
-        scaleX(.85);
+    transform:translateX(-50%) scaleX(.85);
 
     border-radius:50%;
 
@@ -1656,13 +1840,19 @@ h2{
 
         );
 
-    filter:blur(7px);
+    filter:blur(9px);
 
-    opacity:.5;
+    opacity:.48;
 
     z-index:3;
 
     pointer-events:none;
+
+    transition:
+
+        opacity .5s ease,
+
+        transform .5s ease;
 
 }
 
@@ -1724,13 +1914,9 @@ h2{
 
         );
 
-    box-shadow:
+    box-shadow:0 0 12px var(--club-glow);
 
-        0 0 12px var(--club-glow);
-
-    transition:
-
-        width .5s ease;
+    transition:width .5s ease;
 
 }
 
@@ -1768,7 +1954,7 @@ h2{
 
 }
 
-/* Premium hover */
+/* Hover animation */
 
 .club:hover{
 
@@ -1780,9 +1966,7 @@ h2{
 
         rotateX(.8deg);
 
-    border-color:
-
-        var(--club-border);
+    border-color:var(--club-border);
 
     box-shadow:
 
@@ -1794,31 +1978,25 @@ h2{
 
 }
 
-.club:hover .club-logo img{
+.club:hover .club-title{
 
-    transform:
+    transform:translateY(-4px) scale(1.045);
 
-        translateY(-6px)
+    letter-spacing:-1px;
 
-        scale(1.075);
+    text-shadow:
 
-    filter:
+        0 5px 20px rgba(0,0,0,.75),
 
-        drop-shadow(0 12px 18px rgba(0,0,0,.62))
-
-        drop-shadow(0 0 28px var(--club-glow));
+        0 0 38px var(--club-glow);
 
 }
 
 .club:hover .club-logo .logo-reflection{
 
-    opacity:.85;
+    opacity:.88;
 
-    transform:
-
-        translateX(-50%)
-
-        scaleX(1.1);
+    transform:translateX(-50%) scaleX(1.18);
 
 }
 
@@ -1832,23 +2010,11 @@ h2{
 
     color:#ffffff;
 
-    transform:
-
-        translateX(2px);
+    transform:translateX(2px);
 
 }
 
-/* =========================================================
-
-   INDIVIDUAL CLUB IDENTITIES
-
-   ========================================================= */
-
-/* 01 — CRBBA
-
-   Yellow / Black
-
-*/
+/* 01 — CRBBA */
 
 .club:nth-child(1){
 
@@ -1868,11 +2034,7 @@ h2{
 
 }
 
-/* 02 — MBT Tadjenanet
-
-   Blue / White
-
-*/
+/* 02 — MBT */
 
 .club:nth-child(2){
 
@@ -1892,11 +2054,7 @@ h2{
 
 }
 
-/* 03 — CRBM Mila
-
-   Red / White
-
-*/
+/* 03 — CRBM */
 
 .club:nth-child(3){
 
@@ -1916,11 +2074,7 @@ h2{
 
 }
 
-/* 04 — CHBZY
-
-   Red / Dark
-
-*/
+/* 04 — CHBZY */
 
 .club:nth-child(4){
 
@@ -1940,11 +2094,7 @@ h2{
 
 }
 
-/* 05 — MBBA
-
-   Blue / White
-
-*/
+/* 05 — MBBA */
 
 .club:nth-child(5){
 
@@ -1964,11 +2114,7 @@ h2{
 
 }
 
-/* 06 — OMA Annaba
-
-   Blue / White
-
-*/
+/* 06 — OMA */
 
 .club:nth-child(6){
 
@@ -1988,11 +2134,7 @@ h2{
 
 }
 
-/* =========================================================
-
-   MEDIA
-
-   ========================================================= */
+/* MEDIA */
 
 .media{
 
@@ -2476,11 +2618,7 @@ footer{
 
 }
 
-/* =========================================================
-
-   RESPONSIVE
-
-   ========================================================= */
+/* RESPONSIVE */
 
 @media(max-width:850px){
 
@@ -2780,11 +2918,17 @@ footer{
 
     }
 
-    .club-logo img{
+    .club-title{
 
-        max-width:140px;
+        font-size:clamp(24px,7vw,34px);
 
-        max-height:100px;
+        letter-spacing:-1.2px;
+
+    }
+
+    .club-identity{
+
+        padding:0 18px;
 
     }
 
@@ -2821,6 +2965,12 @@ footer{
     .sport-status-main{
 
         font-size:clamp(15px,4.3vw,22px);
+
+    }
+
+    .club-title{
+
+        font-size:25px;
 
     }
 
@@ -3506,11 +3656,27 @@ More than 25 international preparation camps in Europe with international opposi
 
 <div class="club-logo">
 
-<img
+<div class="club-grid"></div>
 
-src="https://raw.githubusercontent.com/Abderraoufseg/Abderraoufseg.github.io/main/IMG_9779.jpeg"
+<div class="club-scan"></div>
 
-alt="CRBBA Bordj Bou Arreridj logo">
+<div class="club-identity">
+
+<span class="club-code">CHABAB RIADHI</span>
+
+<div class="club-title">
+
+CRBBA
+
+</div>
+
+<div class="club-subtitle">
+
+BORDJ BOU ARRERIDJ
+
+</div>
+
+</div>
 
 <div class="logo-reflection"></div>
 
@@ -3548,11 +3714,27 @@ Division Excellence — Top Division of Algerian Handball
 
 <div class="club-logo">
 
-<img
+<div class="club-grid"></div>
 
-src="https://raw.githubusercontent.com/Abderraoufseg/Abderraoufseg.github.io/main/IMG_9789.jpeg"
+<div class="club-scan"></div>
 
-alt="MBT Tadjenanet logo">
+<div class="club-identity">
+
+<span class="club-code">HANDBALL CLUB</span>
+
+<div class="club-title">
+
+MBT
+
+</div>
+
+<div class="club-subtitle">
+
+TADJENANET
+
+</div>
+
+</div>
 
 <div class="logo-reflection"></div>
 
@@ -3590,11 +3772,27 @@ Division Excellence — Top Division of Algerian Handball
 
 <div class="club-logo">
 
-<img
+<div class="club-grid"></div>
 
-src="https://raw.githubusercontent.com/Abderraoufseg/Abderraoufseg.github.io/main/IMG_9971.webp"
+<div class="club-scan"></div>
 
-alt="CRBM Mila logo">
+<div class="club-identity">
+
+<span class="club-code">CLUB SPORTIF</span>
+
+<div class="club-title">
+
+CRBM
+
+</div>
+
+<div class="club-subtitle">
+
+MILA
+
+</div>
+
+</div>
 
 <div class="logo-reflection"></div>
 
@@ -3632,11 +3830,27 @@ Division Excellence — Top Division of Algerian Handball
 
 <div class="club-logo">
 
-<img
+<div class="club-grid"></div>
 
-src="https://raw.githubusercontent.com/Abderraoufseg/Abderraoufseg.github.io/main/IMG_9788.jpeg"
+<div class="club-scan"></div>
 
-alt="CHBZY Zighoud Youcef logo">
+<div class="club-identity">
+
+<span class="club-code">CLUB HANDBALL</span>
+
+<div class="club-title">
+
+CHBZY
+
+</div>
+
+<div class="club-subtitle">
+
+ZIGHOUD YOUCEF
+
+</div>
+
+</div>
 
 <div class="logo-reflection"></div>
 
@@ -3674,11 +3888,27 @@ Division Excellence — Top Division of Algerian Handball
 
 <div class="club-logo">
 
-<img
+<div class="club-grid"></div>
 
-src="https://raw.githubusercontent.com/Abderraoufseg/Abderraoufseg.github.io/main/IMG_9783.jpeg"
+<div class="club-scan"></div>
 
-alt="MBBA Mouloudia Bordj Bou Arreridj logo">
+<div class="club-identity">
+
+<span class="club-code">MOULOUDIA</span>
+
+<div class="club-title">
+
+MBBA
+
+</div>
+
+<div class="club-subtitle">
+
+BORDJ BOU ARRERIDJ
+
+</div>
+
+</div>
 
 <div class="logo-reflection"></div>
 
@@ -3716,11 +3946,27 @@ Division Excellence — Top Division of Algerian Handball
 
 <div class="club-logo">
 
-<img
+<div class="club-grid"></div>
 
-src="https://raw.githubusercontent.com/Abderraoufseg/Abderraoufseg.github.io/main/IMG_9974.jpeg"
+<div class="club-scan"></div>
 
-alt="OMA Annaba logo">
+<div class="club-identity">
+
+<span class="club-code">OLYMPIQUE MADINET</span>
+
+<div class="club-title">
+
+OMA
+
+</div>
+
+<div class="club-subtitle">
+
+ANNABA
+
+</div>
+
+</div>
 
 <div class="logo-reflection"></div>
 
