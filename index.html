@@ -210,13 +210,15 @@ h1{
 
     position:absolute;
 
-    left:-13px;
+    left:7px;
 
-    top:15%;
+    top:50%;
+
+    transform:translateY(-50%);
 
     width:2px;
 
-    height:70%;
+    height:calc(100% - 4px);
 
     background:linear-gradient(
 
@@ -2600,7 +2602,7 @@ h2{
 
 }
 
-/* AS 18 — PERSONAL MONOGRAM */
+/* AS 18 — SMALL LUXURY MONOGRAM */
 
 .as18{
 
@@ -2608,19 +2610,21 @@ h2{
 
     color:#d6b36a;
 
-    font-size:clamp(42px,8vw,68px);
+    font-size:clamp(24px,5vw,32px);
 
-    font-weight:950;
+    font-weight:800;
 
     line-height:1;
 
-    letter-spacing:4px;
+    letter-spacing:1px;
+
+    text-align:center;
 
     text-shadow:
 
-        0 0 12px rgba(214,179,106,.22),
+        0 0 10px rgba(214,179,106,.20),
 
-        0 0 28px rgba(214,179,106,.12);
+        0 0 20px rgba(214,179,106,.10);
 
 }
 
@@ -2640,27 +2644,17 @@ h2{
 
 }
 
-/* FLAGS + FAHB — MOVED TO VERY END OF SIGNATURE FRAME */
+/* ALGERIA FLAG — FINAL POSITION */
 
 .algeria{
 
-    margin-top:26px;
+    margin:22px auto 0;
 
-    padding-top:20px;
+    width:min(120px,70%);
 
-    border-top:1px solid rgba(214,179,106,.18);
+    min-height:58px;
 
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    min-height:70px;
-
-}
-
-.fahb-text-end{
+    padding:10px 16px;
 
     display:flex;
 
@@ -2668,19 +2662,15 @@ h2{
 
     justify-content:center;
 
-    text-align:center;
+    border:1px solid rgba(214,179,106,.30);
 
-}
+    background:rgba(8,9,11,.42);
 
-.fahb-symbols-end{
+    box-shadow:
 
-    display:flex;
+        inset 0 0 16px rgba(214,179,106,.035),
 
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
+        0 0 12px rgba(0,0,0,.18);
 
 }
 
@@ -2699,32 +2689,6 @@ h2{
     align-items:center;
 
     justify-content:center;
-
-}
-
-.fahb-circle-end{
-
-    width:34px;
-
-    height:34px;
-
-    border:1px solid #d6b36a;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:#d6b36a;
-
-    font-size:9px;
-
-    font-weight:900;
-
-    letter-spacing:.5px;
 
 }
 
@@ -2898,11 +2862,11 @@ footer{
 
     .role::before{
 
-        left:-10px;
+        left:7px;
 
-        top:17%;
+        top:50%;
 
-        height:66%;
+        height:calc(100% - 4px);
 
     }
 
@@ -3030,15 +2994,13 @@ footer{
 
     .algeria{
 
-        margin-top:22px;
+        margin-top:20px;
 
-        padding-top:18px;
+        width:110px;
 
-    }
+        min-height:56px;
 
-    .fahb-symbols-end{
-
-        gap:8px;
+        padding:9px 14px;
 
     }
 
@@ -3052,21 +3014,15 @@ footer{
 
     }
 
-    .fahb-circle-end{
-
-        width:34px;
-
-        height:34px;
-
-    }
-
     .as18{
 
         margin-top:7px;
 
         margin-bottom:17px;
 
-        font-size:clamp(42px,15vw,60px);
+        font-size:clamp(24px,8vw,30px);
+
+        letter-spacing:.8px;
 
     }
 
@@ -3130,7 +3086,7 @@ footer{
 
     .role::before{
 
-        left:-9px;
+        left:7px;
 
     }
 
@@ -4504,25 +4460,11 @@ rel="noopener noreferrer">
 
 </div>
 
-<!-- FLAG + FAHB — FINAL POSITION -->
+<!-- ALGERIA FLAG — FINAL POSITION -->
 
 <div class="algeria">
 
-<div class="fahb-text-end">
-
-<div class="fahb-symbols-end">
-
 <span class="algeria-flag">🇩🇿</span>
-
-<div class="fahb-circle-end">
-
-FAHB
-
-</div>
-
-</div>
-
-</div>
 
 </div>
 
