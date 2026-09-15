@@ -286,21 +286,7 @@ header{
 
 .logo{font-size:14px;font-weight:800;letter-spacing:3px}
 
-nav{
-
-    display:flex;
-
-    gap:28px;
-
-    color:#9298a1;
-
-    font-size:11px;
-
-    text-transform:uppercase;
-
-    letter-spacing:1.7px
-
-}
+nav{display:flex;gap:28px;color:#9298a1;font-size:11px;text-transform:uppercase;letter-spacing:1.7px}
 
 nav a:hover{color:#d6b36a}
 
@@ -332,23 +318,159 @@ nav a:hover{color:#d6b36a}
 
 }
 
+/* =========================================================
+
+   OFFICIAL ATHLETE PROFILE — IHF CREDENTIAL
+
+   ========================================================= */
+
+.hero-credential{
+
+    display:inline-flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:6px;
+
+    margin:0 0 30px;
+
+    padding:0;
+
+    color:#d6b36a;
+
+    text-decoration:none;
+
+    transition:transform .3s ease,opacity .3s ease;
+
+}
+
+.hero-credential:hover{
+
+    transform:translateY(-2px);
+
+    opacity:1;
+
+}
+
+.hero-credential-title{
+
+    color:#d6b36a;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:3.2px;
+
+    line-height:1.2;
+
+    text-transform:uppercase;
+
+    text-shadow:0 0 10px rgba(214,179,106,.18);
+
+}
+
+.hero-credential-source{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#d6b36a;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:1.8px;
+
+    line-height:1;
+
+    text-transform:uppercase;
+
+}
+
+.hero-credential-check{
+
+    width:16px;
+
+    height:16px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:1px solid #d6b36a;
+
+    border-radius:50%;
+
+    color:#d6b36a;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    line-height:1;
+
+    box-shadow:0 0 10px rgba(214,179,106,.20);
+
+}
+
+.hero-credential-divider{
+
+    color:#8e7545;
+
+    font-size:10px;
+
+}
+
+.hero-credential-logo{
+
+    width:54px;
+
+    height:12px;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    filter:grayscale(1) sepia(1) saturate(3) hue-rotate(355deg) brightness(1.05);
+
+    mix-blend-mode:screen;
+
+    opacity:.92;
+
+}
+
+.hero-credential:hover .hero-credential-check{
+
+    background:#d6b36a;
+
+    color:#08090b;
+
+    box-shadow:0 0 16px rgba(214,179,106,.35);
+
+}
+
+.hero-credential:hover .hero-credential-logo{
+
+    opacity:1;
+
+    filter:grayscale(1) sepia(1) saturate(4) hue-rotate(355deg) brightness(1.18);
+
+}
+
 h1{line-height:.92;letter-spacing:-4px;font-weight:850}
 
 .last-name{display:block;font-size:clamp(58px,10vw,108px)}
 
-.first-name{
-
-    display:block;
-
-    font-size:clamp(35px,5.8vw,62px);
-
-    letter-spacing:-2px;
-
-    font-weight:650;
-
-    margin-top:9px
-
-}
+.first-name{display:block;font-size:clamp(35px,5.8vw,62px);letter-spacing:-2px;font-weight:650;margin-top:9px}
 
 .role{
 
@@ -602,13 +724,7 @@ h1{line-height:.92;letter-spacing:-4px;font-weight:850}
 
 }
 
-@keyframes verifyAttention{
-
-    0%,100%{opacity:.65}
-
-    50%{opacity:1}
-
-}
+@keyframes verifyAttention{0%,100%{opacity:.65}50%{opacity:1}}
 
 @keyframes verifyArrow{
 
@@ -646,15 +762,7 @@ h2{
 
 }
 
-.section-intro{
-
-    max-width:800px;
-
-    color:#b9bec6;
-
-    margin-bottom:35px
-
-}
+.section-intro{max-width:800px;color:#b9bec6;margin-bottom:35px}
 
 /* SPORT STATUS */
 
@@ -720,7 +828,7 @@ h2{
 
     overflow:hidden;
 
-    transition:all .25s ease
+    transition:all .25s ease;
 
 }
 
@@ -896,21 +1004,9 @@ h2{
 
 }
 
-.sport-status-item.gold{
+.sport-status-item.gold{border-color:#3c3528;color:#f0f1f3}
 
-    border-color:#3c3528;
-
-    color:#f0f1f3
-
-}
-
-.sport-status-item.gold strong{
-
-    color:#f0f1f3;
-
-    font-weight:900
-
-}
+.sport-status-item.gold strong{color:#f0f1f3;font-weight:900}
 
 .sport-status-list{display:grid;gap:10px}
 
@@ -934,15 +1030,7 @@ h2{
 
 /* PROFILE */
 
-.profile-layout{
-
-    display:grid;
-
-    grid-template-columns:1.35fr .85fr;
-
-    gap:20px
-
-}
+.profile-layout{display:grid;grid-template-columns:1.35fr .85fr;gap:20px}
 
 .profile-box,.ihf-box{
 
@@ -954,21 +1042,9 @@ h2{
 
 }
 
-.profile-box h3{
+.profile-box h3{font-size:28px;margin-bottom:10px}
 
-    font-size:28px;
-
-    margin-bottom:10px
-
-}
-
-.profile-box p{
-
-    color:#b9bec6;
-
-    max-width:700px
-
-}
+.profile-box p{color:#b9bec6;max-width:700px}
 
 .profile-info-grid{
 
@@ -1058,13 +1134,7 @@ h2{
 
 }
 
-.ihf-title{
-
-    font-size:20px;
-
-    font-weight:800
-
-}
+.ihf-title{font-size:20px;font-weight:800}
 
 .ihf-subtitle{
 
@@ -1094,7 +1164,7 @@ h2{
 
     overflow:hidden;
 
-    box-shadow:0 14px 40px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,255,255,.035)
+    box-shadow:0 14px 40px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,255,255,.035);
 
 }
 
@@ -1118,7 +1188,7 @@ h2{
 
     animation:aiScoutScan 5.5s ease-in-out infinite;
 
-    pointer-events:none
+    pointer-events:none;
 
 }
 
@@ -1360,31 +1430,11 @@ h2{
 
 }
 
-.event h3{
+.event h3{font-size:21px;margin-bottom:5px}
 
-    font-size:21px;
+.event p{color:#b5bac2;font-size:14px}
 
-    margin-bottom:5px
-
-}
-
-.event p{
-
-    color:#b5bac2;
-
-    font-size:14px
-
-}
-
-.flag{
-
-    font-size:21px;
-
-    vertical-align:-2px;
-
-    margin-right:6px
-
-}
+.flag{font-size:21px;vertical-align:-2px;margin-right:6px}
 
 .gold{color:#d6b36a}
 
@@ -1476,43 +1526,15 @@ h2{
 
 @keyframes medalCelebration{
 
-    0%,100%{
+    0%,100%{transform:scale(.72) rotate(0);opacity:.18;filter:blur(.2px)}
 
-        transform:scale(.72) rotate(0);
+    35%{transform:scale(1) rotate(12deg);opacity:.75}
 
-        opacity:.18;
-
-        filter:blur(.2px)
-
-    }
-
-    35%{
-
-        transform:scale(1) rotate(12deg);
-
-        opacity:.75
-
-    }
-
-    65%{
-
-        transform:scale(1.18) rotate(-8deg);
-
-        opacity:.42
-
-    }
+    65%{transform:scale(1.18) rotate(-8deg);opacity:.42}
 
 }
 
-.medal-icon{
-
-    font-size:52px;
-
-    line-height:1;
-
-    margin-bottom:16px
-
-}
+.medal-icon{font-size:52px;line-height:1;margin-bottom:16px}
 
 .medal-label{
 
@@ -1526,21 +1548,11 @@ h2{
 
 }
 
-.medal h3{
-
-    margin:12px 0 4px;
-
-    font-size:24px
-
-}
+.medal h3{margin:12px 0 4px;font-size:24px}
 
 .medal p{color:#949aa3}
 
-/* =========================================================
-
-   CLUB CAREER
-
-   ========================================================= */
+/* CLUB CAREER */
 
 .clubs{
 
@@ -1733,50 +1745,6 @@ h2{
     0%,100%{transform:rotate(-3deg) translateX(-9%) skewX(-2deg) scale(1.05)}
 
     50%{transform:rotate(3deg) translateX(9%) skewX(2deg) scale(1.12)}
-
-}
-
-/* REAL CLUB LOGOS */
-
-.club-real-logo{
-
-    position:relative;
-
-    z-index:10;
-
-    display:block;
-
-    width:auto;
-
-    height:auto;
-
-    max-width:72%;
-
-    max-height:135px;
-
-    object-fit:contain;
-
-    object-position:center;
-
-    filter:
-
-        drop-shadow(0 5px 12px rgba(0,0,0,.55))
-
-        drop-shadow(0 0 16px rgba(255,255,255,.10));
-
-    transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .45s ease;
-
-}
-
-.club:hover .club-real-logo{
-
-    transform:scale(1.07);
-
-    filter:
-
-        drop-shadow(0 8px 18px rgba(0,0,0,.68))
-
-        drop-shadow(0 0 24px var(--club-glow));
 
 }
 
@@ -2674,13 +2642,7 @@ footer{
 
     .media{grid-template-columns:1fr 1fr}
 
-    .videos{
-
-        grid-template-columns:1fr 1fr;
-
-        gap:18px
-
-    }
+    .videos{grid-template-columns:1fr 1fr;gap:18px}
 
     .ai-scouting-head{
 
@@ -2770,6 +2732,52 @@ footer{
 
     }
 
+    /* OFFICIAL ATHLETE PROFILE — MOBILE */
+
+    .hero-credential{
+
+        margin-bottom:26px;
+
+        gap:6px
+
+    }
+
+    .hero-credential-title{
+
+        font-size:8px;
+
+        letter-spacing:2.6px
+
+    }
+
+    .hero-credential-source{
+
+        gap:7px;
+
+        font-size:8px;
+
+        letter-spacing:1.35px
+
+    }
+
+    .hero-credential-check{
+
+        width:15px;
+
+        height:15px;
+
+        font-size:9px
+
+    }
+
+    .hero-credential-logo{
+
+        width:49px;
+
+        height:11px
+
+    }
+
     /* NEW SECONDARY STATUS — MOBILE */
 
     .hero-status{
@@ -2802,7 +2810,11 @@ footer{
 
     .sport-status-box{padding:30px 22px}
 
-    .sport-status-box h2{gap:9px}
+    .sport-status-box h2{
+
+        gap:9px
+
+    }
 
     .sport-status-main{
 
@@ -2950,14 +2962,6 @@ footer{
 
     .club-logo{height:175px}
 
-    .club-real-logo{
-
-        max-width:70%;
-
-        max-height:135px
-
-    }
-
     .club-title{
 
         font-size:clamp(24px,7vw,34px);
@@ -2990,6 +2994,50 @@ footer{
 
     .role::before{left:7px}
 
+    /* OFFICIAL ATHLETE PROFILE — VERY SMALL SCREENS */
+
+    .hero-credential{
+
+        margin-bottom:24px
+
+    }
+
+    .hero-credential-title{
+
+        font-size:7px;
+
+        letter-spacing:2.2px
+
+    }
+
+    .hero-credential-source{
+
+        gap:6px;
+
+        font-size:7px;
+
+        letter-spacing:1.1px
+
+    }
+
+    .hero-credential-check{
+
+        width:14px;
+
+        height:14px;
+
+        font-size:8px
+
+    }
+
+    .hero-credential-logo{
+
+        width:45px;
+
+        height:10px
+
+    }
+
     /* NEW SECONDARY STATUS — VERY SMALL SCREENS */
 
     .hero-status{
@@ -3012,11 +3060,7 @@ footer{
 
     .hero-status::before{left:7px}
 
-    .sport-status-main{
-
-        font-size:clamp(15px,4.3vw,22px)
-
-    }
+    .sport-status-main{font-size:clamp(15px,4.3vw,22px)}
 
     .club-title{font-size:25px}
 
@@ -3083,6 +3127,34 @@ footer{
 <div class="container">
 
 <div class="eyebrow">Algerian Handball</div>
+
+<!-- OFFICIAL ATHLETE PROFILE -->
+
+<a href="#verified-ihf" class="hero-credential" aria-label="Official Athlete Profile — Certified by IHF">
+
+<span class="hero-credential-title">OFFICIAL ATHLETE PROFILE</span>
+
+<span class="hero-credential-source">
+
+<span class="hero-credential-check">✓</span>
+
+<span>CERTIFIED BY IHF</span>
+
+<span class="hero-credential-divider">·</span>
+
+<img
+
+class="hero-credential-logo"
+
+src="https://www.ihf.info/sites/default/files/inline-images/IHF%20Logo_1440x300.jpg"
+
+alt="IHF"
+
+>
+
+</span>
+
+</a>
 
 <h1>
 
@@ -3594,8 +3666,6 @@ More than 25 international preparation camps in Europe with international opposi
 
 <div class="clubs">
 
-<!-- 01 — CRBBA -->
-
 <div class="club">
 
 <div>
@@ -3604,11 +3674,19 @@ More than 25 international preparation camps in Europe with international opposi
 
 <div class="club-logo">
 
-<img class="club-real-logo" src="IMG_9779.jpeg" alt="CRBBA Bordj Bou Arreridj logo">
-
 <div class="club-grid"></div>
 
 <div class="club-scan"></div>
+
+<div class="club-identity">
+
+<span class="club-code">CHABAB RIADHI</span>
+
+<div class="club-title">CRBBA</div>
+
+<div class="club-subtitle">BORDJ BOU ARRERIDJ</div>
+
+</div>
 
 <div class="logo-reflection"></div>
 
@@ -3625,8 +3703,6 @@ More than 25 international preparation camps in Europe with international opposi
 </div>
 
 </div>
-
-<!-- 02 — MBT — NO CONFIRMED LOGO -->
 
 <div class="club">
 
@@ -3666,8 +3742,6 @@ More than 25 international preparation camps in Europe with international opposi
 
 </div>
 
-<!-- 03 — CRBM MILA -->
-
 <div class="club">
 
 <div>
@@ -3676,11 +3750,19 @@ More than 25 international preparation camps in Europe with international opposi
 
 <div class="club-logo">
 
-<img class="club-real-logo" src="IMG_9781.jpeg" alt="CRBM Mila logo">
-
 <div class="club-grid"></div>
 
 <div class="club-scan"></div>
+
+<div class="club-identity">
+
+<span class="club-code">CLUB SPORTIF</span>
+
+<div class="club-title">CRBM</div>
+
+<div class="club-subtitle">MILA</div>
+
+</div>
 
 <div class="logo-reflection"></div>
 
@@ -3698,8 +3780,6 @@ More than 25 international preparation camps in Europe with international opposi
 
 </div>
 
-<!-- 04 — CHBZY -->
-
 <div class="club">
 
 <div>
@@ -3708,11 +3788,19 @@ More than 25 international preparation camps in Europe with international opposi
 
 <div class="club-logo">
 
-<img class="club-real-logo" src="IMG_9788.jpeg" alt="CHBZY Zighoud Youcef logo">
-
 <div class="club-grid"></div>
 
 <div class="club-scan"></div>
+
+<div class="club-identity">
+
+<span class="club-code">CLUB HANDBALL</span>
+
+<div class="club-title">CHBZY</div>
+
+<div class="club-subtitle">ZIGHOUD YOUCEF</div>
+
+</div>
 
 <div class="logo-reflection"></div>
 
@@ -3730,8 +3818,6 @@ More than 25 international preparation camps in Europe with international opposi
 
 </div>
 
-<!-- 05 — MBBA -->
-
 <div class="club">
 
 <div>
@@ -3740,11 +3826,19 @@ More than 25 international preparation camps in Europe with international opposi
 
 <div class="club-logo">
 
-<img class="club-real-logo" src="IMG_9783.jpeg" alt="MBBA Mouloudia Bordj Bou Arreridj logo">
-
 <div class="club-grid"></div>
 
 <div class="club-scan"></div>
+
+<div class="club-identity">
+
+<span class="club-code">MOULOUDIA</span>
+
+<div class="club-title">MBBA</div>
+
+<div class="club-subtitle">BORDJ BOU ARRERIDJ</div>
+
+</div>
 
 <div class="logo-reflection"></div>
 
@@ -3762,8 +3856,6 @@ More than 25 international preparation camps in Europe with international opposi
 
 </div>
 
-<!-- 06 — OMA ANNABA -->
-
 <div class="club">
 
 <div>
@@ -3772,11 +3864,19 @@ More than 25 international preparation camps in Europe with international opposi
 
 <div class="club-logo">
 
-<img class="club-real-logo" src="IMG_9786.jpeg" alt="OMA Annaba logo">
-
 <div class="club-grid"></div>
 
 <div class="club-scan"></div>
+
+<div class="club-identity">
+
+<span class="club-code">OLYMPIQUE MADINET</span>
+
+<div class="club-title">OMA</div>
+
+<div class="club-subtitle">ANNABA</div>
+
+</div>
 
 <div class="logo-reflection"></div>
 
