@@ -60,8 +60,6 @@ a{color:inherit;text-decoration:none}
 
     overflow:hidden;
 
-    animation:introExit 1.35s cubic-bezier(.76,0,.24,1) 5.35s forwards;
-
 }
 
 .cinematic-intro::before{
@@ -78,7 +76,7 @@ a{color:inherit;text-decoration:none}
 
         linear-gradient(115deg,transparent 35%,rgba(214,179,106,.045) 50%,transparent 65%);
 
-    animation:introAtmosphere 5.2s ease-in-out forwards;
+    animation:introAtmosphere 8.4s ease-in-out forwards;
 
 }
 
@@ -111,6 +109,32 @@ a{color:inherit;text-decoration:none}
     width:min(900px,90%);
 
     text-align:center;
+
+}
+
+/* =========================================================
+
+   FIRST INTRO STAGE
+
+   ========================================================= */
+
+.cinematic-stage-one{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    width:min(900px,90%);
+
+    transform:translate(-50%,-50%);
+
+    text-align:center;
+
+    opacity:1;
+
+    animation:introStageOneExit .75s cubic-bezier(.76,0,.24,1) 3.95s forwards;
 
 }
 
@@ -196,202 +220,6 @@ a{color:inherit;text-decoration:none}
 
 }
 
-/* =========================================================
-
-   PROFESSIONAL IHF VERIFICATION FRAME — INTRO
-
-   ========================================================= */
-
-.cinematic-ihf{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:12px;
-
-    margin-top:19px;
-
-    padding:9px 18px 9px 11px;
-
-    min-width:min(330px,82vw);
-
-    border:1px solid rgba(214,179,106,.62);
-
-    border-radius:2px;
-
-    background:
-
-        linear-gradient(135deg,rgba(255,255,255,.035),rgba(214,179,106,.025)),
-
-        rgba(8,9,11,.72);
-
-    box-shadow:
-
-        0 0 0 1px rgba(214,179,106,.05),
-
-        0 0 18px rgba(214,179,106,.12),
-
-        inset 0 0 18px rgba(214,179,106,.025);
-
-    backdrop-filter:blur(8px);
-
-    opacity:0;
-
-    transform:translateY(12px) scale(.97);
-
-    animation:introIhf 1s cubic-bezier(.2,.8,.2,1) 2.28s forwards;
-
-    transition:border-color .3s ease,box-shadow .3s ease,transform .3s ease;
-
-}
-
-.cinematic-ihf:hover{
-
-    border-color:#f2cf72;
-
-    box-shadow:
-
-        0 0 0 1px rgba(214,179,106,.12),
-
-        0 0 26px rgba(214,179,106,.22),
-
-        inset 0 0 22px rgba(214,179,106,.04);
-
-    transform:translateY(-2px) scale(1.01);
-
-}
-
-.cinematic-ihf-logo{
-
-    width:82px;
-
-    height:23px;
-
-    object-fit:contain;
-
-    background:#fff;
-
-    flex:0 0 auto;
-
-}
-
-.cinematic-ihf-divider{
-
-    width:1px;
-
-    height:22px;
-
-    background:linear-gradient(180deg,transparent,#d6b36a,transparent);
-
-    flex:0 0 auto;
-
-}
-
-.cinematic-ihf-text{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    line-height:1.15;
-
-    text-align:left;
-
-}
-
-.cinematic-ihf-main{
-
-    color:#f2cf72;
-
-    font-size:9px;
-
-    font-weight:900;
-
-    letter-spacing:2.2px;
-
-    text-transform:uppercase;
-
-}
-
-.cinematic-ihf-sub{
-
-    margin-top:4px;
-
-    color:#858b94;
-
-    font-size:7px;
-
-    font-weight:700;
-
-    letter-spacing:1.5px;
-
-    text-transform:uppercase;
-
-}
-
-.cinematic-ihf-mark{
-
-    width:7px;
-
-    height:7px;
-
-    border-radius:50%;
-
-    background:#31c46c;
-
-    box-shadow:
-
-        0 0 8px rgba(49,196,108,.8),
-
-        0 0 15px rgba(49,196,108,.3);
-
-    flex:0 0 auto;
-
-    animation:ihfVerifyPulse 2.2s ease-in-out infinite;
-
-}
-
-@keyframes introIhf{
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0) scale(1)
-
-    }
-
-}
-
-@keyframes ihfVerifyPulse{
-
-    0%,100%{
-
-        box-shadow:
-
-            0 0 6px rgba(49,196,108,.65),
-
-            0 0 12px rgba(49,196,108,.20)
-
-    }
-
-    50%{
-
-        box-shadow:
-
-            0 0 10px rgba(49,196,108,1),
-
-            0 0 21px rgba(49,196,108,.42)
-
-    }
-
-}
-
 .cinematic-status{
 
     margin-top:15px;
@@ -408,7 +236,7 @@ a{color:inherit;text-decoration:none}
 
     opacity:0;
 
-    animation:introStatus 1s ease 3.05s forwards;
+    animation:introStatus 1s ease 2.65s forwards;
 
 }
 
@@ -424,51 +252,339 @@ a{color:inherit;text-decoration:none}
 
     box-shadow:0 0 12px rgba(214,179,106,.5);
 
-    animation:introBar 1.2s ease 3.15s forwards;
+    animation:introBar 1.2s ease 2.75s forwards;
 
 }
 
-@keyframes introLine{to{width:min(430px,65vw)}}
+/* =========================================================
 
-@keyframes introName{to{opacity:1;transform:translateY(0)}}
+   SECOND INTRO STAGE — ORIGINAL IHF FRAME
 
-@keyframes introFirst{to{opacity:1;transform:translateY(0)}}
+   ========================================================= */
 
-@keyframes introRole{to{opacity:1;transform:translateY(0)}}
+.cinematic-ihf-stage{
 
-@keyframes introStatus{to{opacity:1}}
+    position:absolute;
 
-@keyframes introBar{to{width:115px}}
+    left:50%;
+
+    top:50%;
+
+    width:min(1160px,92%);
+
+    transform:translate(-50%,-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    z-index:5;
+
+    animation:introIhfStage 2.55s cubic-bezier(.2,.8,.2,1) 4.25s forwards;
+
+}
+
+.cinematic-ihf-stage .ihf-box{
+
+    width:min(760px,92vw);
+
+    margin:0 !important;
+
+    padding:32px;
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:#101318;
+
+    border:1px solid #292d34;
+
+    box-shadow:
+
+        0 0 0 1px rgba(214,179,106,.05),
+
+        0 0 20px rgba(242,207,114,.18),
+
+        0 0 45px rgba(242,207,114,.10);
+
+    animation:cinematicIhfGlow 2.2s ease-in-out infinite;
+
+}
+
+/* The original hero verification arrows/text must NOT appear
+
+   during the cinematic second stage. The frame itself remains. */
+
+.cinematic-ihf-stage .ihf-box::before,
+
+.cinematic-ihf-stage .ihf-box::after{
+
+    display:none !important;
+
+}
+
+.cinematic-ihf-stage .ihf-logo{
+
+    width:min(330px,100%);
+
+    height:auto;
+
+    display:block;
+
+    margin-bottom:22px;
+
+    background:#fff;
+
+}
+
+.cinematic-ihf-stage .ihf-title{
+
+    font-size:20px;
+
+    font-weight:800;
+
+    color:#f4f4f5;
+
+}
+
+.cinematic-ihf-stage .ihf-subtitle{
+
+    margin-top:6px;
+
+    color:#949aa3;
+
+    font-size:12px;
+
+}
+
+@keyframes introIhfStage{
+
+    0%{
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transform:translate(-50%,-50%) scale(.94)
+
+    }
+
+    12%{
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:translate(-50%,-50%) scale(1)
+
+    }
+
+    78%{
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:translate(-50%,-50%) scale(1)
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transform:translate(-50%,-50%) scale(1.015)
+
+    }
+
+}
+
+@keyframes cinematicIhfGlow{
+
+    0%,100%{
+
+        box-shadow:
+
+            0 0 0 1px rgba(214,179,106,.05),
+
+            0 0 16px rgba(242,207,114,.16),
+
+            0 0 34px rgba(242,207,114,.08)
+
+    }
+
+    50%{
+
+        box-shadow:
+
+            0 0 0 1px rgba(214,179,106,.10),
+
+            0 0 28px rgba(242,207,114,.38),
+
+            0 0 58px rgba(242,207,114,.18)
+
+    }
+
+}
+
+/* =========================================================
+
+   INTRO ANIMATIONS
+
+   ========================================================= */
+
+@keyframes introStageOneExit{
+
+    0%{
+
+        opacity:1;
+
+        transform:translate(-50%,-50%) scale(1)
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:translate(-50%,-50%) scale(1.025)
+
+    }
+
+}
+
+@keyframes introLine{
+
+    to{width:min(430px,65vw)}
+
+}
+
+@keyframes introName{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0)
+
+    }
+
+}
+
+@keyframes introFirst{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0)
+
+    }
+
+}
+
+@keyframes introRole{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0)
+
+    }
+
+}
+
+@keyframes introStatus{
+
+    to{opacity:1}
+
+}
+
+@keyframes introBar{
+
+    to{width:115px}
+
+}
 
 @keyframes introLight{
 
-    0%{left:-35%;opacity:0}
+    0%{
 
-    15%{opacity:1}
+        left:-35%;
 
-    75%{opacity:.8}
+        opacity:0
 
-    100%{left:125%;opacity:0}
+    }
+
+    15%{
+
+        opacity:1
+
+    }
+
+    75%{
+
+        opacity:.8
+
+    }
+
+    100%{
+
+        left:125%;
+
+        opacity:0
+
+    }
 
 }
 
 @keyframes introAtmosphere{
 
-    0%{opacity:.15;transform:scale(.94)}
+    0%{
 
-    50%{opacity:1;transform:scale(1.04)}
+        opacity:.15;
 
-    100%{opacity:.55;transform:scale(1)}
+        transform:scale(.94)
 
-}
+    }
 
-@keyframes introExit{
+    50%{
 
-    0%{opacity:1;visibility:visible}
+        opacity:1;
 
-    70%{opacity:1}
+        transform:scale(1.04)
 
-    100%{opacity:0;visibility:hidden;pointer-events:none}
+    }
+
+    100%{
+
+        opacity:.55;
+
+        transform:scale(1)
+
+    }
 
 }
 
@@ -3434,67 +3550,39 @@ footer{
 
     .club-identity{padding:0 18px}
 
-    /* INTRO IHF FRAME — MOBILE */
+    /* SECOND IHF FRAME — MOBILE */
 
-    .cinematic-ihf{
+    .cinematic-ihf-stage{
 
-        margin-top:18px;
-
-        min-width:0;
-
-        width:min(330px,88vw);
-
-        padding:8px 13px 8px 9px;
-
-        gap:9px
+        width:94%;
 
     }
 
-    .cinematic-ihf-logo{
+    .cinematic-ihf-stage .ihf-box{
 
-        width:67px;
+        width:min(92vw,760px);
 
-        height:20px
-
-    }
-
-    .cinematic-ihf-divider{
-
-        height:20px
+        padding:25px 20px;
 
     }
 
-    .cinematic-ihf-main{
+    .cinematic-ihf-stage .ihf-logo{
 
-        font-size:7.5px;
+        width:min(330px,100%);
 
-        letter-spacing:1.7px
-
-    }
-
-    .cinematic-ihf-sub{
-
-        font-size:6px;
-
-        letter-spacing:1px
+        margin-bottom:18px;
 
     }
 
-    .cinematic-ihf-mark{
+    .cinematic-ihf-stage .ihf-title{
 
-        width:6px;
-
-        height:6px
+        font-size:18px;
 
     }
 
-    .cinematic-status{
+    .cinematic-ihf-stage .ihf-subtitle{
 
-        margin-top:13px;
-
-        font-size:7px;
-
-        letter-spacing:2.4px
+        font-size:11px;
 
     }
 
@@ -3564,11 +3652,23 @@ footer{
 
     .club-title{font-size:25px}
 
-    .cinematic-ihf{
+    .cinematic-ihf-stage .ihf-box{
 
-        width:90vw;
+        width:92vw;
 
-        padding-right:10px
+        padding:22px 15px;
+
+    }
+
+    .cinematic-ihf-stage .ihf-title{
+
+        font-size:17px;
+
+    }
+
+    .cinematic-ihf-stage .ihf-subtitle{
+
+        font-size:10px;
 
     }
 
@@ -3592,6 +3692,14 @@ footer{
 
 <div class="cinematic-content">
 
+<!-- =====================================================
+
+     STAGE 1 — MAIN INTRO
+
+     ===================================================== -->
+
+<div class="cinematic-stage-one">
+
 <div class="cinematic-line"></div>
 
 <span class="cinematic-last">SEGUENI</span>
@@ -3600,21 +3708,27 @@ footer{
 
 <div class="cinematic-role">International Handball Player</div>
 
-<!-- PROFESSIONAL IHF FRAME — SECOND ELEMENT -->
+<div class="cinematic-status">Professional Pivot · Algerian · #18</div>
 
-<a
+<div class="cinematic-bar"></div>
 
-    href="ihf.html"
+</div>
 
-    class="cinematic-ihf"
+<!-- =====================================================
 
-    aria-label="Verified by IHF — International Handball Federation"
+     STAGE 2 — ORIGINAL IHF FRAME
 
->
+     Appears only after Stage 1 disappears.
+
+     ===================================================== -->
+
+<div class="cinematic-ihf-stage">
+
+<div class="ihf-box">
 
 <img
 
-    class="cinematic-ihf-logo"
+    class="ihf-logo"
 
     src="https://www.ihf.info/sites/default/files/inline-images/IHF%20Logo_1440x300.jpg"
 
@@ -3622,23 +3736,13 @@ footer{
 
 >
 
-<span class="cinematic-ihf-divider"></span>
+<div class="ihf-title">Certified by IHF</div>
 
-<span class="cinematic-ihf-text">
+<div class="ihf-subtitle">International Handball Federation</div>
 
-<span class="cinematic-ihf-main">Verified by IHF</span>
+</div>
 
-<span class="cinematic-ihf-sub">International Handball Federation</span>
-
-</span>
-
-<span class="cinematic-ihf-mark"></span>
-
-</a>
-
-<div class="cinematic-status">Professional Pivot · Algerian · #18</div>
-
-<div class="cinematic-bar"></div>
+</div>
 
 </div>
 
@@ -4816,7 +4920,27 @@ International Handball Player · Pivot · #18
 
 <script>
 
-/* Release the cinematic entrance without changing the page structure */
+/* =========================================================
+
+   CINEMATIC INTRO CONTROLLER
+
+   Stage 1:
+
+   Main identity appears first.
+
+   
+
+   Stage 2:
+
+   The ORIGINAL IHF frame appears alone.
+
+   
+
+   Then:
+
+   Intro completely disappears and website becomes active.
+
+   ========================================================= */
 
 window.addEventListener("load",function(){
 
@@ -4824,7 +4948,21 @@ window.addEventListener("load",function(){
 
         document.body.classList.remove("intro-active");
 
-    },5500);
+        var intro=document.querySelector(".cinematic-intro");
+
+        if(intro){
+
+            intro.style.pointerEvents="none";
+
+            setTimeout(function(){
+
+                intro.style.display="none";
+
+            },700);
+
+        }
+
+    },7000);
 
 });
 
