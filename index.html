@@ -1050,7 +1050,7 @@ h2{
 
 /* =========================================================
 
-   OFFICIAL IHF RECORDS — THREE WINDOWS
+   OFFICIAL IHF RECORDS — SWIPE WINDOWS
 
    ========================================================= */
 
@@ -1100,15 +1100,61 @@ h2{
 
 }
 
+/* ===== SWIPE CONTAINER ===== */
+
 .ihf-records-grid{
 
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
+    display:flex;
 
     gap:18px;
 
+    overflow-x:auto;
+
+    overflow-y:hidden;
+
+    padding:4px 4px 18px;
+
+    scroll-snap-type:x mandatory;
+
+    -webkit-overflow-scrolling:touch;
+
+    scrollbar-width:thin;
+
+    scrollbar-color:#665331 #0b0e12;
+
+    cursor:grab;
+
+    overscroll-behavior-x:contain;
+
 }
+
+.ihf-records-grid:active{
+
+    cursor:grabbing;
+
+}
+
+.ihf-records-grid::-webkit-scrollbar{
+
+    height:5px;
+
+}
+
+.ihf-records-grid::-webkit-scrollbar-track{
+
+    background:#0b0e12;
+
+}
+
+.ihf-records-grid::-webkit-scrollbar-thumb{
+
+    background:#665331;
+
+    border-radius:10px;
+
+}
+
+/* ===== EACH SWIPE WINDOW ===== */
 
 .ihf-record-card{
 
@@ -1119,6 +1165,10 @@ h2{
     flex-direction:column;
 
     justify-content:space-between;
+
+    /* 3 windows visible on desktop */
+
+    flex:0 0 calc((100% - 36px) / 3);
 
     min-height:285px;
 
@@ -1139,6 +1189,8 @@ h2{
         0 14px 40px rgba(0,0,0,.24),
 
         inset 0 1px 0 rgba(255,255,255,.035);
+
+    scroll-snap-align:start;
 
     transition:
 
@@ -3470,9 +3522,17 @@ footer{
 
     }
 
+    /* IHF stays horizontal — no grid here */
+
     .ihf-records-grid{
 
-        grid-template-columns:1fr 1fr
+        gap:16px;
+
+    }
+
+    .ihf-record-card{
+
+        flex:0 0 calc((100% - 16px) / 2);
 
     }
 
@@ -3742,7 +3802,11 @@ footer{
 
     .club-identity{padding:0 18px}
 
-    /* OFFICIAL IHF RECORDS — MOBILE */
+    /* =====================================================
+
+       OFFICIAL IHF RECORDS — MOBILE SWIPE
+
+       ===================================================== */
 
     .ihf-records-section{
 
@@ -3754,17 +3818,33 @@ footer{
 
     .ihf-records-grid{
 
-        grid-template-columns:1fr;
+        display:flex;
 
-        gap:14px
+        gap:14px;
+
+        overflow-x:auto;
+
+        overflow-y:hidden;
+
+        padding:4px 2px 16px;
+
+        scroll-snap-type:x mandatory;
+
+        -webkit-overflow-scrolling:touch;
+
+        scrollbar-width:thin;
 
     }
 
     .ihf-record-card{
 
+        flex:0 0 88vw;
+
         min-height:235px;
 
-        padding:24px 20px
+        padding:24px 20px;
+
+        scroll-snap-align:start;
 
     }
 
@@ -3891,6 +3971,8 @@ footer{
     }
 
     .ihf-record-card{
+
+        flex-basis:88vw;
 
         padding:22px 17px
 
@@ -4080,7 +4162,7 @@ Statut Sportif Et Juridique : Athlète De Haut Niveau — Class A — &amp; Éli
 
 <!-- =========================================================
 
-     OFFICIAL IHF RECORDS — 3 WINDOWS
+     OFFICIAL IHF RECORDS — 3 SWIPE WINDOWS
 
      ========================================================= -->
 
