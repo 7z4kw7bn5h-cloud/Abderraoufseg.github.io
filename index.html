@@ -1050,7 +1050,7 @@ h2{
 
 /* =========================================================
 
-   OFFICIAL IHF RECORDS — SWIPE WINDOWS
+   OFFICIAL IHF RECORDS
 
    ========================================================= */
 
@@ -1100,61 +1100,15 @@ h2{
 
 }
 
-/* ===== SWIPE CONTAINER ===== */
-
 .ihf-records-grid{
 
-    display:flex;
+    display:grid;
+
+    grid-template-columns:1fr;
 
     gap:18px;
 
-    overflow-x:auto;
-
-    overflow-y:hidden;
-
-    padding:4px 4px 18px;
-
-    scroll-snap-type:x mandatory;
-
-    -webkit-overflow-scrolling:touch;
-
-    scrollbar-width:thin;
-
-    scrollbar-color:#665331 #0b0e12;
-
-    cursor:grab;
-
-    overscroll-behavior-x:contain;
-
 }
-
-.ihf-records-grid:active{
-
-    cursor:grabbing;
-
-}
-
-.ihf-records-grid::-webkit-scrollbar{
-
-    height:5px;
-
-}
-
-.ihf-records-grid::-webkit-scrollbar-track{
-
-    background:#0b0e12;
-
-}
-
-.ihf-records-grid::-webkit-scrollbar-thumb{
-
-    background:#665331;
-
-    border-radius:10px;
-
-}
-
-/* ===== EACH SWIPE WINDOW ===== */
 
 .ihf-record-card{
 
@@ -1166,11 +1120,7 @@ h2{
 
     justify-content:space-between;
 
-    /* 3 windows visible on desktop */
-
-    flex:0 0 calc((100% - 36px) / 3);
-
-    min-height:285px;
+    min-height:245px;
 
     padding:28px;
 
@@ -1189,8 +1139,6 @@ h2{
         0 14px 40px rgba(0,0,0,.24),
 
         inset 0 1px 0 rgba(255,255,255,.035);
-
-    scroll-snap-align:start;
 
     transition:
 
@@ -1300,7 +1248,7 @@ h2{
 
     margin-top:10px;
 
-    font-size:clamp(19px,2vw,25px);
+    font-size:clamp(20px,2.6vw,28px);
 
     line-height:1.15;
 
@@ -1322,7 +1270,7 @@ h2{
 
 .ihf-record-event{
 
-    margin-top:7px;
+    margin-top:5px;
 
     color:#858b94;
 
@@ -1354,7 +1302,7 @@ h2{
 
 .ihf-record-source{
 
-    margin-top:18px;
+    margin-top:16px;
 
     display:flex;
 
@@ -1422,11 +1370,7 @@ h2{
 
 }
 
-/* =========================================================
-
-   SPORT STATUS
-
-   ========================================================= */
+/* SPORT STATUS */
 
 .sport-status-box{
 
@@ -1716,11 +1660,7 @@ h2{
 
 }
 
-/* =========================================================
-
-   PROFILE
-
-   ========================================================= */
+/* PROFILE */
 
 .profile-layout{
 
@@ -1822,11 +1762,7 @@ h2{
 
 }
 
-/* =========================================================
-
-   IHF
-
-   ========================================================= */
+/* IHF */
 
 .ihf-box{
 
@@ -1874,11 +1810,7 @@ h2{
 
 }
 
-/* =========================================================
-
-   SCOUTING
-
-   ========================================================= */
+/* SCOUTING */
 
 .ai-scouting-box{
 
@@ -2126,11 +2058,7 @@ h2{
 
 }
 
-/* =========================================================
-
-   INTERNATIONAL
-
-   ========================================================= */
+/* INTERNATIONAL */
 
 .timeline{
 
@@ -2196,11 +2124,7 @@ h2{
 
 .gold{color:#d6b36a}
 
-/* =========================================================
-
-   MEDALS
-
-   ========================================================= */
+/* MEDALS */
 
 .medals{
 
@@ -2352,11 +2276,7 @@ h2{
 
 .medal p{color:#949aa3}
 
-/* =========================================================
-
-   CLUB CAREER
-
-   ========================================================= */
+/* CLUB CAREER */
 
 .clubs{
 
@@ -2986,11 +2906,7 @@ h2{
 
 }
 
-/* =========================================================
-
-   MEDIA
-
-   ========================================================= */
+/* MEDIA */
 
 .media{
 
@@ -3214,11 +3130,7 @@ h2{
 
 }
 
-/* =========================================================
-
-   CONTACT / SIGNATURE
-
-   ========================================================= */
+/* CONTACT / SIGNATURE */
 
 .contact{
 
@@ -3468,7 +3380,7 @@ footer{
 
    ========================================================= */
 
-@media(max-width:950px){
+@media(max-width:850px){
 
     nav{display:none}
 
@@ -3522,17 +3434,9 @@ footer{
 
     }
 
-    /* IHF stays horizontal — no grid here */
-
     .ihf-records-grid{
 
-        gap:16px;
-
-    }
-
-    .ihf-record-card{
-
-        flex:0 0 calc((100% - 16px) / 2);
+        grid-template-columns:1fr
 
     }
 
@@ -3802,11 +3706,7 @@ footer{
 
     .club-identity{padding:0 18px}
 
-    /* =====================================================
-
-       OFFICIAL IHF RECORDS — MOBILE SWIPE
-
-       ===================================================== */
+    /* OFFICIAL IHF RECORDS — MOBILE */
 
     .ihf-records-section{
 
@@ -3818,33 +3718,15 @@ footer{
 
     .ihf-records-grid{
 
-        display:flex;
-
-        gap:14px;
-
-        overflow-x:auto;
-
-        overflow-y:hidden;
-
-        padding:4px 2px 16px;
-
-        scroll-snap-type:x mandatory;
-
-        -webkit-overflow-scrolling:touch;
-
-        scrollbar-width:thin;
+        gap:14px
 
     }
 
     .ihf-record-card{
 
-        flex:0 0 88vw;
-
         min-height:235px;
 
-        padding:24px 20px;
-
-        scroll-snap-align:start;
+        padding:24px 20px
 
     }
 
@@ -3972,8 +3854,6 @@ footer{
 
     .ihf-record-card{
 
-        flex-basis:88vw;
-
         padding:22px 17px
 
     }
@@ -4006,6 +3886,12 @@ footer{
 
 <div class="cinematic-content">
 
+<!-- =====================================================
+
+     STAGE 1 — MAIN INTRO
+
+     ===================================================== -->
+
 <div class="cinematic-stage-one">
 
 <div class="cinematic-line"></div>
@@ -4021,6 +3907,12 @@ footer{
 <div class="cinematic-bar"></div>
 
 </div>
+
+<!-- =====================================================
+
+     STAGE 2 — ORIGINAL IHF FRAME
+
+     ===================================================== -->
 
 <div class="cinematic-ihf-stage">
 
@@ -4162,7 +4054,7 @@ Statut Sportif Et Juridique : Athlète De Haut Niveau — Class A — &amp; Éli
 
 <!-- =========================================================
 
-     OFFICIAL IHF RECORDS — 3 SWIPE WINDOWS
+     OFFICIAL IHF RECORDS
 
      ========================================================= -->
 
@@ -4178,7 +4070,7 @@ Statut Sportif Et Juridique : Athlète De Haut Niveau — Class A — &amp; Éli
 
 <div class="ihf-records-note">
 
-Official International Handball Federation archive references documenting SEGUENI Abderraouf's international player record, team roster and official competition information.
+Official International Handball Federation archive reference documenting SEGUENI Abderraouf's international player record.
 
 </div>
 
@@ -4186,27 +4078,21 @@ Official International Handball Federation archive references documenting SEGUEN
 
 <div class="ihf-records-grid">
 
-<!-- =====================================================
-
-     WINDOW 01 — INTERNATIONAL HANDBALL FEDERATION
-
-     ===================================================== -->
-
 <a
 
     class="ihf-record-card"
 
     href="ihf.html"
 
-    aria-label="International Handball Federation — SEGUENI Abderraouf"
+    aria-label="Official IHF Record — SEGUENI Abderraouf Algeria"
 
 >
 
 <div class="ihf-record-card-top">
 
-<div class="ihf-record-kicker">01 · International Handball Federation</div>
+<div class="ihf-record-kicker">International Handball Federation</div>
 
-<h3>INTERNATIONAL HANDBALL FEDERATION</h3>
+<h3>OFFICIAL IHF RECORD</h3>
 
 <div class="ihf-record-name">
 
@@ -4216,7 +4102,7 @@ SEGUENI Abderraouf — Algeria
 
 <div class="ihf-record-event">
 
-Official international player record and federation reference.
+2017 IHF Men's Junior World Championship
 
 </div>
 
@@ -4232,111 +4118,7 @@ NO. 18 · PIVOT · ALGERIA
 
 <span>Official IHF archive</span>
 
-<span class="ihf-record-link">View IHF record</span>
-
-</div>
-
-</a>
-
-<!-- =====================================================
-
-     WINDOW 02 — IHF TEAM ROSTER
-
-     ===================================================== -->
-
-<a
-
-    class="ihf-record-card"
-
-    href="ihf.html"
-
-    aria-label="IHF Team Roster — SEGUENI Abderraouf Algeria"
-
->
-
-<div class="ihf-record-card-top">
-
-<div class="ihf-record-kicker">02 · IHF Team Roster</div>
-
-<h3>IHF TEAM ROSTER</h3>
-
-<div class="ihf-record-name">
-
-SEGUENI Abderraouf — Algeria
-
-</div>
-
-<div class="ihf-record-event">
-
-2017 IHF Men's Junior World Championship — Algeria team roster reference.
-
-</div>
-
-<div class="ihf-record-data">
-
-NO. 18 · PIVOT · ALGERIA
-
-</div>
-
-</div>
-
-<div class="ihf-record-source">
-
-<span>Official team roster</span>
-
-<span class="ihf-record-link">View team roster</span>
-
-</div>
-
-</a>
-
-<!-- =====================================================
-
-     WINDOW 03 — OFFICIAL MATCH REPORTS
-
-     ===================================================== -->
-
-<a
-
-    class="ihf-record-card"
-
-    href="ihf.html"
-
-    aria-label="Official Match Reports — SEGUENI Abderraouf Algeria"
-
->
-
-<div class="ihf-record-card-top">
-
-<div class="ihf-record-kicker">03 · Official Match Reports</div>
-
-<h3>OFFICIAL MATCH REPORTS</h3>
-
-<div class="ihf-record-name">
-
-SEGUENI Abderraouf — Algeria
-
-</div>
-
-<div class="ihf-record-event">
-
-Official competition and match documentation associated with the IHF international record.
-
-</div>
-
-<div class="ihf-record-data">
-
-2017 · U21 · WORLD CHAMPIONSHIP
-
-</div>
-
-</div>
-
-<div class="ihf-record-source">
-
-<span>IHF competition archive</span>
-
-<span class="ihf-record-link">View reports</span>
+<span class="ihf-record-link">View official record</span>
 
 </div>
 
@@ -4346,7 +4128,7 @@ Official competition and match documentation associated with the IHF internation
 
 <div class="ihf-record-footnote">
 
-Official source · International Handball Federation archive · Player · Team Roster · Match Reports
+Official source · International Handball Federation archive
 
 </div>
 
