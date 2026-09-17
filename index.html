@@ -1050,6 +1050,148 @@ h2{
 
 /* =========================================================
 
+   LUXURY CHROME TITLES
+
+   ========================================================= */
+
+h1 .last-name,
+
+h1 .first-name,
+
+section h2,
+
+.video-section-title{
+
+    color:transparent;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            #ffffff 0%,
+
+            #f4f4f4 12%,
+
+            #cfcfcf 27%,
+
+            #858585 44%,
+
+            #f8f8f8 55%,
+
+            #b8b8b8 70%,
+
+            #707070 86%,
+
+            #eeeeee 100%
+
+        );
+
+    background-size:100% 220%;
+
+    background-position:50% 0%;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+
+        0 1px 1px rgba(255,255,255,.16),
+
+        0 8px 28px rgba(0,0,0,.35);
+
+    animation:
+
+        chromeTitleFloat 5.8s ease-in-out infinite,
+
+        chromeTitleShine 6.5s ease-in-out infinite;
+
+}
+
+@keyframes chromeTitleFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-3px);
+
+    }
+
+}
+
+@keyframes chromeTitleShine{
+
+    0%,35%,100%{
+
+        background-position:50% 0%;
+
+    }
+
+    55%{
+
+        background-position:50% 55%;
+
+    }
+
+    72%{
+
+        background-position:50% 100%;
+
+    }
+
+}
+
+h1 .last-name{
+
+    text-shadow:
+
+        0 2px 2px rgba(255,255,255,.16),
+
+        0 10px 35px rgba(0,0,0,.45);
+
+}
+
+h1 .first-name{
+
+    text-shadow:
+
+        0 1px 1px rgba(255,255,255,.13),
+
+        0 7px 24px rgba(0,0,0,.35);
+
+}
+
+section h2{
+
+    position:relative;
+
+}
+
+.video-section-title{
+
+    display:inline-block;
+
+    background-size:100% 220%;
+
+}
+
+.club-title{
+
+    color:#fff;
+
+}
+
+/* =========================================================
+
    OFFICIAL IHF RECORDS
 
    ========================================================= */
@@ -3376,6 +3518,34 @@ footer{
 
 /* =========================================================
 
+   REDUCED MOTION
+
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+
+        scroll-behavior:auto;
+
+    }
+
+    h1 .last-name,
+
+    h1 .first-name,
+
+    section h2,
+
+    .video-section-title{
+
+        animation:none;
+
+    }
+
+}
+
+/* =========================================================
+
    RESPONSIVE
 
    ========================================================= */
@@ -3886,12 +4056,6 @@ footer{
 
 <div class="cinematic-content">
 
-<!-- =====================================================
-
-     STAGE 1 — MAIN INTRO
-
-     ===================================================== -->
-
 <div class="cinematic-stage-one">
 
 <div class="cinematic-line"></div>
@@ -3907,12 +4071,6 @@ footer{
 <div class="cinematic-bar"></div>
 
 </div>
-
-<!-- =====================================================
-
-     STAGE 2 — ORIGINAL IHF FRAME
-
-     ===================================================== -->
 
 <div class="cinematic-ihf-stage">
 
@@ -4341,8 +4499,6 @@ Algerian international handball player with a national-team pathway through U17,
 </div>
 
 </div>
-
-<!-- IMG_9726.jpeg REMOVED FROM PLAYER PROFILE -->
 
 </div>
 
@@ -4931,8 +5087,6 @@ More than 25 international preparation camps in Europe with international opposi
 <div class="media-card"><img src="IMG_9540.png" alt="SEGUENI Abderraouf"></div>
 
 <div class="media-card"><img src="IMG_9541.png" alt="SEGUENI Abderraouf"></div>
-
-<!-- IMG_9726.jpeg KEPT IN MEDIA -->
 
 <div class="media-card"><img src="IMG_9726.jpeg" alt="SEGUENI Abderraouf"></div>
 
