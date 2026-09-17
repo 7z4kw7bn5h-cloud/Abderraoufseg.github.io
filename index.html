@@ -14,133 +14,83 @@
 
 <style>
 
-/* =========================================================
+*{margin:0;padding:0;box-sizing:border-box}
 
-   GLOBAL
-
-   ========================================================= */
-
-*{
-
-    margin:0;
-
-    padding:0;
-
-    box-sizing:border-box;
-
-}
-
-html{
-
-    scroll-behavior:smooth;
-
-}
+html{scroll-behavior:smooth}
 
 body{
 
-    background:#08090b;
+background:#08090b;
 
-    color:#f4f4f5;
+color:#f4f4f5;
 
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
 
-    line-height:1.6;
-
-}
-
-body.intro-active{
-
-    overflow:hidden;
+line-height:1.6
 
 }
 
-.container{
+body.intro-active{overflow:hidden}
 
-    width:min(1160px,92%);
+.container{width:min(1160px,92%);margin:auto}
 
-    margin:auto;
-
-}
-
-a{
-
-    color:inherit;
-
-    text-decoration:none;
-
-}
-
-/* =========================================================
-
-   HEADER
-
-   ========================================================= */
+a{color:inherit;text-decoration:none}
 
 header{
 
-    position:sticky;
+position:sticky;
 
-    top:0;
+top:0;
 
-    z-index:100;
+z-index:100;
 
-    background:rgba(8,9,11,.94);
+background:rgba(8,9,11,.94);
 
-    backdrop-filter:blur(14px);
+backdrop-filter:blur(14px);
 
-    border-bottom:1px solid #25282d;
+border-bottom:1px solid #25282d
 
 }
 
 .nav{
 
-    min-height:72px;
+min-height:72px;
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:space-between;
+justify-content:space-between
 
 }
 
 .logo{
 
-    font-size:14px;
+font-size:14px;
 
-    font-weight:800;
+font-weight:800;
 
-    letter-spacing:3px;
+letter-spacing:3px
 
 }
 
 nav{
 
-    display:flex;
+display:flex;
 
-    gap:28px;
+gap:28px;
 
-    color:#9298a1;
+color:#9298a1;
 
-    font-size:11px;
+font-size:11px;
 
-    text-transform:uppercase;
+text-transform:uppercase;
 
-    letter-spacing:1.7px;
-
-}
-
-nav a{
-
-    transition:color .3s ease;
+letter-spacing:1.7px
 
 }
 
-nav a:hover{
-
-    color:#d6b36a;
-
-}
+nav a:hover{color:#d6b36a}
 
 /* =========================================================
 
@@ -150,657 +100,499 @@ nav a:hover{
 
 .cinematic-intro{
 
-    position:fixed;
+position:fixed;
 
-    inset:0;
+inset:0;
 
-    z-index:9999;
+z-index:9999;
 
-    background:#050608;
+background:#050608;
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:center;
+justify-content:center;
 
-    overflow:hidden;
+overflow:hidden
 
 }
 
 .cinematic-intro:before{
 
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    inset:0;
+inset:0;
 
-    background:
+background:
 
-        radial-gradient(
+radial-gradient(circle at 50% 48%,rgba(214,179,106,.075),transparent 28%),
 
-            circle at 50% 48%,
+linear-gradient(115deg,transparent 35%,rgba(214,179,106,.045) 50%,transparent 65%);
 
-            rgba(214,179,106,.075),
-
-            transparent 28%
-
-        ),
-
-        linear-gradient(
-
-            115deg,
-
-            transparent 35%,
-
-            rgba(214,179,106,.045) 50%,
-
-            transparent 65%
-
-        );
-
-    animation:introAtmosphere 8.4s ease-in-out forwards;
+animation:introAtmosphere 8.4s ease-in-out forwards
 
 }
 
 .cinematic-light{
 
-    position:absolute;
+position:absolute;
 
-    top:-20%;
+top:-20%;
 
-    left:-35%;
+left:-35%;
 
-    width:24%;
+width:24%;
 
-    height:140%;
+height:140%;
 
-    background:
+background:linear-gradient(
 
-        linear-gradient(
+90deg,
 
-            90deg,
+transparent,
 
-            transparent,
+rgba(242,207,114,.13),
 
-            rgba(242,207,114,.13),
+transparent
 
-            transparent
+);
 
-        );
+transform:skewX(-18deg);
 
-    transform:skewX(-18deg);
-
-    animation:introLight 3.8s cubic-bezier(.2,.7,.2,1) .7s forwards;
+animation:introLight 3.8s cubic-bezier(.2,.7,.2,1) .7s forwards
 
 }
 
 .cinematic-content{
 
-    position:relative;
+position:relative;
 
-    z-index:2;
+z-index:2;
 
-    width:min(900px,90%);
+width:min(900px,90%);
 
-    text-align:center;
+text-align:center
 
 }
 
 .cinematic-stage-one{
 
-    position:absolute;
+position:absolute;
 
-    left:50%;
+left:50%;
 
-    top:50%;
+top:50%;
 
-    width:min(900px,90%);
+width:min(900px,90%);
 
-    transform:translate(-50%,-50%);
+transform:translate(-50%,-50%);
 
-    text-align:center;
+text-align:center;
 
-    opacity:1;
+opacity:1;
 
-    animation:
-
-        introStageOneExit
-
-        .75s
-
-        cubic-bezier(.76,0,.24,1)
-
-        3.95s
-
-        forwards;
+animation:introStageOneExit .75s cubic-bezier(.76,0,.24,1) 3.95s forwards
 
 }
 
 .cinematic-line{
 
-    width:0;
+width:0;
 
-    height:1px;
+height:1px;
 
-    margin:0 auto 28px;
+margin:0 auto 28px;
 
-    background:
+background:linear-gradient(
 
-        linear-gradient(
+90deg,
 
-            90deg,
+transparent,
 
-            transparent,
+#d6b36a,
 
-            #d6b36a,
+transparent
 
-            transparent
+);
 
-        );
+box-shadow:0 0 14px rgba(214,179,106,.45);
 
-    box-shadow:0 0 14px rgba(214,179,106,.45);
-
-    animation:
-
-        introLine
-
-        1.15s
-
-        cubic-bezier(.2,.8,.2,1)
-
-        .35s
-
-        forwards;
+animation:introLine 1.15s cubic-bezier(.2,.8,.2,1) .35s forwards
 
 }
 
 .cinematic-last{
 
-    display:block;
+display:block;
 
-    color:#f4f4f5;
+color:#f4f4f5;
 
-    font-size:clamp(58px,12vw,130px);
+font-size:clamp(58px,12vw,130px);
 
-    font-weight:900;
+font-weight:900;
 
-    line-height:.82;
+line-height:.82;
 
-    letter-spacing:clamp(-6px,-.55vw,-2px);
+letter-spacing:clamp(-6px,-.55vw,-2px);
 
-    opacity:0;
+opacity:0;
 
-    transform:translateY(28px);
+transform:translateY(28px);
 
-    animation:
-
-        introName
-
-        1.25s
-
-        cubic-bezier(.2,.8,.2,1)
-
-        .7s
-
-        forwards;
+animation:introName 1.25s cubic-bezier(.2,.8,.2,1) .7s forwards
 
 }
 
 .cinematic-first{
 
-    display:block;
+display:block;
 
-    margin-top:12px;
+margin-top:12px;
 
-    color:#d6b36a;
+color:#d6b36a;
 
-    font-size:clamp(27px,5vw,55px);
+font-size:clamp(27px,5vw,55px);
 
-    font-weight:600;
+font-weight:600;
 
-    letter-spacing:1px;
+letter-spacing:1px;
 
-    opacity:0;
+opacity:0;
 
-    transform:translateY(18px);
+transform:translateY(18px);
 
-    animation:
-
-        introFirst
-
-        1.05s
-
-        cubic-bezier(.2,.8,.2,1)
-
-        1.25s
-
-        forwards;
+animation:introFirst 1.05s cubic-bezier(.2,.8,.2,1) 1.25s forwards
 
 }
 
 .cinematic-role{
 
-    margin-top:30px;
+margin-top:30px;
 
-    color:#f0f1f3;
+color:#f0f1f3;
 
-    font-size:clamp(10px,1.7vw,15px);
+font-size:clamp(10px,1.7vw,15px);
 
-    font-weight:800;
+font-weight:800;
 
-    letter-spacing:clamp(3px,.7vw,7px);
+letter-spacing:clamp(3px,.7vw,7px);
 
-    text-transform:uppercase;
+text-transform:uppercase;
 
-    opacity:0;
+opacity:0;
 
-    transform:translateY(15px);
+transform:translateY(15px);
 
-    animation:
-
-        introRole
-
-        1s
-
-        ease
-
-        2s
-
-        forwards;
+animation:introRole 1s ease 2s forwards
 
 }
 
 .cinematic-status{
 
-    margin-top:15px;
+margin-top:15px;
 
-    color:#858b94;
+color:#858b94;
 
-    font-size:8px;
+font-size:8px;
 
-    font-weight:700;
+font-weight:700;
 
-    letter-spacing:3px;
+letter-spacing:3px;
 
-    text-transform:uppercase;
+text-transform:uppercase;
 
-    opacity:0;
+opacity:0;
 
-    animation:
-
-        introStatus
-
-        1s
-
-        ease
-
-        2.65s
-
-        forwards;
+animation:introStatus 1s ease 2.65s forwards
 
 }
 
 .cinematic-bar{
 
-    width:0;
+width:0;
 
-    height:1px;
+height:1px;
 
-    margin:25px auto 0;
+margin:25px auto 0;
 
-    background:#d6b36a;
+background:#d6b36a;
 
-    box-shadow:0 0 12px rgba(214,179,106,.5);
+box-shadow:0 0 12px rgba(214,179,106,.5);
 
-    animation:
-
-        introBar
-
-        1.2s
-
-        ease
-
-        2.75s
-
-        forwards;
+animation:introBar 1.2s ease 2.75s forwards
 
 }
 
 .cinematic-ihf-stage{
 
-    position:absolute;
+position:absolute;
 
-    left:50%;
+left:50%;
 
-    top:50%;
+top:50%;
 
-    width:min(1160px,92%);
+width:min(1160px,92%);
 
-    transform:translate(-50%,-50%);
+transform:translate(-50%,-50%);
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:center;
+justify-content:center;
 
-    text-align:center;
+text-align:center;
 
-    opacity:0;
+opacity:0;
 
-    visibility:hidden;
+visibility:hidden;
 
-    pointer-events:none;
+pointer-events:none;
 
-    z-index:5;
+z-index:5;
 
-    animation:
-
-        introIhfStage
-
-        2.55s
-
-        cubic-bezier(.2,.8,.2,1)
-
-        4.25s
-
-        forwards;
+animation:introIhfStage 2.55s cubic-bezier(.2,.8,.2,1) 4.25s forwards
 
 }
 
 .ihf-box{
 
-    background:#101318;
+background:#101318;
 
-    border:1px solid #292d34;
+border:1px solid #292d34;
 
-    padding:32px;
+padding:32px
 
 }
 
 .cinematic-ihf-stage .ihf-box{
 
-    width:min(760px,92vw);
+width:min(760px,92vw);
 
-    margin:0!important;
+margin:0!important;
 
-    display:flex;
+display:flex;
 
-    flex-direction:column;
+flex-direction:column;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:center;
+justify-content:center;
 
-    text-align:center;
+text-align:center;
 
-    box-shadow:
+box-shadow:
 
-        0 0 0 1px rgba(214,179,106,.05),
+0 0 0 1px rgba(214,179,106,.05),
 
-        0 0 20px rgba(242,207,114,.18),
+0 0 20px rgba(242,207,114,.18),
 
-        0 0 45px rgba(242,207,114,.1);
+0 0 45px rgba(242,207,114,.1);
 
-    animation:
-
-        cinematicIhfGlow
-
-        2.2s
-
-        ease-in-out
-
-        infinite;
+animation:cinematicIhfGlow 2.2s ease-in-out infinite
 
 }
 
 .ihf-logo{
 
-    width:min(330px,100%);
+width:min(330px,100%);
 
-    height:auto;
+height:auto;
 
-    display:block;
+display:block;
 
-    margin-bottom:22px;
+margin-bottom:22px;
 
-    background:#fff;
+background:#fff
 
 }
 
 .ihf-title{
 
-    font-size:20px;
+font-size:20px;
 
-    font-weight:800;
+font-weight:800
 
 }
 
 .ihf-subtitle{
 
-    margin-top:6px;
+margin-top:6px;
 
-    color:#949aa3;
+color:#949aa3;
 
-    font-size:12px;
+font-size:12px
 
 }
 
 @keyframes introStageOneExit{
 
-    to{
+to{
 
-        opacity:0;
+opacity:0;
 
-        transform:
+transform:translate(-50%,-50%) scale(1.025)
 
-            translate(-50%,-50%)
-
-            scale(1.025);
-
-    }
+}
 
 }
 
 @keyframes introLine{
 
-    to{
-
-        width:min(430px,65vw);
-
-    }
+to{width:min(430px,65vw)}
 
 }
 
 @keyframes introName{
 
-    to{
+to{
 
-        opacity:1;
+opacity:1;
 
-        transform:translateY(0);
+transform:translateY(0)
 
-    }
+}
 
 }
 
 @keyframes introFirst{
 
-    to{
+to{
 
-        opacity:1;
+opacity:1;
 
-        transform:translateY(0);
+transform:translateY(0)
 
-    }
+}
 
 }
 
 @keyframes introRole{
 
-    to{
+to{
 
-        opacity:1;
+opacity:1;
 
-        transform:translateY(0);
+transform:translateY(0)
 
-    }
+}
 
 }
 
 @keyframes introStatus{
 
-    to{
-
-        opacity:1;
-
-    }
+to{opacity:1}
 
 }
 
 @keyframes introBar{
 
-    to{
-
-        width:115px;
-
-    }
+to{width:115px}
 
 }
 
 @keyframes introLight{
 
-    0%{
+0%{left:-35%;opacity:0}
 
-        left:-35%;
+15%{opacity:1}
 
-        opacity:0;
+75%{opacity:.8}
 
-    }
-
-    15%{
-
-        opacity:1;
-
-    }
-
-    75%{
-
-        opacity:.8;
-
-    }
-
-    100%{
-
-        left:125%;
-
-        opacity:0;
-
-    }
+100%{left:125%;opacity:0}
 
 }
 
 @keyframes introAtmosphere{
 
-    0%{
+0%{
 
-        opacity:.15;
+opacity:.15;
 
-        transform:scale(.94);
+transform:scale(.94)
 
-    }
+}
 
-    50%{
+50%{
 
-        opacity:1;
+opacity:1;
 
-        transform:scale(1.04);
+transform:scale(1.04)
 
-    }
+}
 
-    100%{
+100%{
 
-        opacity:.55;
+opacity:.55;
 
-        transform:scale(1);
+transform:scale(1)
 
-    }
+}
 
 }
 
 @keyframes introIhfStage{
 
-    0%{
+0%{
 
-        opacity:0;
+opacity:0;
 
-        visibility:hidden;
+visibility:hidden;
 
-        transform:
+transform:translate(-50%,-50%) scale(.94)
 
-            translate(-50%,-50%)
+}
 
-            scale(.94);
+12%,78%{
 
-    }
+opacity:1;
 
-    12%,78%{
+visibility:visible;
 
-        opacity:1;
+transform:translate(-50%,-50%) scale(1)
 
-        visibility:visible;
+}
 
-        transform:
+100%{
 
-            translate(-50%,-50%)
+opacity:0;
 
-            scale(1);
+visibility:hidden;
 
-    }
+transform:translate(-50%,-50%) scale(1.015)
 
-    100%{
-
-        opacity:0;
-
-        visibility:hidden;
-
-        transform:
-
-            translate(-50%,-50%)
-
-            scale(1.015);
-
-    }
+}
 
 }
 
 @keyframes cinematicIhfGlow{
 
-    0%,100%{
+0%,100%{
 
-        box-shadow:
+box-shadow:
 
-            0 0 0 1px rgba(214,179,106,.05),
+0 0 0 1px rgba(214,179,106,.05),
 
-            0 0 16px rgba(242,207,114,.16),
+0 0 16px rgba(242,207,114,.16),
 
-            0 0 34px rgba(242,207,114,.08);
+0 0 34px rgba(242,207,114,.08)
 
-    }
+}
 
-    50%{
+50%{
 
-        box-shadow:
+box-shadow:
 
-            0 0 0 1px rgba(214,179,106,.1),
+0 0 0 1px rgba(214,179,106,.1),
 
-            0 0 28px rgba(242,207,114,.38),
+0 0 28px rgba(242,207,114,.38),
 
-            0 0 58px rgba(242,207,114,.18);
+0 0 58px rgba(242,207,114,.18)
 
-    }
+}
 
 }
 
@@ -812,87 +604,87 @@ nav a:hover{
 
 .hero{
 
-    padding:75px 0 85px;
+padding:75px 0 85px
 
 }
 
 .hero>.container{
 
-    padding-left:clamp(20px,5vw,70px);
+padding-left:clamp(20px,5vw,70px);
 
-    padding-right:clamp(20px,5vw,70px);
+padding-right:clamp(20px,5vw,70px)
 
 }
 
 .eyebrow{
 
-    color:#969ca5;
+color:#969ca5;
 
-    font-size:11px;
+font-size:11px;
 
-    letter-spacing:4px;
+letter-spacing:4px;
 
-    text-transform:uppercase;
+text-transform:uppercase;
 
-    margin-bottom:18px;
+margin-bottom:18px
 
 }
 
 h1{
 
-    line-height:.92;
+line-height:.92;
 
-    letter-spacing:-4px;
+letter-spacing:-4px;
 
-    font-weight:850;
+font-weight:850
 
 }
 
 .last-name{
 
-    display:block;
+display:block;
 
-    font-size:clamp(58px,10vw,108px);
+font-size:clamp(58px,10vw,108px)
 
 }
 
 .first-name{
 
-    display:block;
+display:block;
 
-    font-size:clamp(35px,5.8vw,62px);
+font-size:clamp(35px,5.8vw,62px);
 
-    letter-spacing:-2px;
+letter-spacing:-2px;
 
-    font-weight:650;
+font-weight:650;
 
-    margin-top:9px;
+margin-top:9px
 
 }
 
 .role{
 
-    margin-top:28px;
+margin-top:28px;
 
-    margin-left:clamp(18px,5vw,70px);
+margin-left:clamp(18px,5vw,70px);
 
-    color:#d6b36a;
+color:#d6b36a;
 
-    font-size:clamp(18px,2.8vw,30px);
+font-size:clamp(18px,2.8vw,30px);
 
-    font-weight:850;
+font-weight:850;
 
-    text-transform:uppercase;
+text-transform:uppercase;
 
-    padding:0 18px;
+padding:0 18px;
 
-    line-height:1.15;
+line-height:1.15;
 
-    letter-spacing:1px;
+letter-spacing:1px;
 
-    text-shadow:0 0 14px rgba(214,179,106,.18);
+text-shadow:0 0 14px rgba(214,179,106,.18);
 
-    position:relative;
+position:relative
 
 }
 
@@ -900,333 +692,357 @@ h1{
 
 .hero-status:before{
 
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    left:7px;
+left:7px;
 
-    top:50%;
+top:50%;
 
-    transform:translateY(-50%);
+transform:translateY(-50%);
 
-    width:2px;
+width:2px;
 
-    background:
+background:linear-gradient(
 
-        linear-gradient(
+180deg,
 
-            180deg,
+transparent,
 
-            transparent,
+#d6b36a 18%,
 
-            #d6b36a 18%,
+#f2cf72 50%,
 
-            #f2cf72 50%,
+#d6b36a 82%,
 
-            #d6b36a 82%,
+transparent
 
-            transparent
+);
 
-        );
+box-shadow:
 
-    box-shadow:
+0 0 8px rgba(214,179,106,.45),
 
-        0 0 8px rgba(214,179,106,.45),
+0 0 18px rgba(214,179,106,.16);
 
-        0 0 18px rgba(214,179,106,.16);
-
-    border-radius:4px;
+border-radius:4px
 
 }
 
 .role:before{
 
-    height:calc(100% - 4px);
+height:calc(100% - 4px)
 
 }
 
 .hero-status{
 
-    margin-top:24px;
+margin-top:24px;
 
-    margin-left:clamp(18px,5vw,70px);
+margin-left:clamp(18px,5vw,70px);
 
-    padding:0 18px;
+padding:0 18px;
 
-    color:#d6b36a;
+color:#d6b36a;
 
-    font-size:clamp(12px,1.8vw,17px);
+font-size:clamp(12px,1.8vw,17px);
 
-    font-weight:800;
+font-weight:800;
 
-    line-height:1.35;
+line-height:1.35;
 
-    letter-spacing:1.2px;
+letter-spacing:1.2px;
 
-    text-shadow:0 0 12px rgba(214,179,106,.16);
+text-shadow:0 0 12px rgba(214,179,106,.16);
 
-    position:relative;
+position:relative
 
 }
 
 .hero-status:before{
 
-    height:calc(100% - 2px);
+height:calc(100% - 2px)
 
 }
 
 .main-photo{
 
-    margin-top:50px;
+margin-top:50px
 
 }
 
 .main-photo img{
 
-    width:100%;
+width:100%;
 
-    display:block;
+display:block;
 
-    max-height:720px;
+max-height:720px;
 
-    object-fit:cover;
+object-fit:cover;
 
-    object-position:center;
+object-position:center;
 
-    border:1px solid #2a2e34;
+border:1px solid #2a2e34
 
 }
 
 .photo-info{
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    gap:20px;
+gap:20px;
 
-    margin-top:12px;
+margin-top:12px;
 
-    color:#858b94;
+color:#858b94;
 
-    font-size:10px;
+font-size:10px;
 
-    letter-spacing:2px;
+letter-spacing:2px;
 
-    text-transform:uppercase;
-
-}
-
-.hero .ihf-box{
-
-    margin-top:34px;
-
-    position:relative;
-
-    box-shadow:
-
-        0 0 10px rgba(242,207,114,.18),
-
-        0 0 25px rgba(242,207,114,.12);
-
-    animation:
-
-        ihfGoldenGlow
-
-        2.8s
-
-        ease-in-out
-
-        infinite;
-
-}
-
-.hero .ihf-box:before{
-
-    content:"CLICK TO VERIFY";
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:-67px;
-
-    transform:translateX(-50%);
-
-    color:#fff;
-
-    text-shadow:0 0 8px rgba(255,255,255,.28);
-
-    font-size:9px;
-
-    font-weight:800;
-
-    letter-spacing:3px;
-
-    white-space:nowrap;
-
-    opacity:.82;
-
-    animation:
-
-        verifyAttention
-
-        2.4s
-
-        ease-in-out
-
-        infinite;
-
-}
-
-.hero .ihf-box:after{
-
-    content:"↑";
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:-43px;
-
-    transform:translateX(-50%);
-
-    color:#f2cf72;
-
-    font-size:17px;
-
-    font-weight:900;
-
-    opacity:.85;
-
-    animation:
-
-        verifyArrow
-
-        2.4s
-
-        ease-in-out
-
-        infinite;
-
-}
-
-@keyframes ihfGoldenGlow{
-
-    0%,100%{
-
-        box-shadow:
-
-            0 0 8px rgba(242,207,114,.16),
-
-            0 0 20px rgba(242,207,114,.08);
-
-    }
-
-    50%{
-
-        box-shadow:
-
-            0 0 16px rgba(242,207,114,.45),
-
-            0 0 38px rgba(242,207,114,.22);
-
-    }
-
-}
-
-@keyframes verifyAttention{
-
-    0%,100%{
-
-        opacity:.65;
-
-    }
-
-    50%{
-
-        opacity:1;
-
-    }
-
-}
-
-@keyframes verifyArrow{
-
-    0%,100%{
-
-        opacity:.55;
-
-        transform:
-
-            translateX(-50%)
-
-            translateY(3px);
-
-    }
-
-    50%{
-
-        opacity:1;
-
-        transform:
-
-            translateX(-50%)
-
-            translateY(-3px);
-
-    }
+text-transform:uppercase
 
 }
 
 /* =========================================================
 
-   GENERAL SECTIONS
+   HERO IHF — SINGLE FRAME
+
+   ========================================================= */
+
+.hero-verify-wrap{
+
+position:relative;
+
+margin-top:34px;
+
+padding-bottom:48px
+
+}
+
+.hero-verify-wrap:before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+bottom:0;
+
+width:min(300px,70%);
+
+height:1px;
+
+transform:translateX(-50%);
+
+background:linear-gradient(
+
+90deg,
+
+transparent,
+
+#d6b36a 20%,
+
+#f2cf72 50%,
+
+#d6b36a 80%,
+
+transparent
+
+);
+
+box-shadow:0 0 12px rgba(214,179,106,.4)
+
+}
+
+.hero-verify-wrap:after{
+
+content:"CLICK TO VERIFY";
+
+position:absolute;
+
+left:50%;
+
+bottom:-7px;
+
+transform:translateX(-50%);
+
+padding:0 16px;
+
+background:#08090b;
+
+color:#f4f4f5;
+
+font-size:8px;
+
+font-weight:900;
+
+letter-spacing:3px;
+
+white-space:nowrap
+
+}
+
+.hero .ihf-box{
+
+position:relative;
+
+margin:0;
+
+width:100%;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+text-align:center;
+
+border:1px solid rgba(214,179,106,.68);
+
+border-radius:18px;
+
+box-shadow:
+
+0 0 10px rgba(242,207,114,.14),
+
+0 0 30px rgba(242,207,114,.08);
+
+overflow:hidden;
+
+transition:.45s
+
+}
+
+.hero .ihf-box:before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+border-radius:18px;
+
+pointer-events:none;
+
+background:linear-gradient(
+
+115deg,
+
+transparent 20%,
+
+rgba(242,207,114,.09) 48%,
+
+transparent 62%
+
+);
+
+transform:translateX(-110%);
+
+animation:heroIhfSweep 5.5s ease-in-out infinite
+
+}
+
+.hero .ihf-box:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 0 16px rgba(242,207,114,.3),
+
+0 0 45px rgba(242,207,114,.12)
+
+}
+
+.hero .ihf-box .ihf-logo,
+
+.hero .ihf-box .ihf-title,
+
+.hero .ihf-box .ihf-subtitle{
+
+position:relative;
+
+z-index:2
+
+}
+
+@keyframes heroIhfSweep{
+
+0%,58%{
+
+transform:translateX(-110%);
+
+opacity:0
+
+}
+
+65%{opacity:1}
+
+85%,100%{
+
+transform:translateX(110%);
+
+opacity:0
+
+}
+
+}
+
+/* =========================================================
+
+   TITLES
 
    ========================================================= */
 
 section{
 
-    padding:82px 0;
+padding:82px 0;
 
-    border-top:1px solid #22252a;
+border-top:1px solid #22252a
 
 }
 
 .section-label{
 
-    color:#858b94;
+color:#858b94;
 
-    font-size:10px;
+font-size:10px;
 
-    letter-spacing:4px;
+letter-spacing:4px;
 
-    text-transform:uppercase;
+text-transform:uppercase;
 
-    margin-bottom:13px;
+margin-bottom:13px
 
 }
 
 h2{
 
-    font-size:clamp(33px,5vw,53px);
+font-size:clamp(33px,5vw,53px);
 
-    line-height:1.05;
+line-height:1.05;
 
-    letter-spacing:-2px;
+letter-spacing:-2px;
 
-    margin-bottom:34px;
+margin-bottom:34px
 
 }
 
 .section-intro{
 
-    max-width:800px;
+max-width:800px;
 
-    color:#b9bec6;
+color:#b9bec6;
 
-    margin-bottom:35px;
+margin-bottom:35px
 
 }
 
@@ -1238,103 +1054,69 @@ section h2,
 
 .video-section-title{
 
-    color:transparent;
+color:transparent;
 
-    background:
+background:linear-gradient(
 
-        linear-gradient(
+180deg,
 
-            180deg,
+#fff,
 
-            #fff,
+#f4f4f4 12%,
 
-            #f4f4f4 12%,
+#cfcfcf 27%,
 
-            #cfcfcf 27%,
+#858585 44%,
 
-            #858585 44%,
+#f8f8f8 55%,
 
-            #f8f8f8 55%,
+#b8b8b8 70%,
 
-            #b8b8b8 70%,
+#707070 86%,
 
-            #707070 86%,
+#eee
 
-            #eee
+);
 
-        );
+background-size:100% 220%;
 
-    background-size:100% 220%;
+background-position:50% 0;
 
-    background-position:50% 0;
+-webkit-background-clip:text;
 
-    -webkit-background-clip:text;
+background-clip:text;
 
-    background-clip:text;
+-webkit-text-fill-color:transparent;
 
-    -webkit-text-fill-color:transparent;
+text-shadow:
 
-    text-shadow:
+0 1px 1px rgba(255,255,255,.16),
 
-        0 1px 1px rgba(255,255,255,.16),
+0 8px 28px rgba(0,0,0,.35);
 
-        0 8px 28px rgba(0,0,0,.35);
+animation:
 
-    animation:
+chromeTitleFloat 5.8s ease-in-out infinite,
 
-        chromeTitleFloat
-
-        5.8s
-
-        ease-in-out
-
-        infinite,
-
-        chromeTitleShine
-
-        6.5s
-
-        ease-in-out
-
-        infinite;
+chromeTitleShine 6.5s ease-in-out infinite
 
 }
 
 @keyframes chromeTitleFloat{
 
-    0%,100%{
+0%,100%{transform:translateY(0)}
 
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-3px);
-
-    }
+50%{transform:translateY(-3px)}
 
 }
 
 @keyframes chromeTitleShine{
 
-    0%,35%,100%{
+0%,35%,100%{background-position:50% 0}
 
-        background-position:50% 0;
+55%{background-position:50% 55%}
 
-    }
-
-    55%{
-
-        background-position:50% 55%;
-
-    }
-
-    72%{
-
-        background-position:50% 100%;
-
-    }
+72%{background-position:50% 100%}
 
 }
 
@@ -1346,291 +1128,289 @@ section h2,
 
 .ihf-records-section{
 
-    padding-top:62px;
+padding-top:62px;
 
-    padding-bottom:70px;
+padding-bottom:70px;
 
-    background:
+background:
 
-        radial-gradient(
+radial-gradient(
 
-            circle at 50% 0,
+circle at 50% 0,
 
-            rgba(214,179,106,.035),
+rgba(214,179,106,.035),
 
-            transparent 40%
+transparent 40%
 
-        );
+)
 
 }
 
 .ihf-records-header{
 
-    display:flex;
+display:flex;
 
-    align-items:flex-end;
+align-items:flex-end;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    gap:25px;
+gap:25px;
 
-    margin-bottom:30px;
+margin-bottom:30px
 
 }
 
 .ihf-records-title{
 
-    margin-bottom:0;
+margin-bottom:0
 
 }
 
 .ihf-records-note{
 
-    max-width:430px;
+max-width:430px;
 
-    color:#858b94;
+color:#858b94;
 
-    font-size:11px;
+font-size:11px;
 
-    line-height:1.65;
+line-height:1.65;
 
-    text-align:right;
+text-align:right
 
 }
 
 .ihf-records-grid{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:1fr;
+grid-template-columns:1fr;
 
-    gap:18px;
+gap:18px
 
 }
 
 .ihf-record-card{
 
-    position:relative;
+position:relative;
 
-    display:flex;
+display:flex;
 
-    flex-direction:column;
+flex-direction:column;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    min-height:245px;
+min-height:245px;
 
-    padding:28px;
+padding:28px;
 
-    overflow:hidden;
+overflow:hidden;
 
-    background:
+background:
 
-        linear-gradient(
+linear-gradient(
 
-            145deg,
+145deg,
 
-            rgba(255,255,255,.025),
+rgba(255,255,255,.025),
 
-            rgba(255,255,255,0)
+rgba(255,255,255,0)
 
-        ),
+),
 
-        #0d1014;
+#0d1014;
 
-    border:1px solid #34302a;
+border:1px solid #34302a;
 
-    box-shadow:
+box-shadow:
 
-        0 14px 40px rgba(0,0,0,.24),
+0 14px 40px rgba(0,0,0,.24),
 
-        inset 0 1px 0 rgba(255,255,255,.035);
+inset 0 1px 0 rgba(255,255,255,.035);
 
-    transition:.35s;
+transition:.35s
 
 }
 
 .ihf-record-card:before{
 
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    left:0;
+left:0;
 
-    top:0;
+top:0;
 
-    width:3px;
+width:3px;
 
-    height:100%;
+height:100%;
 
-    background:
+background:linear-gradient(
 
-        linear-gradient(
+180deg,
 
-            180deg,
+transparent,
 
-            transparent,
+#d6b36a 18%,
 
-            #d6b36a 18%,
+#f2cf72 50%,
 
-            #f2cf72 50%,
+#d6b36a 82%,
 
-            #d6b36a 82%,
+transparent
 
-            transparent
+);
 
-        );
-
-    box-shadow:0 0 18px rgba(214,179,106,.25);
+box-shadow:0 0 18px rgba(214,179,106,.25)
 
 }
 
 .ihf-record-card:after{
 
-    content:"IHF";
+content:"IHF";
 
-    position:absolute;
+position:absolute;
 
-    right:-15px;
+right:-15px;
 
-    top:-28px;
+top:-28px;
 
-    color:rgba(214,179,106,.035);
+color:rgba(214,179,106,.035);
 
-    font-size:115px;
+font-size:115px;
 
-    font-weight:950;
+font-weight:950;
 
-    letter-spacing:-8px;
+letter-spacing:-8px
 
 }
 
 .ihf-record-card:hover{
 
-    transform:translateY(-5px);
+transform:translateY(-5px);
 
-    border-color:#665331;
+border-color:#665331
 
 }
 
 .ihf-record-kicker{
 
-    color:#d6b36a;
+color:#d6b36a;
 
-    font-size:9px;
+font-size:9px;
 
-    font-weight:900;
+font-weight:900;
 
-    letter-spacing:3px;
+letter-spacing:3px;
 
-    text-transform:uppercase;
+text-transform:uppercase
 
 }
 
 .ihf-record-card h3{
 
-    margin-top:10px;
+margin-top:10px;
 
-    font-size:clamp(20px,2.6vw,28px);
+font-size:clamp(20px,2.6vw,28px)
 
 }
 
 .ihf-record-name{
 
-    margin-top:12px;
+margin-top:12px;
 
-    font-size:14px;
+font-size:14px;
 
-    font-weight:750;
+font-weight:750
 
 }
 
 .ihf-record-event{
 
-    margin-top:5px;
+margin-top:5px;
 
-    color:#858b94;
+color:#858b94;
 
-    font-size:11px;
+font-size:11px
 
 }
 
 .ihf-record-data{
 
-    margin-top:22px;
+margin-top:22px;
 
-    padding-top:16px;
+padding-top:16px;
 
-    border-top:1px solid #292d34;
+border-top:1px solid #292d34;
 
-    font-size:11px;
+font-size:11px;
 
-    font-weight:800;
+font-weight:800;
 
-    letter-spacing:1.5px;
+letter-spacing:1.5px
 
 }
 
 .ihf-record-source{
 
-    margin-top:16px;
+margin-top:16px;
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    gap:15px;
+gap:15px
 
 }
 
 .ihf-record-source span{
 
-    color:#777d86;
+color:#777d86;
 
-    font-size:9px;
+font-size:9px;
 
-    letter-spacing:1.3px;
+letter-spacing:1.3px;
 
-    text-transform:uppercase;
+text-transform:uppercase
 
 }
 
 .ihf-record-link{
 
-    color:#d6b36a!important;
+color:#d6b36a;
 
-    font-size:9px!important;
+font-size:9px;
 
-    font-weight:900;
+font-weight:900;
 
-    letter-spacing:2px!important;
+letter-spacing:2px;
 
-    text-transform:uppercase;
+text-transform:uppercase
 
 }
 
 .ihf-record-link:after{
 
-    content:" →";
+content:" →"
 
 }
 
 .ihf-record-footnote{
 
-    text-align:center;
+text-align:center;
 
-    color:#777d86;
+color:#777d86;
 
-    font-size:8px;
+font-size:8px;
 
-    font-weight:800;
+font-weight:800;
 
-    letter-spacing:2px;
+letter-spacing:2px;
 
-    text-transform:uppercase;
+text-transform:uppercase;
 
-    margin-top:18px;
+margin-top:18px
 
 }
 
@@ -1642,223 +1422,215 @@ section h2,
 
 .sport-status-box{
 
-    background:#101318;
+background:#101318;
 
-    border:1px solid #292d34;
+border:1px solid #292d34;
 
-    padding:38px 34px;
+padding:38px 34px;
 
-    position:relative;
+position:relative;
 
-    overflow:hidden;
+overflow:hidden
 
 }
 
 .sport-status-box:before{
 
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    left:0;
+left:0;
 
-    top:0;
+top:0;
 
-    width:3px;
+width:3px;
 
-    height:100%;
+height:100%;
 
-    background:#d6b36a;
+background:#d6b36a
 
 }
 
 .sport-status-main{
 
-    margin:8px 0 25px;
+margin:8px 0 25px;
 
-    color:#d6b36a;
+color:#d6b36a;
 
-    font-size:clamp(21px,3vw,32px);
+font-size:clamp(21px,3vw,32px);
 
-    font-weight:900;
+font-weight:900;
 
-    text-transform:uppercase;
+text-transform:uppercase
 
 }
 
 .sport-status-description{
 
-    max-width:900px;
+max-width:900px;
 
-    color:#b9bec6;
+color:#b9bec6;
 
-    font-size:15px;
+font-size:15px;
 
-    line-height:1.8;
+line-height:1.8;
 
-    margin-bottom:30px;
+margin-bottom:30px
 
 }
 
 .sport-status-subtitle{
 
-    color:#f0f1f3;
+color:#f0f1f3;
 
-    font-size:12px;
+font-size:12px;
 
-    font-weight:900;
+font-weight:900;
 
-    letter-spacing:2.5px;
+letter-spacing:2.5px;
 
-    text-transform:uppercase;
+text-transform:uppercase;
 
-    margin-bottom:12px;
+margin-bottom:12px
 
 }
 
 .sport-status-list{
 
-    display:grid;
+display:grid;
 
-    gap:10px;
+gap:10px
 
 }
 
 .sport-status-item{
 
-    background:#0b0e12;
+background:#0b0e12;
 
-    border:1px solid #292d34;
+border:1px solid #292d34;
 
-    padding:16px 18px;
+padding:16px 18px;
 
-    color:#b9bec6;
+color:#b9bec6;
 
-    font-size:13px;
+font-size:13px
 
 }
 
 .sport-status-item strong{
 
-    color:#f0f1f3;
+color:#f0f1f3
 
 }
 
 .legal-reference-card{
 
-    display:block;
+display:block;
 
-    margin:32px 0;
+margin:32px 0;
 
-    padding:22px 24px;
+padding:22px 24px;
 
-    background:#0b0e12;
+background:#0b0e12;
 
-    border:1px solid #3c3528;
+border:1px solid #3c3528;
 
-    position:relative;
+position:relative
 
 }
 
 .legal-reference-card:before{
 
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    left:0;
+left:0;
 
-    top:0;
+top:0;
 
-    width:3px;
+width:3px;
 
-    height:100%;
+height:100%;
 
-    background:#d6b36a;
+background:#d6b36a
 
 }
 
 .legal-reference-title{
 
-    color:#d6b36a;
+color:#d6b36a;
 
-    font-size:clamp(15px,2vw,19px);
+font-size:clamp(15px,2vw,19px);
 
-    font-weight:900;
+font-weight:900;
 
-    text-transform:uppercase;
+text-transform:uppercase
 
 }
 
 .legal-reference-subtitle{
 
-    margin-top:6px;
+margin-top:6px;
 
-    font-size:13px;
+font-size:13px;
 
-    font-weight:700;
+font-weight:700
 
 }
 
 .legal-reference-arrow{
 
-    margin-top:12px;
+margin-top:12px;
 
-    color:#858b94;
+color:#858b94;
 
-    font-size:9px;
+font-size:9px;
 
-    font-weight:800;
+font-weight:800;
 
-    letter-spacing:2px;
+letter-spacing:2px;
 
-    text-transform:uppercase;
+text-transform:uppercase
 
 }
 
 .legal-important{
 
-    text-align:center;
+text-align:center;
 
-    color:#d6b36a;
+color:#d6b36a;
 
-    font-size:8px;
+font-size:8px;
 
-    font-weight:900;
+font-weight:900;
 
-    letter-spacing:2.5px;
+letter-spacing:2.5px;
 
-    text-transform:uppercase;
+text-transform:uppercase;
 
-    animation:
-
-        legalImportantMove
-
-        1.5s
-
-        ease-in-out
-
-        infinite;
+animation:legalImportantMove 1.5s ease-in-out infinite
 
 }
 
 @keyframes legalImportantMove{
 
-    0%,100%{
+0%,100%{
 
-        transform:translateY(0);
+transform:translateY(0);
 
-        opacity:.65;
+opacity:.65
 
-    }
+}
 
-    50%{
+50%{
 
-        transform:translateY(-5px);
+transform:translateY(-5px);
 
-        opacity:1;
+opacity:1
 
-    }
+}
 
 }
 
@@ -1870,305 +1642,291 @@ section h2,
 
 .profile-layout{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:1.35fr .85fr;
+grid-template-columns:1.35fr .85fr;
 
-    gap:20px;
+gap:20px
 
 }
 
 .profile-box{
 
-    background:#101318;
+background:#101318;
 
-    border:1px solid #292d34;
+border:1px solid #292d34;
 
-    padding:32px;
+padding:32px
 
 }
 
 .profile-box h3{
 
-    font-size:28px;
+font-size:28px;
 
-    margin-bottom:10px;
+margin-bottom:10px
 
 }
 
 .profile-box p{
 
-    color:#b9bec6;
+color:#b9bec6
 
 }
 
 .profile-info-grid{
 
-    margin-top:28px;
+margin-top:28px;
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(3,1fr);
 
-    gap:1px;
+gap:1px;
 
-    background:#292d34;
+background:#292d34;
 
-    border:1px solid #292d34;
+border:1px solid #292d34
 
 }
 
 .profile-info{
 
-    background:#0b0e12;
+background:#0b0e12;
 
-    padding:18px 15px;
+padding:18px 15px;
 
-    min-height:86px;
+min-height:86px
 
 }
 
 .profile-info-label{
 
-    color:#858b94;
+color:#858b94;
 
-    font-size:9px;
+font-size:9px;
 
-    letter-spacing:2px;
+letter-spacing:2px;
 
-    text-transform:uppercase;
+text-transform:uppercase;
 
-    margin-bottom:5px;
+margin-bottom:5px
 
 }
 
 .profile-info-value{
 
-    font-size:14px;
+font-size:14px;
 
-    font-weight:800;
+font-weight:800
 
 }
 
 .profile-info-value.gold{
 
-    color:#d6b36a;
+color:#d6b36a
 
 }
 
 /* =========================================================
 
-   SCOUTING
+   AI SCOUTING
 
    ========================================================= */
 
 .ai-scouting-box{
 
-    background:
+background:
 
-        linear-gradient(
+linear-gradient(
 
-            145deg,
+145deg,
 
-            rgba(255,255,255,.025),
+rgba(255,255,255,.025),
 
-            rgba(255,255,255,0)
+rgba(255,255,255,0)
 
-        ),
+),
 
-        #0d1014;
+#0d1014;
 
-    border:1px solid #292d34;
+border:1px solid #292d34;
 
-    padding:28px 30px;
+padding:28px 30px;
 
-    position:relative;
+position:relative;
 
-    overflow:hidden;
+overflow:hidden
 
 }
 
 .ai-scouting-box:before{
 
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    left:-25%;
+left:-25%;
 
-    top:0;
+top:0;
 
-    width:25%;
+width:25%;
 
-    height:100%;
+height:100%;
 
-    background:
+background:linear-gradient(
 
-        linear-gradient(
+90deg,
 
-            90deg,
+transparent,
 
-            transparent,
+rgba(214,179,106,.12),
 
-            rgba(214,179,106,.12),
+transparent
 
-            transparent
+);
 
-        );
+transform:skewX(-18deg);
 
-    transform:skewX(-18deg);
-
-    animation:
-
-        aiScoutScan
-
-        5.5s
-
-        ease-in-out
-
-        infinite;
+animation:aiScoutScan 5.5s ease-in-out infinite
 
 }
 
 @keyframes aiScoutScan{
 
-    0%,55%{
+0%,55%{
 
-        left:-30%;
+left:-30%;
 
-        opacity:0;
+opacity:0
 
-    }
+}
 
-    65%{
+65%{opacity:1}
 
-        opacity:1;
+100%{
 
-    }
+left:125%;
 
-    100%{
+opacity:0
 
-        left:125%;
-
-        opacity:0;
-
-    }
+}
 
 }
 
 .ai-scouting-head{
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    gap:20px;
+gap:20px;
 
-    margin-bottom:20px;
+margin-bottom:20px
 
 }
 
 .ai-scouting-kicker{
 
-    color:#d6b36a;
+color:#d6b36a;
 
-    font-size:9px;
+font-size:9px;
 
-    font-weight:900;
+font-weight:900;
 
-    letter-spacing:3px;
+letter-spacing:3px
 
 }
 
 .ai-scouting-title{
 
-    margin:7px 0 0;
+margin:7px 0 0;
 
-    font-size:clamp(24px,4vw,38px);
+font-size:clamp(24px,4vw,38px)
 
 }
 
 .ai-scouting-note{
 
-    max-width:420px;
+max-width:420px;
 
-    color:#858b94;
+color:#858b94;
 
-    font-size:11px;
+font-size:11px
 
 }
 
 .ai-scouting-grid{
 
-    display:flex;
+display:flex;
 
-    gap:10px;
+gap:10px;
 
-    overflow-x:auto;
+overflow-x:auto;
 
-    padding:3px 2px 12px;
+padding:3px 2px 12px;
 
-    scroll-snap-type:x mandatory;
+scroll-snap-type:x mandatory
 
 }
 
 .ai-scout-card{
 
-    flex:0 0 255px;
+flex:0 0 255px;
 
-    min-height:138px;
+min-height:138px;
 
-    background:#0b0e12;
+background:#0b0e12;
 
-    border:1px solid #292d34;
+border:1px solid #292d34;
 
-    padding:18px;
+padding:18px;
 
-    scroll-snap-align:start;
+scroll-snap-align:start
 
 }
 
 .ai-scout-index{
 
-    color:#858b94;
+color:#858b94;
 
-    font-size:8px;
+font-size:8px;
 
-    font-weight:900;
+font-weight:900;
 
-    letter-spacing:2px;
+letter-spacing:2px
 
 }
 
 .ai-scout-card h3{
 
-    margin-top:8px;
+margin-top:8px;
 
-    font-size:14px;
+font-size:14px
 
 }
 
 .ai-scout-card p{
 
-    margin-top:6px;
+margin-top:6px;
 
-    color:#858b94;
+color:#858b94;
 
-    font-size:11px;
+font-size:11px
 
 }
 
 .ai-scout-footer{
 
-    margin-top:14px;
+margin-top:14px;
 
-    padding-top:12px;
+padding-top:12px;
 
-    border-top:1px solid #22252a;
+border-top:1px solid #22252a;
 
-    color:#777d86;
+color:#777d86;
 
-    font-size:9px;
+font-size:9px
 
 }
 
@@ -2176,1607 +1934,1363 @@ section h2,
 
    INTERNATIONAL CAREER
 
-   NEW EDITORIAL / BLENDING STRATEGY STYLE
-
    ========================================================= */
 
 #international{
 
-    position:relative;
+position:relative;
 
-    overflow:hidden;
+overflow:hidden;
 
-    min-height:1100px;
+perspective:1500px;
 
-    background:
+background:
 
-        radial-gradient(
+radial-gradient(
 
-            circle at 75% 35%,
+circle at 78% 20%,
 
-            rgba(255,255,255,.055),
+rgba(220,225,230,.045),
 
-            transparent 27%
+transparent 28%
 
-        ),
+),
 
-        radial-gradient(
+radial-gradient(
 
-            circle at 15% 75%,
+circle at 8% 82%,
 
-            rgba(214,179,106,.035),
+rgba(255,255,255,.018),
 
-            transparent 30%
+transparent 32%
 
-        ),
-
-        #08090b;
+)
 
 }
 
 #international:before{
 
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    inset:-20%;
+inset:-15%;
 
-    pointer-events:none;
+background:
 
-    background:
+radial-gradient(
 
-        radial-gradient(
+circle at 70% 30%,
 
-            circle at 70% 30%,
+rgba(225,230,236,.035),
 
-            rgba(255,255,255,.035),
+transparent 24%
 
-            transparent 22%
+),
 
-        );
+radial-gradient(
 
-    animation:
+circle at 28% 72%,
 
-        internationalAtmosphere
+rgba(225,230,236,.02),
 
-        11s
+transparent 28%
 
-        ease-in-out
+);
 
-        infinite;
+pointer-events:none;
+
+animation:intAtmosphere 10s ease-in-out infinite
 
 }
 
-@keyframes internationalAtmosphere{
+@keyframes intAtmosphere{
 
-    0%,100%{
+0%,100%{
 
-        transform:scale(.94) translate3d(0,0,0);
+transform:scale(.96);
 
-        opacity:.35;
+opacity:.55
 
-    }
+}
 
-    50%{
+50%{
 
-        transform:scale(1.07) translate3d(-1%,1%,0);
+transform:scale(1.06);
 
-        opacity:1;
+opacity:1
 
-    }
+}
 
 }
 
 #international .container{
 
-    position:relative;
+position:relative;
 
-    z-index:2;
-
-}
-
-/* ---------------------------------------------------------
-
-   HEADER OF THE SECTION
-
-   --------------------------------------------------------- */
-
-.international-editorial-head{
-
-    position:relative;
-
-    z-index:5;
-
-    max-width:850px;
-
-    margin-bottom:95px;
+z-index:2
 
 }
 
-.international-editorial-head .section-label{
+#international h2{
 
-    opacity:0;
+display:inline-block;
 
-    transform:translateY(20px);
-
-    transition:
-
-        opacity .8s ease,
-
-        transform .9s cubic-bezier(.16,1,.3,1);
+margin-bottom:22px
 
 }
 
-#international.international-active
+#international .section-intro{
 
-.international-editorial-head
+max-width:780px;
 
-.section-label{
+color:#aeb3ba;
 
-    opacity:1;
+font-size:14px;
 
-    transform:none;
+line-height:1.85;
 
-}
-
-.international-main-title{
-
-    position:relative;
-
-    margin:0;
-
-    display:block;
-
-    font-size:clamp(60px,10vw,145px);
-
-    line-height:.78;
-
-    letter-spacing:-7px;
-
-    font-weight:950;
-
-    text-transform:uppercase;
-
-    color:transparent;
-
-    background:
-
-        linear-gradient(
-
-            180deg,
-
-            #ffffff 0%,
-
-            #dfe2e5 18%,
-
-            #7b8087 43%,
-
-            #f7f8f9 58%,
-
-            #8b9096 77%,
-
-            #ffffff 100%
-
-        );
-
-    background-size:100% 240%;
-
-    background-position:50% 0;
-
-    -webkit-background-clip:text;
-
-    background-clip:text;
-
-    -webkit-text-fill-color:transparent;
-
-    text-shadow:
-
-        0 4px 4px rgba(255,255,255,.06),
-
-        0 25px 60px rgba(0,0,0,.55);
-
-    opacity:0;
-
-    transform:
-
-        translate3d(0,60px,-80px)
-
-        scale(.96);
-
-    filter:blur(10px);
-
-    transition:
-
-        opacity 1.1s cubic-bezier(.16,1,.3,1),
-
-        transform 1.35s cubic-bezier(.16,1,.3,1),
-
-        filter 1.1s ease;
+margin-bottom:58px
 
 }
 
-#international.international-active
+.international-layout{
 
-.international-main-title{
+position:relative;
 
-    opacity:1;
+min-height:920px;
 
-    transform:none;
-
-    filter:none;
-
-    animation:
-
-        internationalTitleShine
-
-        7s
-
-        ease-in-out
-
-        infinite;
+perspective:1600px
 
 }
 
-@keyframes internationalTitleShine{
+.international-timeline{
 
-    0%,35%,100%{
+position:relative;
 
-        background-position:50% 0;
+z-index:4;
 
-    }
+width:min(760px,100%);
 
-    55%{
+margin-left:0;
 
-        background-position:50% 48%;
-
-    }
-
-    72%{
-
-        background-position:50% 100%;
-
-    }
+padding:12px 0 30px
 
 }
 
-.international-subtitle{
+.international-timeline:before{
 
-    margin-top:32px;
+content:"";
 
-    max-width:690px;
+position:absolute;
 
-    color:#9da3ab;
+left:144px;
 
-    font-size:14px;
+top:0;
 
-    line-height:1.9;
+bottom:0;
 
-    opacity:0;
+width:1px;
 
-    transform:translateY(25px);
+background:linear-gradient(
 
-    filter:blur(5px);
+180deg,
 
-    transition:
+transparent,
 
-        opacity .9s ease .2s,
+rgba(220,225,230,.52) 22%,
 
-        transform 1s cubic-bezier(.16,1,.3,1) .2s,
+rgba(255,255,255,.18) 75%,
 
-        filter .9s ease .2s;
+transparent
 
-}
+);
 
-#international.international-active
+box-shadow:0 0 16px rgba(220,225,230,.08);
 
-.international-subtitle{
+transform:scaleY(.1);
 
-    opacity:1;
+transform-origin:top;
 
-    transform:none;
-
-    filter:none;
+transition:transform 1.8s cubic-bezier(.16,1,.3,1)
 
 }
 
-/* ---------------------------------------------------------
+.international-timeline.is-active:before{
 
-   MAIN EDITORIAL COMPOSITION
-
-   --------------------------------------------------------- */
-
-.international-editorial{
-
-    position:relative;
-
-    min-height:820px;
-
-    perspective:1800px;
+transform:scaleY(1)
 
 }
 
-/* ---------------------------------------------------------
+.international-entry{
 
-   HUGE BACKGROUND WORD
+--entry-index:0;
 
-   --------------------------------------------------------- */
+position:relative;
 
-.international-giant-word{
+display:grid;
 
-    position:absolute;
+grid-template-columns:120px minmax(0,1fr);
 
-    left:-35px;
+gap:50px;
 
-    top:55px;
+padding:0 0 68px;
 
-    z-index:0;
+opacity:0;
 
-    font-size:clamp(120px,21vw,300px);
+transform:
 
-    line-height:.72;
+translate3d(0,54px,-70px)
 
-    font-weight:950;
+rotateX(6deg);
 
-    letter-spacing:-15px;
+filter:blur(9px);
 
-    color:rgba(255,255,255,.022);
+transform-origin:center top;
 
-    white-space:nowrap;
+transition:
 
-    pointer-events:none;
+opacity 1s cubic-bezier(.16,1,.3,1),
 
-    transform:
+transform 1.15s cubic-bezier(.16,1,.3,1),
 
-        translate3d(
+filter 1.1s ease;
 
-            var(--giant-x,0px),
+transition-delay:calc(var(--entry-index)*90ms);
 
-            var(--giant-y,0px),
-
-            -100px
-
-        );
-
-    user-select:none;
+will-change:transform,opacity,filter
 
 }
 
-/* ---------------------------------------------------------
+.international-entry.is-visible{
 
-   IMAGE COMPOSITION
+opacity:1;
 
-   --------------------------------------------------------- */
+transform:none;
 
-.international-image-stage{
-
-    position:absolute;
-
-    z-index:2;
-
-    right:-2%;
-
-    top:10px;
-
-    width:min(510px,47vw);
-
-    height:700px;
-
-    transform-style:preserve-3d;
-
-    transform:
-
-        translate3d(
-
-            var(--visual-x,0px),
-
-            var(--visual-y,0px),
-
-            0
-
-        )
-
-        rotateY(-8deg)
-
-        rotateZ(1deg);
-
-    transition:
-
-        transform .25s ease-out;
-
-    pointer-events:none;
+filter:none
 
 }
 
-/* atmospheric glow behind image */
+.international-year{
 
-.international-image-stage:before{
+padding-top:7px;
 
-    content:"";
+color:#9ea4ac;
 
-    position:absolute;
+font-size:10px;
 
-    left:8%;
+font-weight:850;
 
-    top:5%;
+letter-spacing:2.8px;
 
-    width:90%;
+text-align:right;
 
-    height:85%;
+white-space:nowrap;
 
-    background:
-
-        radial-gradient(
-
-            ellipse,
-
-            rgba(255,255,255,.13),
-
-            transparent 62%
-
-        );
-
-    filter:blur(35px);
-
-    opacity:.35;
-
-    transform:translateZ(-90px);
-
-    animation:
-
-        imageAtmosphere
-
-        7s
-
-        ease-in-out
-
-        infinite;
+transition:.8s
 
 }
 
-@keyframes imageAtmosphere{
+.international-entry.is-visible .international-year{
 
-    0%,100%{
+color:#e0e3e6;
 
-        transform:
+text-shadow:0 0 12px rgba(220,225,230,.18);
 
-            translateZ(-90px)
-
-            scale(.88);
-
-        opacity:.25;
-
-    }
-
-    50%{
-
-        transform:
-
-            translateZ(-90px)
-
-            scale(1.06);
-
-        opacity:.75;
-
-    }
+transform:translateX(-3px)
 
 }
 
-/* back image */
+.international-point{
 
-.international-image-back{
+position:absolute;
 
-    position:absolute;
+left:144px;
 
-    top:0;
+top:8px;
 
-    right:0;
+width:10px;
 
-    width:390px;
+height:10px;
 
-    height:545px;
+border-radius:50%;
 
-    overflow:hidden;
+transform:translateX(-50%) scale(.2);
 
-    opacity:0;
+opacity:0;
 
-    transform:
+background:
 
-        translate3d(
+radial-gradient(
 
-            90px,
+circle at 30% 25%,
 
-            55px,
+#fff,
 
-            -100px
+#e8ebee 20%,
 
-        )
+#a4aab1 50%,
 
-        rotateY(-10deg)
+#4f555b 72%,
 
-        rotateZ(3deg)
+#fff
 
-        scale(.92);
+);
 
-    filter:
+box-shadow:
 
-        grayscale(.3)
+0 0 0 1px rgba(255,255,255,.2),
 
-        brightness(.65)
+0 0 12px rgba(220,225,230,.38);
 
-        contrast(1.08)
+transition:.9s cubic-bezier(.16,1,.3,1);
 
-        blur(1px);
-
-    box-shadow:
-
-        0 45px 100px rgba(0,0,0,.72),
-
-        0 0 55px rgba(255,255,255,.05);
-
-    transition:
-
-        opacity 1.25s cubic-bezier(.16,1,.3,1) .25s,
-
-        transform 1.45s cubic-bezier(.16,1,.3,1) .25s,
-
-        filter 1.2s ease .25s;
+transition-delay:calc(var(--entry-index)*90ms + 180ms)
 
 }
 
-.international-image-back img{
+.international-entry.is-visible .international-point{
 
-    width:100%;
+opacity:1;
 
-    height:100%;
-
-    display:block;
-
-    object-fit:cover;
-
-    object-position:center;
-
-    transform:scale(1.03);
+transform:translateX(-50%) scale(1)
 
 }
 
-.international-image-back:after{
+.international-content{
 
-    content:"";
+position:relative;
 
-    position:absolute;
+min-width:0;
 
-    inset:0;
+padding-left:2px;
 
-    background:
-
-        linear-gradient(
-
-            180deg,
-
-            rgba(0,0,0,.05),
-
-            rgba(0,0,0,.22) 45%,
-
-            rgba(0,0,0,.76)
-
-        );
+transform-style:preserve-3d
 
 }
 
-/* front image */
+.international-content:before{
 
-.international-image-front{
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    z-index:4;
+left:0;
 
-    right:115px;
+top:13px;
 
-    top:335px;
+width:0;
 
-    width:285px;
+height:1px;
 
-    height:375px;
+background:linear-gradient(
 
-    overflow:hidden;
+90deg,
 
-    opacity:0;
+transparent,
 
-    transform:
+rgba(220,225,230,.7),
 
-        translate3d(
+transparent
 
-            70px,
+);
 
-            70px,
+box-shadow:0 0 10px rgba(220,225,230,.18);
 
-            100px
+transition:width 1s cubic-bezier(.16,1,.3,1);
 
-        )
-
-        rotateY(-7deg)
-
-        rotateZ(-2deg)
-
-        scale(.88);
-
-    filter:
-
-        grayscale(.08)
-
-        brightness(.82)
-
-        contrast(1.08);
-
-    box-shadow:
-
-        0 45px 90px rgba(0,0,0,.75),
-
-        0 0 45px rgba(255,255,255,.08);
-
-    transition:
-
-        opacity 1.15s cubic-bezier(.16,1,.3,1) .55s,
-
-        transform 1.35s cubic-bezier(.16,1,.3,1) .55s,
-
-        filter 1s ease .55s;
+transition-delay:calc(var(--entry-index)*90ms + 260ms)
 
 }
 
-.international-image-front img{
+.international-entry.is-visible .international-content:before{
 
-    width:100%;
-
-    height:100%;
-
-    display:block;
-
-    object-fit:cover;
-
-    object-position:center;
+width:68px
 
 }
 
-.international-image-front:after{
+.international-index{
 
-    content:"";
+position:absolute;
 
-    position:absolute;
+right:0;
 
-    inset:0;
+top:0;
 
-    background:
+color:rgba(220,225,230,.16);
 
-        linear-gradient(
+font-size:9px;
 
-            180deg,
+font-weight:900;
 
-            rgba(0,0,0,0),
+letter-spacing:3px;
 
-            rgba(0,0,0,.42) 72%,
+opacity:0;
 
-            rgba(0,0,0,.72)
+transform:translateX(12px);
 
-        );
-
-}
-
-/* active images */
-
-#international.international-active
-
-.international-image-back{
-
-    opacity:1;
-
-    transform:
-
-        translate3d(0,0,-20px)
-
-        rotateY(-5deg)
-
-        rotateZ(2deg)
-
-        scale(1);
-
-    filter:
-
-        grayscale(.14)
-
-        brightness(.78)
-
-        contrast(1.07);
+transition:.9s
 
 }
 
-#international.international-active
+.international-entry.is-visible .international-index{
 
-.international-image-front{
+opacity:1;
 
-    opacity:.96;
-
-    transform:
-
-        translate3d(0,0,75px)
-
-        rotateY(-3deg)
-
-        rotateZ(-1.5deg)
-
-        scale(1);
+transform:none
 
 }
 
-/* ---------------------------------------------------------
+.international-title{
 
-   IMAGE LABEL
+position:relative;
 
-   --------------------------------------------------------- */
+display:inline-block;
 
-.international-image-label{
+color:transparent;
 
-    position:absolute;
+background:linear-gradient(
 
-    z-index:7;
+180deg,
 
-    right:2px;
+#fff,
 
-    bottom:-32px;
+#e7e9eb 16%,
 
-    color:#737982;
+#aeb3b9 34%,
 
-    font-size:8px;
+#656b72 48%,
 
-    font-weight:800;
+#f6f7f8 59%,
 
-    letter-spacing:3px;
+#b7bbc0 73%,
 
-    text-transform:uppercase;
+#737980 87%,
 
-    opacity:0;
+#eceeef
 
-    transform:translateY(12px);
+);
 
-    transition:
+background-size:100% 230%;
 
-        opacity .8s ease 1s,
+background-position:50% 0;
 
-        transform .8s cubic-bezier(.16,1,.3,1) 1s;
+-webkit-background-clip:text;
 
-}
+background-clip:text;
 
-#international.international-active
+-webkit-text-fill-color:transparent;
 
-.international-image-label{
+font-size:clamp(25px,3.5vw,40px);
 
-    opacity:1;
+line-height:1.05;
 
-    transform:none;
+font-weight:900;
 
-}
+letter-spacing:-1.2px;
 
-/* ---------------------------------------------------------
+text-shadow:
 
-   CAREER INFORMATION
+0 2px 2px rgba(255,255,255,.1),
 
-   --------------------------------------------------------- */
+0 9px 30px rgba(0,0,0,.42);
 
-.international-information{
+opacity:0;
 
-    position:relative;
+transform:
 
-    z-index:5;
+translate3d(0,20px,35px)
 
-    width:min(680px,58%);
+scale(.97);
 
-    padding-top:35px;
+filter:blur(5px);
 
-}
+transition:.95s cubic-bezier(.16,1,.3,1);
 
-/* each item is open — NO CARD */
-
-.international-career-item{
-
-    position:relative;
-
-    padding:
-
-        0
-
-        0
-
-        68px
-
-        0;
-
-    margin-bottom:52px;
-
-    opacity:0;
-
-    transform:
-
-        translate3d(
-
-            0,
-
-            65px,
-
-            -60px
-
-        )
-
-        rotateX(5deg);
-
-    filter:blur(8px);
-
-    transform-origin:left center;
-
-    transition:
-
-        opacity 1s cubic-bezier(.16,1,.3,1),
-
-        transform 1.25s cubic-bezier(.16,1,.3,1),
-
-        filter 1s ease;
-
-    transition-delay:
-
-        calc(
-
-            var(--career-index) * 130ms
-
-        );
+transition-delay:calc(var(--entry-index)*90ms + 180ms)
 
 }
 
-.international-career-item.is-visible{
+.international-entry.is-visible .international-title{
 
-    opacity:1;
+opacity:1;
 
-    transform:none;
+transform:none;
 
-    filter:none;
+filter:none;
 
-}
-
-/* small line */
-
-.international-career-item:after{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:0;
-
-    width:0;
-
-    height:1px;
-
-    background:
-
-        linear-gradient(
-
-            90deg,
-
-            rgba(255,255,255,.35),
-
-            rgba(255,255,255,.08),
-
-            transparent
-
-        );
-
-    transition:
-
-        width 1.1s cubic-bezier(.16,1,.3,1);
-
-    transition-delay:
-
-        calc(
-
-            var(--career-index) * 130ms + 350ms
-
-        );
+animation:intTitleShine 5.5s ease-in-out infinite
 
 }
 
-.international-career-item.is-visible:after{
+@keyframes intTitleShine{
 
-    width:100%;
+0%,35%,100%{
 
-}
-
-/* year */
-
-.international-career-year{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    color:#777e87;
-
-    font-size:9px;
-
-    font-weight:900;
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-
-    margin-bottom:14px;
+background-position:50% 0
 
 }
 
-.international-career-year:before{
+55%{
 
-    content:"";
-
-    width:30px;
-
-    height:1px;
-
-    background:#d6b36a;
-
-    box-shadow:0 0 10px rgba(214,179,106,.25);
+background-position:50% 48%
 
 }
 
-/* index */
+70%{
 
-.international-career-index{
-
-    position:absolute;
-
-    right:0;
-
-    top:0;
-
-    color:rgba(255,255,255,.12);
-
-    font-size:10px;
-
-    font-weight:900;
-
-    letter-spacing:3px;
-
-    opacity:0;
-
-    transform:translateX(15px);
-
-    transition:
-
-        opacity .7s ease,
-
-        transform .8s cubic-bezier(.16,1,.3,1);
+background-position:50% 100%
 
 }
 
-.international-career-item.is-visible
+}
 
-.international-career-index{
+.international-flag{
 
-    opacity:1;
+display:inline-block;
 
-    transform:none;
+margin-right:8px;
+
+font-size:.62em;
+
+vertical-align:13%;
+
+filter:drop-shadow(0 3px 8px rgba(0,0,0,.45));
+
+transform:translateZ(22px)
 
 }
 
-/* title */
+.international-description{
 
-.international-career-title{
+max-width:760px;
 
-    margin:0;
+margin-top:13px;
 
-    padding:0;
+color:#aeb4bb;
 
-    font-size:clamp(28px,4vw,48px);
+font-size:14px;
 
-    line-height:.98;
+line-height:1.8;
 
-    letter-spacing:-2px;
+opacity:0;
 
-    font-weight:900;
+transform:translate3d(0,18px,15px);
 
-    color:#f2f3f4;
+filter:blur(4px);
 
-    text-shadow:
+transition:.9s cubic-bezier(.16,1,.3,1);
 
-        0 2px 2px rgba(255,255,255,.08),
-
-        0 14px 35px rgba(0,0,0,.45);
-
-    opacity:0;
-
-    transform:
-
-        translate3d(
-
-            0,
-
-            25px,
-
-            35px
-
-        )
-
-        scale(.97);
-
-    filter:blur(5px);
-
-    transition:
-
-        opacity .9s cubic-bezier(.16,1,.3,1),
-
-        transform 1s cubic-bezier(.16,1,.3,1),
-
-        filter .9s ease;
-
-    transition-delay:
-
-        calc(
-
-            var(--career-index) * 130ms + 160ms
-
-        );
+transition-delay:calc(var(--entry-index)*90ms + 330ms)
 
 }
 
-.international-career-item.is-visible
+.international-entry.is-visible .international-description{
 
-.international-career-title{
+opacity:1;
 
-    opacity:1;
+transform:none;
 
-    transform:none;
-
-    filter:none;
+filter:none
 
 }
 
-/* flag */
+.international-description strong,
 
-.international-career-title .flag{
+.international-description .silver{
 
-    display:inline-block;
+color:#e1e4e7;
 
-    font-size:.63em;
-
-    vertical-align:12%;
-
-    margin-right:8px;
-
-    transform:translateZ(25px);
-
-    filter:
-
-        drop-shadow(
-
-            0 4px 10px
-
-            rgba(0,0,0,.55)
-
-        );
+font-weight:850
 
 }
 
-/* description */
+.international-description .gold{
 
-.international-career-description{
+color:#fff;
 
-    max-width:570px;
-
-    margin-top:15px;
-
-    color:#9da3ab;
-
-    font-size:13px;
-
-    line-height:1.85;
-
-    opacity:0;
-
-    transform:
-
-        translate3d(
-
-            0,
-
-            22px,
-
-            20px
-
-        );
-
-    filter:blur(4px);
-
-    transition:
-
-        opacity .9s cubic-bezier(.16,1,.3,1),
-
-        transform 1s cubic-bezier(.16,1,.3,1),
-
-        filter .9s ease;
-
-    transition-delay:
-
-        calc(
-
-            var(--career-index) * 130ms + 300ms
-
-        );
-
-}
-
-.international-career-item.is-visible
-
-.international-career-description{
-
-    opacity:1;
-
-    transform:none;
-
-    filter:none;
-
-}
-
-.international-career-description strong{
-
-    color:#f0f1f3;
-
-    font-weight:850;
-
-}
-
-.international-career-description .gold{
-
-    color:#d6b36a;
-
-    font-weight:900;
-
-}
-
-/* ---------------------------------------------------------
-
-   FLOATING NUMBER
-
-   --------------------------------------------------------- */
-
-.international-side-number{
-
-    position:absolute;
-
-    left:-15px;
-
-    bottom:25px;
-
-    z-index:1;
-
-    font-size:clamp(130px,18vw,250px);
-
-    font-weight:950;
-
-    line-height:.7;
-
-    letter-spacing:-15px;
-
-    color:rgba(255,255,255,.018);
-
-    pointer-events:none;
-
-    transform:
-
-        translateY(
-
-            var(--number-y,0px)
-
-        );
-
-}
-
-/* ---------------------------------------------------------
-
-   SMALL VISUAL CAPTION
-
-   --------------------------------------------------------- */
-
-.international-caption{
-
-    position:absolute;
-
-    left:0;
-
-    bottom:15px;
-
-    color:#656b73;
-
-    font-size:8px;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-
-    opacity:0;
-
-    transform:translateY(10px);
-
-    transition:
-
-        opacity .8s ease 1.2s,
-
-        transform .8s cubic-bezier(.16,1,.3,1) 1.2s;
-
-}
-
-#international.international-active
-
-.international-caption{
-
-    opacity:1;
-
-    transform:none;
+font-weight:900
 
 }
 
 /* =========================================================
 
-   ACHIEVEMENTS
+   PREMIUM INTERNATIONAL PHOTO FRAME
+
+   ========================================================= */
+
+.international-visual{
+
+position:absolute;
+
+right:-1%;
+
+top:20px;
+
+width:min(520px,48%);
+
+height:650px;
+
+z-index:2;
+
+pointer-events:none;
+
+transform:
+
+translate3d(0,var(--visual-y,0px),0)
+
+rotateY(-7deg);
+
+transform-style:preserve-3d;
+
+will-change:transform
+
+}
+
+.international-visual:before{
+
+content:"";
+
+position:absolute;
+
+inset:-50px -70px;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(225,230,236,.09),
+
+transparent 62%
+
+);
+
+filter:blur(24px);
+
+animation:visualGlow 7s ease-in-out infinite
+
+}
+
+.international-visual:after{
+
+content:"";
+
+position:absolute;
+
+inset:8px 5px 65px 42px;
+
+border:1px solid rgba(214,179,106,.55);
+
+border-radius:
+
+30px 58px 30px 58px;
+
+clip-path:polygon(
+
+0 8%,
+
+7% 0,
+
+92% 0,
+
+100% 9%,
+
+100% 91%,
+
+92% 100%,
+
+8% 100%,
+
+0 91%
+
+);
+
+box-shadow:
+
+0 0 22px rgba(214,179,106,.12),
+
+inset 0 0 20px rgba(214,179,106,.025);
+
+pointer-events:none
+
+}
+
+@keyframes visualGlow{
+
+0%,100%{
+
+opacity:.4;
+
+transform:scale(.9)
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.06)
+
+}
+
+}
+
+.career-image{
+
+position:absolute;
+
+overflow:hidden;
+
+background:#0b0e12;
+
+border:1px solid rgba(214,179,106,.58);
+
+box-shadow:
+
+0 35px 80px rgba(0,0,0,.6),
+
+0 0 32px rgba(220,225,230,.08),
+
+0 0 18px rgba(214,179,106,.1);
+
+opacity:0;
+
+transition:
+
+opacity 1.25s cubic-bezier(.16,1,.3,1),
+
+transform 1.4s cubic-bezier(.16,1,.3,1),
+
+filter 1s ease;
+
+will-change:transform,opacity,filter
+
+}
+
+.career-image img{
+
+width:100%;
+
+height:100%;
+
+display:block;
+
+object-fit:cover
+
+}
+
+.career-image:before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+z-index:2;
+
+border-radius:inherit;
+
+border:1px solid rgba(255,255,255,.14);
+
+pointer-events:none
+
+}
+
+.career-image:after{
+
+content:"";
+
+position:absolute;
+
+z-index:3;
+
+inset:0;
+
+background:linear-gradient(
+
+180deg,
+
+rgba(0,0,0,.05),
+
+rgba(0,0,0,.12) 55%,
+
+rgba(0,0,0,.55)
+
+);
+
+pointer-events:none
+
+}
+
+/* BACK IMAGE — TEAM LINEUP */
+
+.career-image.back{
+
+right:30px;
+
+top:0;
+
+width:420px;
+
+height:330px;
+
+border-radius:
+
+42px 42px 42px 10px;
+
+transform:
+
+translate3d(80px,50px,-50px)
+
+rotateZ(-3deg)
+
+rotateY(-8deg)
+
+scale(.95);
+
+filter:
+
+grayscale(.16)
+
+contrast(1.04)
+
+brightness(.72)
+
+}
+
+/* FRONT IMAGE — SEGUENI #18 */
+
+.career-image.front{
+
+right:-5px;
+
+top:255px;
+
+width:365px;
+
+height:300px;
+
+border-radius:
+
+28px 48px 12px 48px;
+
+transform:
+
+translate3d(90px,65px,20px)
+
+rotateZ(3deg)
+
+rotateY(-6deg)
+
+scale(.93);
+
+filter:
+
+grayscale(.2)
+
+contrast(1.07)
+
+brightness(.68);
+
+transition-delay:.22s
+
+}
+
+.international-visual.is-visible .career-image.back{
+
+opacity:1;
+
+transform:
+
+translate3d(0,0,-20px)
+
+rotateZ(-3deg)
+
+rotateY(-5deg)
+
+scale(1);
+
+filter:
+
+grayscale(.06)
+
+contrast(1.06)
+
+brightness(.84)
+
+}
+
+.international-visual.is-visible .career-image.front{
+
+opacity:1;
+
+transform:
+
+translate3d(0,0,60px)
+
+rotateZ(3deg)
+
+rotateY(-3deg)
+
+scale(1);
+
+filter:
+
+grayscale(.08)
+
+contrast(1.07)
+
+brightness(.86)
+
+}
+
+/* TECHNICAL FRAME CORNERS */
+
+.career-frame-corner{
+
+position:absolute;
+
+z-index:5;
+
+width:42px;
+
+height:42px;
+
+pointer-events:none;
+
+border-color:#f2cf72;
+
+border-style:solid;
+
+filter:drop-shadow(
+
+0 0 7px rgba(214,179,106,.3)
+
+)
+
+}
+
+.corner-tl{
+
+left:28px;
+
+top:-2px;
+
+border-width:1px 0 0 1px;
+
+border-radius:18px 0 0 0
+
+}
+
+.corner-br{
+
+right:-7px;
+
+bottom:55px;
+
+border-width:0 1px 1px 0;
+
+border-radius:0 0 18px 0
+
+}
+
+.visual-caption{
+
+position:absolute;
+
+right:20px;
+
+bottom:20px;
+
+z-index:7;
+
+color:#c7a85f;
+
+font-size:8px;
+
+letter-spacing:2.5px;
+
+text-transform:uppercase;
+
+opacity:0;
+
+transform:translateY(8px);
+
+transition:.8s ease;
+
+transition-delay:.8s
+
+}
+
+.international-visual.is-visible .visual-caption{
+
+opacity:1;
+
+transform:none
+
+}
+
+.visual-word{
+
+position:absolute;
+
+right:-35px;
+
+top:30px;
+
+color:rgba(230,233,236,.045);
+
+font-size:100px;
+
+font-weight:950;
+
+letter-spacing:-8px;
+
+line-height:.8;
+
+writing-mode:vertical-rl;
+
+transform:translateZ(-20px);
+
+pointer-events:none
+
+}
+
+.international-rule{
+
+width:min(760px,100%);
+
+height:1px;
+
+background:linear-gradient(
+
+90deg,
+
+rgba(255,255,255,.12),
+
+transparent
+
+);
+
+margin-top:8px
+
+}
+
+/* =========================================================
+
+   MEDALS
 
    ========================================================= */
 
 .medals{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(2,1fr);
 
-    gap:16px;
+gap:16px
 
 }
 
 .medal{
 
-    padding:30px;
+padding:30px;
 
-    background:#101318;
+background:#101318;
 
-    border:1px solid #292d34;
+border:1px solid #292d34;
 
-    position:relative;
+position:relative;
 
-    overflow:hidden;
+overflow:hidden
 
 }
 
 .medal-icon{
 
-    font-size:52px;
+font-size:52px
 
 }
 
 .medal-label{
 
-    color:#d6b36a;
+color:#d6b36a;
 
-    font-size:10px;
+font-size:10px;
 
-    letter-spacing:3px;
+letter-spacing:3px;
 
-    text-transform:uppercase;
+text-transform:uppercase
 
 }
 
 .medal h3{
 
-    margin:12px 0 4px;
+margin:12px 0 4px;
 
-    font-size:24px;
+font-size:24px
 
 }
 
 .medal p{
 
-    color:#949aa3;
+color:#949aa3
 
 }
 
 /* =========================================================
 
-   CLUB CAREER
+   CLUBS
 
    ========================================================= */
 
 .clubs{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(2,1fr);
 
-    gap:18px;
+gap:18px
 
 }
 
 .club{
 
-    position:relative;
+position:relative;
 
-    min-height:285px;
+min-height:285px;
 
-    padding:0;
+padding:0;
 
-    overflow:hidden;
+overflow:hidden;
 
-    background:
+background:
 
-        linear-gradient(
+linear-gradient(
 
-            145deg,
+145deg,
 
-            rgba(255,255,255,.025),
+rgba(255,255,255,.025),
 
-            rgba(255,255,255,0)
+rgba(255,255,255,0)
 
-        ),
+),
 
-        #0d1014;
+#0d1014;
 
-    border:1px solid rgba(255,255,255,.1);
+border:1px solid rgba(255,255,255,.1);
 
-    box-shadow:
-
-        0 14px 40px rgba(0,0,0,.28);
+box-shadow:0 14px 40px rgba(0,0,0,.28)
 
 }
 
 .club-logo{
 
-    height:175px;
+height:175px;
 
-    padding:20px;
+padding:20px;
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:center;
+justify-content:center;
 
-    position:relative;
+position:relative;
 
-    overflow:hidden;
+overflow:hidden;
 
-    background:
+background:
 
-        linear-gradient(
+linear-gradient(
 
-            125deg,
+125deg,
 
-            var(--club-deep),
+var(--club-deep),
 
-            var(--club-mid),
+var(--club-mid),
 
-            var(--club-light),
+var(--club-light),
 
-            var(--club-mid),
+var(--club-mid),
 
-            var(--club-deep)
+var(--club-deep)
 
-        );
+);
 
-    background-size:280% 280%;
+background-size:280% 280%;
 
-    animation:
-
-        clubFlow
-
-        10s
-
-        linear
-
-        infinite;
+animation:clubFlow 10s linear infinite
 
 }
 
 .club-logo:after{
 
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    inset:-45%;
+inset:-45%;
 
-    background:
+background:linear-gradient(
 
-        linear-gradient(
+105deg,
 
-            105deg,
+transparent 20%,
 
-            transparent 20%,
+rgba(255,255,255,.14) 30%,
 
-            rgba(255,255,255,.14) 30%,
+transparent 45%,
 
-            transparent 45%,
+rgba(255,255,255,.08) 78%,
 
-            rgba(255,255,255,.08) 78%,
+transparent 88%
 
-            transparent 88%
+);
 
-        );
-
-    animation:
-
-        fabricFold
-
-        5.5s
-
-        ease-in-out
-
-        infinite;
+animation:fabricFold 5.5s ease-in-out infinite
 
 }
 
 .club-number{
 
-    position:absolute;
+position:absolute;
 
-    top:15px;
+top:15px;
 
-    left:17px;
+left:17px;
 
-    z-index:5;
+z-index:5;
 
-    font-size:9px;
+font-size:9px;
 
-    letter-spacing:3px;
+letter-spacing:3px;
 
-    color:rgba(255,255,255,.65);
+color:rgba(255,255,255,.65)
 
 }
 
 .club-identity{
 
-    position:relative;
+position:relative;
 
-    z-index:8;
+z-index:8;
 
-    text-align:center;
+text-align:center
 
 }
 
 .club-code{
 
-    display:block;
+display:block;
 
-    color:rgba(255,255,255,.65);
+color:rgba(255,255,255,.65);
 
-    font-size:9px;
+font-size:9px;
 
-    letter-spacing:5px;
+letter-spacing:5px;
 
-    margin-bottom:9px;
+margin-bottom:9px
 
 }
 
 .club-title{
 
-    color:#fff;
+color:#fff;
 
-    font-size:clamp(25px,3.3vw,38px);
+font-size:clamp(25px,3.3vw,38px);
 
-    font-weight:950;
+font-weight:950;
 
-    line-height:.98;
+line-height:.98;
 
-    letter-spacing:-1.7px;
+letter-spacing:-1.7px;
 
-    text-shadow:0 3px 15px rgba(0,0,0,.65);
+text-shadow:0 3px 15px rgba(0,0,0,.65)
 
 }
 
 .club-subtitle{
 
-    margin-top:18px;
+margin-top:18px;
 
-    color:rgba(255,255,255,.68);
+color:rgba(255,255,255,.68);
 
-    font-size:8px;
+font-size:8px;
 
-    letter-spacing:2.5px;
+letter-spacing:2.5px
 
 }
 
 .club>div:last-child{
 
-    padding:18px 20px 20px;
+padding:18px 20px 20px;
 
-    background:
+background:
 
-        linear-gradient(
+linear-gradient(
 
-            180deg,
+180deg,
 
-            rgba(16,19,24,.9),
+rgba(16,19,24,.9),
 
-            rgba(8,10,13,.98)
+rgba(8,10,13,.98)
 
-        );
+);
 
-    border-top:1px solid rgba(255,255,255,.08);
+border-top:1px solid rgba(255,255,255,.08)
 
 }
 
 .club-name{
 
-    font-size:17px;
+font-size:17px;
 
-    font-weight:800;
+font-weight:800
 
 }
 
 .club-level{
 
-    margin-top:9px;
+margin-top:9px;
 
-    color:#d6b36a;
+color:#d6b36a;
 
-    font-size:10px;
+font-size:10px;
 
-    letter-spacing:1.2px;
+letter-spacing:1.2px;
 
-    text-transform:uppercase;
+text-transform:uppercase
 
 }
 
 @keyframes clubFlow{
 
-    0%{
+0%{background-position:0 50%}
 
-        background-position:0 50%;
+50%{background-position:100% 50%}
 
-    }
-
-    50%{
-
-        background-position:100% 50%;
-
-    }
-
-    100%{
-
-        background-position:0 50%;
-
-    }
+100%{background-position:0 50%}
 
 }
 
 @keyframes fabricFold{
 
-    0%,100%{
+0%,100%{
 
-        transform:
+transform:rotate(-3deg) translateX(-9%)
 
-            rotate(-3deg)
+}
 
-            translateX(-9%);
+50%{
 
-    }
+transform:rotate(3deg) translateX(9%)
 
-    50%{
-
-        transform:
-
-            rotate(3deg)
-
-            translateX(9%);
-
-    }
+}
 
 }
 
@@ -3788,167 +3302,167 @@ section h2,
 
 .media{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(3,1fr);
 
-    gap:14px;
+gap:14px
 
 }
 
 .media-card{
 
-    overflow:hidden;
+overflow:hidden;
 
-    background:#101318;
+background:#101318;
 
-    border:1px solid #292d34;
+border:1px solid #292d34
 
 }
 
 .media-card img{
 
-    width:100%;
+width:100%;
 
-    aspect-ratio:4/3;
+aspect-ratio:4/3;
 
-    object-fit:cover;
+object-fit:cover;
 
-    display:block;
+display:block;
 
-    transition:transform .35s;
+transition:transform .35s
 
 }
 
 .media-card:hover img{
 
-    transform:scale(1.035);
+transform:scale(1.035)
 
 }
 
 .video-section-title{
 
-    display:inline-block;
+display:inline-block;
 
-    margin-top:78px;
+margin-top:78px;
 
-    margin-bottom:25px;
+margin-bottom:25px;
 
-    font-size:18px;
+font-size:18px;
 
-    font-weight:850;
+font-weight:850;
 
-    letter-spacing:4px;
+letter-spacing:4px;
 
-    text-transform:uppercase;
+text-transform:uppercase
 
 }
 
 .videos{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(3,1fr);
 
-    gap:22px;
+gap:22px
 
 }
 
 .video-card{
 
-    display:block;
+display:block;
 
-    overflow:hidden;
+overflow:hidden;
 
-    background:#101318;
+background:#101318;
 
-    border:1px solid rgba(214,179,106,.62);
+border:1px solid rgba(214,179,106,.62)
 
 }
 
 .video-preview{
 
-    aspect-ratio:16/9;
+aspect-ratio:16/9;
 
-    position:relative;
+position:relative;
 
-    overflow:hidden;
+overflow:hidden
 
 }
 
 .video-preview img{
 
-    width:100%;
+width:100%;
 
-    height:100%;
+height:100%;
 
-    object-fit:cover;
+object-fit:cover
 
 }
 
 .play-button{
 
-    position:absolute;
+position:absolute;
 
-    left:50%;
+left:50%;
 
-    top:50%;
+top:50%;
 
-    transform:translate(-50%,-50%);
+transform:translate(-50%,-50%);
 
-    width:64px;
+width:64px;
 
-    height:64px;
+height:64px;
 
-    border:1px solid #d6b36a;
+border:1px solid #d6b36a;
 
-    border-radius:50%;
+border-radius:50%;
 
-    display:flex;
+display:flex;
 
-    align-items:center;
+align-items:center;
 
-    justify-content:center;
+justify-content:center;
 
-    color:#d6b36a;
+color:#d6b36a;
 
-    background:rgba(8,9,11,.72);
+background:rgba(8,9,11,.72);
 
-    font-size:22px;
+font-size:22px
 
 }
 
 .video-info{
 
-    padding:20px;
+padding:20px
 
 }
 
 .video-number{
 
-    color:#d6b36a;
+color:#d6b36a;
 
-    font-size:9px;
+font-size:9px;
 
-    letter-spacing:3px;
+letter-spacing:3px
 
 }
 
 .video-info h3{
 
-    margin-top:8px;
+margin-top:8px;
 
-    font-size:19px;
+font-size:19px
 
 }
 
 .video-info p{
 
-    margin-top:4px;
+margin-top:4px;
 
-    color:#858b94;
+color:#858b94;
 
-    font-size:12px;
+font-size:12px
 
 }
 
@@ -3960,673 +3474,575 @@ section h2,
 
 .signature-section{
 
-    text-align:center;
+text-align:center
 
 }
 
 .signature-wrap{
 
-    max-width:650px;
+max-width:650px;
 
-    margin:10px auto 0;
+margin:10px auto 0;
 
-    padding:36px 30px;
+padding:36px 30px;
 
-    background:#101318;
+background:#101318;
 
-    border:1px solid #292d34;
+border:1px solid #292d34
 
 }
 
 .signature-name{
 
-    font-family:
+font-family:"Brush Script MT","Segoe Script",cursive;
 
-        "Brush Script MT",
+font-size:52px;
 
-        "Segoe Script",
+font-style:italic;
 
-        cursive;
-
-    font-size:52px;
-
-    font-style:italic;
-
-    color:#d6b36a;
+color:#d6b36a
 
 }
 
 .signature-line{
 
-    width:180px;
+width:180px;
 
-    height:1px;
+height:1px;
 
-    background:#665331;
+background:#665331;
 
-    margin:0 auto 22px;
+margin:0 auto 22px
 
 }
 
 .end-ihf{
 
-    width:min(300px,85%);
+width:min(300px,85%);
 
-    display:block;
+display:block;
 
-    margin:0 auto 22px;
+margin:0 auto 22px
 
 }
 
 .fahb-signature{
 
-    margin:8px auto 4px;
+margin:8px auto 4px;
 
-    color:#8f949c;
+color:#8f949c;
 
-    font-size:10px;
+font-size:10px;
 
-    letter-spacing:1.8px;
+letter-spacing:1.8px;
 
-    text-transform:uppercase;
+text-transform:uppercase
 
 }
 
 .as18{
 
-    margin:10px auto 18px;
+margin:10px auto 18px;
 
-    color:#d6b36a;
+color:#d6b36a;
 
-    font-size:clamp(28px,5.5vw,38px);
+font-size:clamp(28px,5.5vw,38px);
 
-    font-weight:900;
+font-weight:900;
 
-    letter-spacing:4px;
+letter-spacing:4px
 
 }
 
 .signature-caption{
 
-    margin-top:13px;
+margin-top:13px;
 
-    color:#777d86;
+color:#777d86;
 
-    font-size:11px;
+font-size:11px
 
 }
 
 .contact{
 
-    margin-top:18px;
+margin-top:18px;
 
-    display:flex;
+display:flex;
 
-    justify-content:center;
+justify-content:center;
 
-    flex-wrap:wrap;
+flex-wrap:wrap;
 
-    gap:10px;
+gap:10px
 
 }
 
 .contact-link{
 
-    display:inline-flex;
+display:inline-flex;
 
-    align-items:center;
+align-items:center;
 
-    gap:8px;
+gap:8px;
 
-    padding:10px 15px;
+padding:10px 15px;
 
-    border:1px solid #292d34;
+border:1px solid #292d34;
 
-    background:#0b0e12;
+background:#0b0e12;
 
-    color:#b9bec6;
+color:#b9bec6;
 
-    font-size:11px;
+font-size:11px
 
 }
 
 .contact-label{
 
-    color:#858b94;
+color:#858b94
 
 }
 
 .contact-icon{
 
-    font-size:15px;
+font-size:15px
 
 }
 
 .algeria{
 
-    margin:22px auto 0;
+margin:22px auto 0
 
 }
 
 .algeria-flag{
 
-    font-size:30px;
+font-size:30px
 
 }
 
-/* =========================================================
-
-   FOOTER
-
-   ========================================================= */
-
 footer{
 
-    border-top:1px solid #25282d;
+border-top:1px solid #25282d;
 
-    padding:38px 0;
+padding:38px 0;
 
-    color:#777d86;
+color:#777d86;
 
-    font-size:11px;
+font-size:11px
 
 }
 
 .footer{
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    gap:20px;
+gap:20px
 
 }
 
 /* =========================================================
 
-   TABLET
+   RESPONSIVE
 
    ========================================================= */
 
 @media(max-width:900px){
 
-    .international-editorial{
+.international-layout{
 
-        min-height:auto;
-
-    }
-
-    .international-editorial-head{
-
-        margin-bottom:60px;
-
-    }
-
-    .international-main-title{
-
-        font-size:clamp(52px,12vw,100px);
-
-        letter-spacing:-5px;
-
-    }
-
-    .international-image-stage{
-
-        position:relative;
-
-        right:auto;
-
-        top:auto;
-
-        width:100%;
-
-        height:620px;
-
-        margin:0 0 70px;
-
-        transform:none;
-
-    }
-
-    .international-image-back{
-
-        right:8%;
-
-        width:390px;
-
-        max-width:72%;
-
-    }
-
-    .international-image-front{
-
-        right:31%;
-
-        top:300px;
-
-        width:260px;
-
-        max-width:50%;
-
-    }
-
-    .international-information{
-
-        width:100%;
-
-        padding-top:0;
-
-    }
-
-    .international-career-item{
-
-        padding-bottom:55px;
-
-    }
-
-    .profile-layout{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .clubs{
-
-        grid-template-columns:1fr 1fr;
-
-    }
-
-    .media{
-
-        grid-template-columns:1fr 1fr;
-
-    }
-
-    .videos{
-
-        grid-template-columns:1fr 1fr;
-
-    }
-
-    .ai-scouting-head,
-
-    .ihf-records-header{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-    }
-
-    .ihf-records-note,
-
-    .ai-scouting-note{
-
-        text-align:left;
-
-        max-width:100%;
-
-    }
+min-height:auto
 
 }
 
-/* =========================================================
+.international-visual{
 
-   MOBILE
+position:relative;
 
-   ========================================================= */
+right:auto;
+
+top:auto;
+
+width:100%;
+
+height:560px;
+
+margin:0 0 55px;
+
+transform:none
+
+}
+
+.international-visual:after{
+
+inset:8px 8% 35px 8%
+
+}
+
+.career-image.back{
+
+right:14%;
+
+top:0
+
+}
+
+.career-image.front{
+
+right:6%;
+
+top:250px
+
+}
+
+.international-timeline{
+
+width:100%
+
+}
+
+.international-timeline:before{
+
+left:9px
+
+}
+
+.international-entry{
+
+grid-template-columns:1fr;
+
+gap:10px;
+
+padding-left:36px;
+
+padding-bottom:55px
+
+}
+
+.international-year{
+
+text-align:left
+
+}
+
+.international-point{
+
+left:9px
+
+}
+
+}
+
+@media(max-width:850px){
+
+nav{
+
+display:none
+
+}
+
+.profile-layout{
+
+grid-template-columns:1fr
+
+}
+
+.clubs{
+
+grid-template-columns:1fr 1fr
+
+}
+
+.media{
+
+grid-template-columns:1fr 1fr
+
+}
+
+.videos{
+
+grid-template-columns:1fr 1fr
+
+}
+
+.ai-scouting-head,
+
+.ihf-records-header{
+
+flex-direction:column;
+
+align-items:flex-start
+
+}
+
+.ihf-records-note,
+
+.ai-scouting-note{
+
+text-align:left;
+
+max-width:100%
+
+}
+
+}
 
 @media(max-width:560px){
 
-    .hero{
+.hero{
 
-        padding-top:52px;
-
-    }
-
-    .hero>.container{
-
-        padding-left:10px;
-
-        padding-right:10px;
-
-    }
-
-    h1{
-
-        letter-spacing:-2.5px;
-
-    }
-
-    .profile-info-grid,
-
-    .clubs,
-
-    .media,
-
-    .videos,
-
-    .medals{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .photo-info,
-
-    .footer{
-
-        flex-direction:column;
-
-    }
-
-    .signature-name{
-
-        font-size:42px;
-
-    }
-
-    .contact{
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-    }
-
-    .contact-link{
-
-        justify-content:center;
-
-    }
-
-    .role{
-
-        font-size:clamp(15px,4.9vw,24px);
-
-        margin-left:8px;
-
-    }
-
-    .hero-status{
-
-        margin-left:8px;
-
-        font-size:clamp(11px,3.5vw,15px);
-
-    }
-
-    /* INTERNATIONAL MOBILE */
-
-    #international{
-
-        min-height:auto;
-
-    }
-
-    .international-editorial-head{
-
-        margin-bottom:45px;
-
-    }
-
-    .international-main-title{
-
-        font-size:
-
-            clamp(
-
-                47px,
-
-                15vw,
-
-                78px
-
-            );
-
-        letter-spacing:-4px;
-
-        line-height:.8;
-
-    }
-
-    .international-subtitle{
-
-        font-size:12px;
-
-        line-height:1.8;
-
-        margin-top:25px;
-
-    }
-
-    .international-editorial{
-
-        min-height:auto;
-
-    }
-
-    .international-giant-word{
-
-        left:-15px;
-
-        top:100px;
-
-        font-size:115px;
-
-        letter-spacing:-8px;
-
-    }
-
-    .international-image-stage{
-
-        height:520px;
-
-        margin-bottom:60px;
-
-    }
-
-    .international-image-back{
-
-        width:245px;
-
-        height:340px;
-
-        right:2%;
-
-    }
-
-    .international-image-front{
-
-        width:180px;
-
-        height:245px;
-
-        right:27%;
-
-        top:220px;
-
-    }
-
-    .international-image-label{
-
-        bottom:-25px;
-
-        right:3px;
-
-        font-size:7px;
-
-    }
-
-    .international-career-item{
-
-        margin-bottom:40px;
-
-        padding-bottom:42px;
-
-    }
-
-    .international-career-title{
-
-        font-size:
-
-            clamp(
-
-                27px,
-
-                8vw,
-
-                37px
-
-            );
-
-        letter-spacing:-1.4px;
-
-    }
-
-    .international-career-description{
-
-        font-size:12px;
-
-    }
-
-    .international-career-index{
-
-        font-size:8px;
-
-    }
-
-    .international-side-number{
-
-        font-size:125px;
-
-        bottom:0;
-
-    }
-
-    .ai-scout-card{
-
-        flex-basis:82vw;
-
-    }
-
-    .sport-status-box{
-
-        padding:30px 22px;
-
-    }
-
-    .video-section-title{
-
-        margin-top:65px;
-
-    }
-
-    nav{
-
-        display:none;
-
-    }
+padding-top:52px
 
 }
 
-/* =========================================================
+.hero>.container{
 
-   REDUCED MOTION
+padding-left:10px;
 
-   ========================================================= */
+padding-right:10px
+
+}
+
+h1{
+
+letter-spacing:-2.5px
+
+}
+
+.profile-info-grid,
+
+.clubs,
+
+.media,
+
+.videos,
+
+.medals{
+
+grid-template-columns:1fr
+
+}
+
+.photo-info,
+
+.footer{
+
+flex-direction:column
+
+}
+
+.signature-name{
+
+font-size:42px
+
+}
+
+.contact{
+
+flex-direction:column;
+
+align-items:stretch
+
+}
+
+.contact-link{
+
+justify-content:center
+
+}
+
+.role{
+
+font-size:clamp(15px,4.9vw,24px);
+
+margin-left:8px
+
+}
+
+.hero-status{
+
+margin-left:8px;
+
+font-size:clamp(11px,3.5vw,15px)
+
+}
+
+.international-visual{
+
+height:475px
+
+}
+
+.international-visual:after{
+
+inset:8px 2% 25px 2%
+
+}
+
+.career-image.back{
+
+width:88%;
+
+height:275px;
+
+right:4%;
+
+border-radius:
+
+32px 32px 32px 8px
+
+}
+
+.career-image.front{
+
+width:76%;
+
+height:225px;
+
+right:3%;
+
+top:225px;
+
+border-radius:
+
+24px 38px 10px 38px
+
+}
+
+.international-entry{
+
+padding-left:28px
+
+}
+
+.international-timeline:before,
+
+.international-point{
+
+left:8px
+
+}
+
+.international-title{
+
+font-size:clamp(23px,7.5vw,32px)
+
+}
+
+.international-description{
+
+font-size:12.5px
+
+}
+
+.ai-scout-card{
+
+flex-basis:82vw
+
+}
+
+.sport-status-box{
+
+padding:30px 22px
+
+}
+
+.video-section-title{
+
+margin-top:65px
+
+}
+
+}
 
 @media(prefers-reduced-motion:reduce){
 
-    html{
+html{
 
-        scroll-behavior:auto;
+scroll-behavior:auto
 
-    }
+}
 
-    .cinematic-intro{
+.cinematic-intro{
 
-        display:none!important;
+display:none!important
 
-    }
+}
 
-    h1 .last-name,
+h1 .last-name,
 
-    h1 .first-name,
+h1 .first-name,
 
-    section h2,
+section h2,
 
-    .international-main-title{
+.international-title{
 
-        animation:none;
+animation:none
 
-    }
+}
 
-    #international:before{
+#international:before{
 
-        animation:none;
+animation:none
 
-    }
+}
 
-    .international-career-item{
+.international-entry{
 
-        opacity:1;
+opacity:1;
 
-        transform:none;
+transform:none;
 
-        filter:none;
+filter:none;
 
-        transition:none;
+transition:none
 
-    }
+}
 
-    .international-career-title,
+.international-entry .international-title,
 
-    .international-career-description,
+.international-entry .international-description,
 
-    .international-career-index{
+.international-entry .international-index{
 
-        opacity:1;
+opacity:1;
 
-        transform:none;
+transform:none;
 
-        filter:none;
+filter:none;
 
-        transition:none;
+transition:none
 
-    }
+}
 
-    .international-image-back,
+.international-timeline:before{
 
-    .international-image-front{
+transform:scaleY(1);
 
-        opacity:1;
+transition:none
 
-        transform:none!important;
+}
 
-        transition:none;
+.international-visual,
 
-    }
+.career-image{
 
-    .international-image-stage{
+animation:none;
 
-        transform:none!important;
+transition:none
 
-    }
+}
 
-    .international-image-stage:before{
+.career-image{
 
-        animation:none;
+opacity:1;
 
-    }
+transform:none!important
 
-    .international-career-item:after{
-
-        width:100%;
-
-        transition:none;
-
-    }
+}
 
 }
 
@@ -4636,3203 +4052,2499 @@ footer{
 
 <body class="intro-active">
 
-<!-- =========================================================
-
-     CINEMATIC INTRO
-
-     ========================================================= -->
-
 <div class="cinematic-intro" aria-hidden="true">
 
-    <div class="cinematic-light"></div>
+<div class="cinematic-light"></div>
 
-    <div class="cinematic-content">
+<div class="cinematic-content">
 
-        <div class="cinematic-stage-one">
+<div class="cinematic-stage-one">
 
-            <div class="cinematic-line"></div>
+<div class="cinematic-line"></div>
 
-            <span class="cinematic-last">
+<span class="cinematic-last">SEGUENI</span>
 
-                SEGUENI
+<span class="cinematic-first">Abderraouf</span>
 
-            </span>
+<div class="cinematic-role">
 
-            <span class="cinematic-first">
-
-                Abderraouf
-
-            </span>
-
-            <div class="cinematic-role">
-
-                International Handball Player
-
-            </div>
-
-            <div class="cinematic-status">
-
-                Professional Pivot · Algerian · #18
-
-            </div>
-
-            <div class="cinematic-bar"></div>
-
-        </div>
-
-        <div class="cinematic-ihf-stage">
-
-            <div class="ihf-box">
-
-                <img
-
-                    class="ihf-logo"
-
-                    src="https://www.ihf.info/sites/default/files/inline-images/IHF%20Logo_1440x300.jpg"
-
-                    alt="International Handball Federation"
-
-                >
-
-                <div class="ihf-title">
-
-                    Certified by IHF
-
-                </div>
-
-                <div class="ihf-subtitle">
-
-                    International Handball Federation
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+International Handball Player
 
 </div>
 
-<!-- =========================================================
+<div class="cinematic-status">
 
-     HEADER
+Professional Pivot · Algerian · #18
 
-     ========================================================= -->
+</div>
+
+<div class="cinematic-bar"></div>
+
+</div>
+
+<div class="cinematic-ihf-stage">
+
+<div class="ihf-box">
+
+<img
+
+class="ihf-logo"
+
+src="https://www.ihf.info/sites/default/files/inline-images/IHF%20Logo_1440x300.jpg"
+
+alt="International Handball Federation">
+
+<div class="ihf-title">
+
+Certified by IHF
+
+</div>
+
+<div class="ihf-subtitle">
+
+International Handball Federation
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 <header>
 
-    <div class="container nav">
+<div class="container nav">
 
-        <div class="logo">
+<div class="logo">
 
-            SEGUENI ABDERRAOUF
+SEGUENI ABDERRAOUF
 
-        </div>
+</div>
 
-        <nav>
+<nav>
 
-            <a href="#ihf-records">
+<a href="#ihf-records">IHF Records</a>
 
-                IHF Records
+<a href="#sport-status">Sport Status</a>
 
-            </a>
+<a href="#profile">Profile</a>
 
-            <a href="#sport-status">
+<a href="#international">International</a>
 
-                Sport Status
+<a href="#career">Career</a>
 
-            </a>
+<a href="#media">Media</a>
 
-            <a href="#profile">
+</nav>
 
-                Profile
-
-            </a>
-
-            <a href="#international">
-
-                International
-
-            </a>
-
-            <a href="#career">
-
-                Career
-
-            </a>
-
-            <a href="#media">
-
-                Media
-
-            </a>
-
-        </nav>
-
-    </div>
+</div>
 
 </header>
 
 <main>
 
-<!-- =========================================================
+<!-- =====================================================
 
      HERO
 
-     ========================================================= -->
+     ===================================================== -->
 
 <section class="hero">
 
-    <div class="container">
+<div class="container">
 
-        <div class="eyebrow">
+<div class="eyebrow">
 
-            Algerian Handball
+Algerian Handball
 
-        </div>
+</div>
 
-        <h1>
+<h1>
 
-            <span class="last-name">
+<span class="last-name">
 
-                SEGUENI
+SEGUENI
 
-            </span>
+</span>
 
-            <span class="first-name">
+<span class="first-name">
 
-                Abderraouf
+Abderraouf
 
-            </span>
+</span>
 
-        </h1>
+</h1>
 
-        <div class="role">
+<div class="role">
 
-            <strong>
+<strong>
 
-                INTERNATIONAL &amp;
+INTERNATIONAL &amp; PROFESSIONAL HANDBALL PLAYER
 
-                PROFESSIONAL HANDBALL PLAYER
+</strong>
 
-            </strong>
+</div>
 
-        </div>
+<div class="hero-status">
 
-        <div class="hero-status">
+Statut Sportif Et Juridique :
 
-            Statut Sportif Et Juridique :
+Athlète De Haut Niveau —
 
-            Athlète De Haut Niveau —
+Class A — &amp; Élite
 
-            Class A — &amp; Élite
+</div>
 
-        </div>
+<div class="main-photo">
 
-        <div class="main-photo">
+<img
 
-            <img
+src="IMG_9755.jpeg"
 
-                src="IMG_9755.jpeg"
+alt="SEGUENI Abderraouf — International & Professional Handball Player">
 
-                alt="SEGUENI Abderraouf — International & Professional Handball Player"
+<div class="photo-info">
 
-            >
+<span>
 
-            <div class="photo-info">
+International Handball Player
 
-                <span>
+</span>
 
-                    International Handball Player
+<span>
 
-                </span>
+Pivot · #18
 
-                <span>
+</span>
 
-                    Pivot · #18
+</div>
 
-                </span>
+</div>
 
-            </div>
+<!-- SINGLE HERO IHF FRAME -->
 
-        </div>
+<div class="hero-verify-wrap">
 
-        <a
+<a
 
-            id="verified-ihf"
+id="verified-ihf"
 
-            href="ihf.html"
+href="ihf.html"
 
-            class="ihf-box"
+class="ihf-box"
 
-            aria-label="SEGUENI Abderraouf — Official IHF Information"
+aria-label="SEGUENI Abderraouf — Official IHF Information">
 
-        >
+<img
 
-            <img
+class="ihf-logo"
 
-                class="ihf-logo"
+src="https://www.ihf.info/sites/default/files/inline-images/IHF%20Logo_1440x300.jpg"
 
-                src="https://www.ihf.info/sites/default/files/inline-images/IHF%20Logo_1440x300.jpg"
+alt="International Handball Federation">
 
-                alt="International Handball Federation"
+<div class="ihf-title">
 
-            >
+Certified by IHF
 
-            <div class="ihf-title">
+</div>
 
-                Certified by IHF
+<div class="ihf-subtitle">
 
-            </div>
+International Handball Federation
 
-            <div class="ihf-subtitle">
+</div>
 
-                International Handball Federation
+</a>
 
-            </div>
+</div>
 
-        </a>
-
-    </div>
+</div>
 
 </section>
 
-<!-- =========================================================
+<!-- =====================================================
 
      IHF RECORDS
 
-     ========================================================= -->
+     ===================================================== -->
 
 <section
 
-    id="ihf-records"
+id="ihf-records"
 
-    class="ihf-records-section"
+class="ihf-records-section">
 
->
+<div class="container">
 
-    <div class="container">
+<div class="section-label">
 
-        <div class="section-label">
+Official International Record
 
-            Official International Record
+</div>
 
-        </div>
+<div class="ihf-records-header">
 
-        <div class="ihf-records-header">
+<h2 class="ihf-records-title">
 
-            <h2 class="ihf-records-title">
+OFFICIAL IHF RECORDS
 
-                OFFICIAL IHF RECORDS
+</h2>
 
-            </h2>
+<div class="ihf-records-note">
 
-            <div class="ihf-records-note">
+Official International Handball Federation archive reference documenting SEGUENI Abderraouf's international player record.
 
-                Official International Handball Federation archive reference documenting SEGUENI Abderraouf's international player record.
+</div>
 
-            </div>
+</div>
 
-        </div>
+<div class="ihf-records-grid">
 
-        <div class="ihf-records-grid">
+<a
 
-            <a
+class="ihf-record-card"
 
-                class="ihf-record-card"
+href="ihf.html"
 
-                href="ihf.html"
+aria-label="Official IHF Record — SEGUENI Abderraouf Algeria">
 
-                aria-label="Official IHF Record — SEGUENI Abderraouf Algeria"
+<div>
 
-            >
+<div class="ihf-record-kicker">
 
-                <div>
+International Handball Federation
 
-                    <div class="ihf-record-kicker">
+</div>
 
-                        International Handball Federation
+<h3>
 
-                    </div>
+OFFICIAL IHF RECORD
 
-                    <h3>
+</h3>
 
-                        OFFICIAL IHF RECORD
+<div class="ihf-record-name">
 
-                    </h3>
+SEGUENI Abderraouf — Algeria
 
-                    <div class="ihf-record-name">
+</div>
 
-                        SEGUENI Abderraouf — Algeria
+<div class="ihf-record-event">
 
-                    </div>
+2017 IHF Men's Junior World Championship
 
-                    <div class="ihf-record-event">
+</div>
 
-                        2017 IHF Men's Junior World Championship
+<div class="ihf-record-data">
 
-                    </div>
+NO. 18 · PIVOT · ALGERIA
 
-                    <div class="ihf-record-data">
+</div>
 
-                        NO. 18 · PIVOT · ALGERIA
+</div>
 
-                    </div>
+<div class="ihf-record-source">
 
-                </div>
+<span>
 
-                <div class="ihf-record-source">
+Official IHF archive
 
-                    <span>
+</span>
 
-                        Official IHF archive
+<span class="ihf-record-link">
 
-                    </span>
+View official record
 
-                    <span class="ihf-record-link">
+</span>
 
-                        View official record
+</div>
 
-                    </span>
+</a>
 
-                </div>
+</div>
 
-            </a>
+<div class="ihf-record-footnote">
 
-        </div>
+Official source · International Handball Federation archive
 
-        <div class="ihf-record-footnote">
+</div>
 
-            Official source · International Handball Federation archive
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
-<!-- =========================================================
+<!-- =====================================================
 
      SPORT STATUS
 
-     ========================================================= -->
+     ===================================================== -->
 
 <section id="sport-status">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-label">
+<div class="section-label">
 
-            01 — Sport Status
+01 — Sport Status
 
-        </div>
+</div>
 
-        <div class="sport-status-box">
+<div class="sport-status-box">
 
-            <h2>
+<h2>
 
-                STATUT SPORTIF ET JURIDIQUE
+STATUT SPORTIF ET JURIDIQUE
 
-            </h2>
+</h2>
 
-            <div class="sport-status-main">
+<div class="sport-status-main">
 
-                HAUT NIVEAU — CLASSE A &amp; ÉLITE
+HAUT NIVEAU — CLASSE A &amp; ÉLITE
 
-            </div>
+</div>
 
-            <p class="sport-status-description">
+<p class="sport-status-description">
 
-                Joueur international algérien — Haut niveau, Classe A &amp; Élite.
+Joueur international algérien —
 
-                <br>
+Haut niveau, Classe A &amp; Élite.
 
-                Parcours sportif documenté au niveau national, africain et mondial.
+<br>
 
-            </p>
+Parcours sportif documenté au niveau national,
 
-            <div class="sport-status-subtitle">
+africain et mondial.
 
-                Cadre réglementaire &amp; juridique :
+</p>
 
-            </div>
+<div class="sport-status-subtitle">
 
-            <div class="sport-status-list">
+Cadre réglementaire &amp; juridique :
 
-                <div class="sport-status-item">
+</div>
 
-                    <strong>
+<div class="sport-status-list">
 
-                        Loi n° 13-05 du 23 juillet 2013
+<div class="sport-status-item">
 
-                    </strong>
+<strong>
 
-                </div>
+Loi n° 13-05 du 23 juillet 2013
 
-                <div class="sport-status-item">
+</strong>
 
-                    <strong>
+</div>
 
-                        Décret exécutif n° 15-213 du 11 août 2015
+<div class="sport-status-item">
 
-                    </strong>
+<strong>
 
-                </div>
+Décret exécutif n° 15-213 du 11 août 2015
 
-                <div class="sport-status-item">
+</strong>
 
-                    <strong>
+</div>
 
-                        Décret exécutif n° 23-132 du 18 mars 2023
+<div class="sport-status-item">
 
-                    </strong>
+<strong>
 
-                    modifiant et complétant le décret n° 15-213.
+Décret exécutif n° 23-132 du 18 mars 2023
 
-                </div>
+</strong>
 
-            </div>
+modifiant et complétant le décret n° 15-213.
 
-            <div
+</div>
 
-                class="sport-status-subtitle"
+</div>
 
-                style="margin-top:30px"
+<div
 
-            >
+class="sport-status-subtitle"
 
-                Éléments sportifs majeurs :
+style="margin-top:30px">
 
-            </div>
+Éléments sportifs majeurs :
 
-            <div class="sport-status-list">
+</div>
 
-                <div class="sport-status-item">
+<div class="sport-status-list">
 
-                    <strong>
+<div class="sport-status-item">
 
-                        01 — Participation au Championnat du Monde U21 2017 et qualification de l'équipe nationale algérienne au deuxième tour.
+<strong>
 
-                    </strong>
+01 — Participation au Championnat du Monde U21 2017 et qualification de l'équipe nationale algérienne au deuxième tour.
 
-                </div>
+</strong>
 
-                <div class="sport-status-item">
+</div>
 
-                    <strong>
+<div class="sport-status-item">
 
-                        02 —
+<strong>
 
-                    </strong>
+02 —
 
-                    <div style="margin-top:4px">
+</strong>
 
-                        <strong>
+<div style="margin-top:4px">
 
-                            Nairobi — Kenya 🇰🇪 — U19 — Médaille d’argent (2e place)
+<strong>
 
-                        </strong>
+Nairobi — Kenya 🇰🇪 — U19 — Médaille d’argent (2e place)
 
-                    </div>
+</strong>
 
-                    <div style="margin-top:8px">
+</div>
 
-                        <strong>
+<div style="margin-top:8px">
 
-                            Bamako — Mali 🇲🇱 — U21 — Médaille de bronze (3e place)
+<strong>
 
-                        </strong>
+Bamako — Mali 🇲🇱 — U21 — Médaille de bronze (3e place)
 
-                    </div>
+</strong>
 
-                </div>
+</div>
 
-            </div>
+</div>
 
-            <a
+</div>
 
-                href="statut-juridique.html"
+<a
 
-                class="legal-reference-card"
+href="statut-juridique.html"
 
-            >
+class="legal-reference-card">
 
-                <div class="legal-reference-title">
+<div class="legal-reference-title">
 
-                    Official Legal &amp; Regulatory References (Sources)
+Official Legal &amp; Regulatory References (Sources)
 
-                </div>
+</div>
 
-                <div class="legal-reference-subtitle">
+<div class="legal-reference-subtitle">
 
-                    Athlète de Haut Niveau &amp; Élite
+Athlète de Haut Niveau &amp; Élite
 
-                </div>
+</div>
 
-                <div class="legal-reference-arrow">
+<div class="legal-reference-arrow">
 
-                    View official legal framework →
+View official legal framework →
 
-                </div>
+</div>
 
-            </a>
+</a>
 
-            <div class="legal-important">
+<div class="legal-important">
 
-                ↑ IMPORTANT
+↑ IMPORTANT
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
-<!-- =========================================================
+<!-- =====================================================
 
      PROFILE
 
-     ========================================================= -->
+     ===================================================== -->
 
 <section id="profile">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-label">
+<div class="section-label">
 
-            02 — Profile
+02 — Profile
 
-        </div>
+</div>
 
-        <h2>
+<h2>
 
-            Player Profile
+Player Profile
 
-        </h2>
+</h2>
 
-        <div class="profile-layout">
+<div class="profile-layout">
 
-            <div class="profile-box">
+<div class="profile-box">
 
-                <h3>
+<h3>
 
-                    Pivot / Line Player
+Pivot / Line Player
 
-                </h3>
+</h3>
 
-                <p>
+<p>
 
-                    Algerian international handball player with a national-team pathway through U17, U19, U21 and senior level, combining physical strength, tactical positioning, movement and close-range finishing.
+Algerian international handball player with a national-team pathway through U17, U19, U21 and senior level, combining physical strength, tactical positioning, movement and close-range finishing.
 
-                </p>
+</p>
 
-                <div class="profile-info-grid">
+<div class="profile-info-grid">
 
-                    <div class="profile-info">
+<div class="profile-info">
 
-                        <div class="profile-info-label">
+<div class="profile-info-label">
 
-                            Date of Birth
+Date of Birth
 
-                        </div>
+</div>
 
-                        <div class="profile-info-value">
+<div class="profile-info-value">
 
-                            08/09/1996
+08/09/1996
 
-                        </div>
+</div>
 
-                    </div>
+</div>
 
-                    <div class="profile-info">
+<div class="profile-info">
 
-                        <div class="profile-info-label">
+<div class="profile-info-label">
 
-                            Height
+Height
 
-                        </div>
+</div>
 
-                        <div class="profile-info-value">
+<div class="profile-info-value">
 
-                            183 cm
+183 cm
 
-                        </div>
+</div>
 
-                    </div>
+</div>
 
-                    <div class="profile-info">
+<div class="profile-info">
 
-                        <div class="profile-info-label">
+<div class="profile-info-label">
 
-                            Position
+Position
 
-                        </div>
+</div>
 
-                        <div class="profile-info-value">
+<div class="profile-info-value">
 
-                            Pivot
+Pivot
 
-                        </div>
+</div>
 
-                    </div>
+</div>
 
-                    <div class="profile-info">
+<div class="profile-info">
 
-                        <div class="profile-info-label">
+<div class="profile-info-label">
 
-                            Nationality
+Nationality
 
-                        </div>
+</div>
 
-                        <div class="profile-info-value">
+<div class="profile-info-value">
 
-                            🇩🇿 Algerian
+🇩🇿 Algerian
 
-                        </div>
+</div>
 
-                    </div>
+</div>
 
-                    <div class="profile-info">
+<div class="profile-info">
 
-                        <div class="profile-info-label">
+<div class="profile-info-label">
 
-                            Experience
+Experience
 
-                        </div>
+</div>
 
-                        <div class="profile-info-value gold">
+<div class="profile-info-value gold">
 
-                            +14 Years
++14 Years
 
-                        </div>
+</div>
 
-                    </div>
+</div>
 
-                    <div class="profile-info">
+<div class="profile-info">
 
-                        <div class="profile-info-label">
+<div class="profile-info-label">
 
-                            Status
+Status
 
-                        </div>
+</div>
 
-                        <div class="profile-info-value gold">
+<div class="profile-info-value gold">
 
-                            International Player
+International Player
 
-                        </div>
+</div>
 
-                    </div>
+</div>
 
-                </div>
+</div>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
-<!-- =========================================================
+<!-- =====================================================
 
-     SCOUTING
+     AI SCOUTING
 
-     ========================================================= -->
+     ===================================================== -->
 
 <section id="scouting">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-label">
+<div class="section-label">
 
-            SCOUTING INTELLIGENCE
+SCOUTING INTELLIGENCE
 
-        </div>
+</div>
 
-        <div class="ai-scouting-box">
+<div class="ai-scouting-box">
 
-            <div class="ai-scouting-head">
+<div class="ai-scouting-head">
 
-                <div>
+<div>
 
-                    <div class="ai-scouting-kicker">
+<div class="ai-scouting-kicker">
 
-                        SCOUTING INTELLIGENCE
+SCOUTING INTELLIGENCE
 
-                    </div>
+</div>
 
-                    <h2 class="ai-scouting-title">
+<h2 class="ai-scouting-title">
 
-                        AI-ASSISTED PLAYER SCOUTING
+AI-ASSISTED PLAYER SCOUTING
 
-                    </h2>
+</h2>
 
-                </div>
+</div>
 
-                <div class="ai-scouting-note">
+<div class="ai-scouting-note">
 
-                    Structured technical profile for professional scouting, built from the documented player profile and sporting record.
+Structured technical profile for professional scouting, built from the documented player profile and sporting record.
 
-                </div>
+</div>
 
-            </div>
+</div>
 
-            <div class="ai-scouting-grid">
+<div class="ai-scouting-grid">
 
-                <div class="ai-scout-card">
+<div class="ai-scout-card">
 
-                    <div class="ai-scout-index">
+<div class="ai-scout-index">01 / ROLE</div>
 
-                        01 / ROLE
+<h3>Power / Tactical Pivot</h3>
 
-                    </div>
+<p>
 
-                    <h3>
+6-metre line specialist combining contact strength, positioning and timing.
 
-                        Power / Tactical Pivot
+</p>
 
-                    </h3>
+</div>
 
-                    <p>
+<div class="ai-scout-card">
 
-                        6-metre line specialist combining contact strength, positioning and timing.
+<div class="ai-scout-index">02 / CONTACT</div>
 
-                    </p>
+<h3>Ball Protection</h3>
 
-                </div>
+<p>
 
-                <div class="ai-scout-card">
+Strong body positioning under contact with controlled reception and protection.
 
-                    <div class="ai-scout-index">
+</p>
 
-                        02 / CONTACT
+</div>
 
-                    </div>
+<div class="ai-scout-card">
 
-                    <h3>
+<div class="ai-scout-index">03 / CREATION</div>
 
-                        Ball Protection
+<h3>Space Creation</h3>
 
-                    </h3>
+<p>
 
-                    <p>
+Screens, blocks and movement patterns designed to create attacking lanes.
 
-                        Strong body positioning under contact with controlled reception and protection.
+</p>
 
-                    </p>
+</div>
 
-                </div>
+<div class="ai-scout-card">
 
-                <div class="ai-scout-card">
+<div class="ai-scout-index">04 / MOBILITY</div>
 
-                    <div class="ai-scout-index">
+<h3>Explosive Movement</h3>
 
-                        03 / CREATION
+<p>
 
-                    </div>
+Short-area acceleration and movement around the defensive line.
 
-                    <h3>
+</p>
 
-                        Space Creation
+</div>
 
-                    </h3>
+<div class="ai-scout-card">
 
-                    <p>
+<div class="ai-scout-index">05 / FINISHING</div>
 
-                        Screens, blocks and movement patterns designed to create attacking lanes.
+<h3>Close-Range Finishing</h3>
 
-                    </p>
+<p>
 
-                </div>
+Efficient finishing around 6 metres, including lob and contact situations.
 
-                <div class="ai-scout-card">
+</p>
 
-                    <div class="ai-scout-index">
+</div>
 
-                        04 / MOBILITY
+<div class="ai-scout-card">
 
-                    </div>
+<div class="ai-scout-index">06 / HAND USE</div>
 
-                    <h3>
+<h3>Two-Hand Reception</h3>
 
-                        Explosive Movement
+<p>
 
-                    </h3>
+Ability to receive under pressure with the left and finish decisively with the right.
 
-                    <p>
+</p>
 
-                        Short-area acceleration and movement around the defensive line.
+</div>
 
-                    </p>
+<div class="ai-scout-card">
 
-                </div>
+<div class="ai-scout-index">07 / MATCH-UP</div>
 
-                <div class="ai-scout-card">
+<h3>Defender Rotation</h3>
 
-                    <div class="ai-scout-index">
+<p>
 
-                        05 / FINISHING
+Adaptation to physical match-ups, including rotation against a 2.06 m defender.
 
-                    </div>
+</p>
 
-                    <h3>
+</div>
 
-                        Close-Range Finishing
+<div class="ai-scout-card">
 
-                    </h3>
+<div class="ai-scout-index">08 / CLUTCH</div>
 
-                    <p>
+<h3>Final-10-Seconds Role</h3>
 
-                        Efficient finishing around 6 metres, including lob and contact situations.
+<p>
 
-                    </p>
+Prepared for screens, contact and close-range solutions in late possessions.
 
-                </div>
+</p>
 
-                <div class="ai-scout-card">
+</div>
 
-                    <div class="ai-scout-index">
+<div class="ai-scout-card">
 
-                        06 / HAND USE
+<div class="ai-scout-index">09 / PROFILE</div>
 
-                    </div>
+<h3>Professional Projection</h3>
 
-                    <h3>
+<p>
 
-                        Two-Hand Reception
+Power-based pivot profile suited to structured, physical and tactical systems.
 
-                    </h3>
+</p>
 
-                    <p>
+</div>
 
-                        Ability to receive under pressure with the left and finish decisively with the right.
+</div>
 
-                    </p>
+<div class="ai-scout-footer">
 
-                </div>
+AI-assisted presentation — not a biometric or independent performance measurement.
 
-                <div class="ai-scout-card">
+</div>
 
-                    <div class="ai-scout-index">
+</div>
 
-                        07 / MATCH-UP
-
-                    </div>
-
-                    <h3>
-
-                        Defender Rotation
-
-                    </h3>
-
-                    <p>
-
-                        Adaptation to physical match-ups, including rotation against a 2.06 m defender.
-
-                    </p>
-
-                </div>
-
-                <div class="ai-scout-card">
-
-                    <div class="ai-scout-index">
-
-                        08 / CLUTCH
-
-                    </div>
-
-                    <h3>
-
-                        Final-10-Seconds Role
-
-                    </h3>
-
-                    <p>
-
-                        Prepared for screens, contact and close-range solutions in late possessions.
-
-                    </p>
-
-                </div>
-
-                <div class="ai-scout-card">
-
-                    <div class="ai-scout-index">
-
-                        09 / PROFILE
-
-                    </div>
-
-                    <h3>
-
-                        Professional Projection
-
-                    </h3>
-
-                    <p>
-
-                        Power-based pivot profile suited to structured, physical and tactical systems.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="ai-scout-footer">
-
-                AI-assisted presentation — not a biometric or independent performance measurement.
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
-<!-- =========================================================
+<!-- =====================================================
 
      INTERNATIONAL CAREER
 
-     ========================================================= -->
+     ===================================================== -->
 
 <section id="international">
 
-    <div class="container">
+<div class="container">
 
-        <div class="international-editorial-head">
+<div class="section-label">
 
-            <div class="section-label">
+03 — International Career
 
-                03 — International Career
+</div>
 
-            </div>
+<h2>
 
-            <h2 class="international-main-title">
+International Career
 
-                International<br>
+</h2>
 
-                Career
+<p class="section-intro">
 
-            </h2>
+International pathway with Algeria across youth national teams, African championships, the World Championship and international preparation camps in Europe.
 
-            <p class="international-subtitle">
+</p>
 
-                International pathway with Algeria across youth national teams,
+<div class="international-layout">
 
-                African championships, the World Championship and international
+<!-- =====================================================
 
-                preparation camps in Europe.
+     INTERNATIONAL PHOTO COMPOSITION
 
-            </p>
+     ===================================================== -->
 
-        </div>
+<div
 
-        <div class="international-editorial">
+class="international-visual"
 
-            <div class="international-giant-word">
+id="careerVisual">
 
-                CAREER
+<div class="visual-word">
 
-            </div>
+CAREER
 
-            <div
+</div>
 
-                class="international-side-number"
+<!-- IMAGE 01 — USER PROVIDED -->
 
-                id="internationalSideNumber"
+<div class="career-image back">
 
-            >
+<img
 
-                03
+src="IMG_9751.jpeg"
 
-            </div>
+alt="SEGUENI Abderraouf with the Algerian national team">
 
-            <!-- =================================================
+</div>
 
-                 IMAGE — POSITIONED AS THE EDITORIAL VISUAL
+<!-- IMAGE 02 — USER PROVIDED -->
 
-                 ================================================= -->
+<div class="career-image front">
 
-            <div
+<img
 
-                class="international-image-stage"
+src="IMG_8742.jpeg"
 
-                id="internationalImageStage"
+alt="SEGUENI Abderraouf number 18 with the Algerian national team">
 
-            >
+</div>
 
-                <div class="international-image-back">
+<!-- TECHNICAL CORNERS -->
 
-                    <img
+<div class="career-frame-corner corner-tl"></div>
 
-                        src="IMG_9755.jpeg"
+<div class="career-frame-corner corner-br"></div>
 
-                        alt="SEGUENI Abderraouf"
+<div class="visual-caption">
 
-                    >
+INTERNATIONAL PATHWAY · #18
 
-                </div>
+</div>
 
-                <div class="international-image-front">
+</div>
 
-                    <img
+<!-- =====================================================
 
-                        src="IMG_9718.jpeg"
+     TIMELINE
 
-                        alt="SEGUENI Abderraouf in action"
+     ===================================================== -->
 
-                    >
+<div class="international-timeline">
 
-                </div>
+<div
 
-                <div class="international-image-label">
+class="international-entry"
 
-                    INTERNATIONAL PATHWAY · PIVOT · #18
+style="--entry-index:0">
 
-                </div>
+<div class="international-year">
 
-            </div>
+2013
 
-            <!-- =================================================
+</div>
 
-                 INFORMATION
+<div class="international-point"></div>
 
-                 ================================================= -->
+<div class="international-content">
 
-            <div class="international-information">
+<span class="international-index">
 
-                <!-- 01 -->
+01
 
-                <article
+</span>
 
-                    class="international-career-item"
+<h3 class="international-title">
 
-                    style="--career-index:0"
+<span class="international-flag">
 
-                >
+🇹🇳
 
-                    <div class="international-career-year">
+</span>
 
-                        2013
+Championnat Arabe des Nations
 
-                    </div>
+</h3>
 
-                    <span class="international-career-index">
+<p class="international-description">
 
-                        01
+Tunisie — Participation with Algeria in the
 
-                    </span>
+<strong>
 
-                    <h3 class="international-career-title">
+Arab Nations Championship
 
-                        <span class="flag">
+</strong>.
 
-                            🇹🇳
+</p>
 
-                        </span>
+</div>
 
-                        Championnat Arabe des Nations
+</div>
 
-                    </h3>
+<div
 
-                    <p class="international-career-description">
+class="international-entry"
 
-                        Tunisie — Participation with Algeria in the
+style="--entry-index:1">
 
-                        <strong>
+<div class="international-year">
 
-                            Arab Nations Championship
+U19 · 2014
 
-                        </strong>.
+</div>
 
-                    </p>
+<div class="international-point"></div>
 
-                </article>
+<div class="international-content">
 
-                <!-- 02 -->
+<span class="international-index">
 
-                <article
+02
 
-                    class="international-career-item"
+</span>
 
-                    style="--career-index:1"
+<h3 class="international-title">
 
-                >
+<span class="international-flag">
 
-                    <div class="international-career-year">
+🇰🇪
 
-                        U19 · 2014
+</span>
 
-                    </div>
+African Championship
 
-                    <span class="international-career-index">
+</h3>
 
-                        02
+<p class="international-description">
 
-                    </span>
+Nairobi, Kenya — Algeria finished 2nd and earned the
 
-                    <h3 class="international-career-title">
+<span class="gold">
 
-                        <span class="flag">
+silver medal
 
-                            🇰🇪
+</span>.
 
-                        </span>
+</p>
 
-                        African Championship
+</div>
 
-                    </h3>
+</div>
 
-                    <p class="international-career-description">
+<div
 
-                        Nairobi, Kenya — Algeria finished 2nd and earned the
+class="international-entry"
 
-                        <span class="gold">
+style="--entry-index:2">
 
-                            silver medal
+<div class="international-year">
 
-                        </span>.
+U21 · 2016
 
-                    </p>
+</div>
 
-                </article>
+<div class="international-point"></div>
 
-                <!-- 03 -->
+<div class="international-content">
 
-                <article
+<span class="international-index">
 
-                    class="international-career-item"
+03
 
-                    style="--career-index:2"
+</span>
 
-                >
+<h3 class="international-title">
 
-                    <div class="international-career-year">
+<span class="international-flag">
 
-                        U21 · 2016
+🇲🇱
 
-                    </div>
+</span>
 
-                    <span class="international-career-index">
+African Championship
 
-                        03
+</h3>
 
-                    </span>
+<p class="international-description">
 
-                    <h3 class="international-career-title">
+Bamako, Mali — Algeria finished 3rd and earned the
 
-                        <span class="flag">
+<span class="gold">
 
-                            🇲🇱
+bronze medal
 
-                        </span>
+</span>.
 
-                        African Championship
+</p>
 
-                    </h3>
+</div>
 
-                    <p class="international-career-description">
+</div>
 
-                        Bamako, Mali — Algeria finished 3rd and earned the
+<div
 
-                        <span class="gold">
+class="international-entry"
 
-                            bronze medal
+style="--entry-index:3">
 
-                        </span>.
+<div class="international-year">
 
-                    </p>
+U21 · 2017
 
-                </article>
+</div>
 
-                <!-- 04 -->
+<div class="international-point"></div>
 
-                <article
+<div class="international-content">
 
-                    class="international-career-item"
+<span class="international-index">
 
-                    style="--career-index:3"
+04
 
-                >
+</span>
 
-                    <div class="international-career-year">
+<h3 class="international-title">
 
-                        U21 · 2017
+<span class="international-flag">
 
-                    </div>
+🇩🇿
 
-                    <span class="international-career-index">
+</span>
 
-                        04
+World Championship
 
-                    </span>
+</h3>
 
-                    <h3 class="international-career-title">
+<p class="international-description">
 
-                        <span class="flag">
+Participation in the U21 World Championship with Algeria as a Pivot / Line Player and qualification to the
 
-                            🇩🇿
+<strong>
 
-                        </span>
+Second Round
 
-                        World Championship
+</strong>.
 
-                    </h3>
+</p>
 
-                    <p class="international-career-description">
+</div>
 
-                        Participation in the U21 World Championship with
+</div>
 
-                        Algeria as a Pivot / Line Player and qualification to
+<div
 
-                        the <strong>Second Round</strong>.
+class="international-entry"
 
-                    </p>
+style="--entry-index:4">
 
-                </article>
+<div class="international-year">
 
-                <!-- 05 -->
+Europe
 
-                <article
+</div>
 
-                    class="international-career-item"
+<div class="international-point"></div>
 
-                    style="--career-index:4"
+<div class="international-content">
 
-                >
+<span class="international-index">
 
-                    <div class="international-career-year">
+05
 
-                        Europe
+</span>
 
-                    </div>
+<h3 class="international-title">
 
-                    <span class="international-career-index">
+25+ International Camps
 
-                        05
+</h3>
 
-                    </span>
+<p class="international-description">
 
-                    <h3 class="international-career-title">
+More than 25 international preparation camps in Europe with international opposition, including
 
-                        25+ International Camps
+<span class="international-flag">🇭🇺</span>
 
-                    </h3>
+Hungary,
 
-                    <p class="international-career-description">
+<span class="international-flag">🇸🇮</span>
 
-                        More than 25 international preparation camps in Europe
+Slovenia,
 
-                        with international opposition, including
+<span class="international-flag">🇭🇷</span>
 
-                        <span class="flag">🇭🇺</span>
+Croatia,
 
-                        Hungary,
+<span class="international-flag">🇷🇸</span>
 
-                        <span class="flag">🇸🇮</span>
+Serbia,
 
-                        Slovenia,
+<span class="international-flag">🇦🇹</span>
 
-                        <span class="flag">🇭🇷</span>
+Austria and
 
-                        Croatia,
+<span class="international-flag">🇮🇸</span>
 
-                        <span class="flag">🇷🇸</span>
+Iceland.
 
-                        Serbia,
+</p>
 
-                        <span class="flag">🇦🇹</span>
+</div>
 
-                        Austria and
+</div>
 
-                        <span class="flag">🇮🇸</span>
+</div>
 
-                        Iceland.
+</div>
 
-                    </p>
+<div class="international-rule"></div>
 
-                </article>
-
-                <div class="international-caption">
-
-                    ALGERIA · INTERNATIONAL HANDBALL · DOCUMENTED PATHWAY
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
-<!-- =========================================================
+<!-- =====================================================
 
-     ACHIEVEMENTS
+     MEDALS
 
-     ========================================================= -->
+     ===================================================== -->
 
 <section>
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-label">
+<div class="section-label">
 
-            04 — Achievements
+04 — Achievements
 
-        </div>
+</div>
 
-        <h2>
+<h2>
 
-            International Medals
+International Medals
 
-        </h2>
+</h2>
 
-        <div class="medals">
+<div class="medals">
 
-            <div class="medal">
+<div class="medal">
 
-                <div class="medal-icon">
+<div class="medal-icon">
 
-                    🥈
+🥈
 
-                </div>
+</div>
 
-                <div class="medal-label">
+<div class="medal-label">
 
-                    Silver · 2014
+Silver · 2014
 
-                </div>
+</div>
 
-                <h3>
+<h3>
 
-                    U19 African Championship
+U19 African Championship
 
-                </h3>
+</h3>
 
-                <p>
+<p>
 
-                    🇰🇪 Nairobi, Kenya · Algeria — 2nd Place
+🇰🇪 Nairobi, Kenya · Algeria — 2nd Place
 
-                </p>
+</p>
 
-            </div>
+</div>
 
-            <div class="medal">
+<div class="medal">
 
-                <div class="medal-icon">
+<div class="medal-icon">
 
-                    🥉
+🥉
 
-                </div>
+</div>
 
-                <div class="medal-label">
+<div class="medal-label">
 
-                    Bronze · 2016
+Bronze · 2016
 
-                </div>
+</div>
 
-                <h3>
+<h3>
 
-                    U21 African Championship
+U21 African Championship
 
-                </h3>
+</h3>
 
-                <p>
+<p>
 
-                    🇲🇱 Bamako, Mali · Algeria — 3rd Place
+🇲🇱 Bamako, Mali · Algeria — 3rd Place
 
-                </p>
+</p>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
-<!-- =========================================================
+<!-- =====================================================
 
      CLUB CAREER
 
-     ========================================================= -->
+     ===================================================== -->
 
 <section id="career">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-label">
+<div class="section-label">
 
-            05 — Club Career
+05 — Club Career
 
-        </div>
+</div>
 
-        <h2>
+<h2>
 
-            Club Career
+Club Career
 
-        </h2>
+</h2>
 
-        <div class="clubs">
+<div class="clubs">
 
-            <div class="club">
+<div class="club">
 
-                <div>
+<div>
 
-                    <div class="club-number">
+<div class="club-number">
 
-                        01
+01
 
-                    </div>
+</div>
 
-                    <div
+<div
 
-                        class="club-logo"
+class="club-logo"
 
-                        style="
+style="
 
-                            --club-deep:#030303;
+--club-deep:#030303;
 
-                            --club-mid:#705500;
+--club-mid:#705500;
 
-                            --club-light:#e4b817
+--club-light:#e4b817">
 
-                        "
+<div class="club-identity">
 
-                    >
+<span class="club-code">
 
-                        <div class="club-identity">
+CHABAB RIADHI
 
-                            <span class="club-code">
+</span>
 
-                                CHABAB RIADHI
+<div class="club-title">
 
-                            </span>
+CRBBA
 
-                            <div class="club-title">
+</div>
 
-                                CRBBA
+<div class="club-subtitle">
 
-                            </div>
+BORDJ BOU ARRERIDJ
 
-                            <div class="club-subtitle">
+</div>
 
-                                BORDJ BOU ARRERIDJ
+</div>
 
-                            </div>
+</div>
 
-                        </div>
+</div>
 
-                    </div>
+<div>
 
-                </div>
+<div class="club-name">
 
-                <div>
+CRBBA Bordj Bou Arreridj
 
-                    <div class="club-name">
+</div>
 
-                        CRBBA Bordj Bou Arreridj
+<div class="club-level">
 
-                    </div>
+2013 — 2017
 
-                    <div class="club-level">
+<br>
 
-                        2013 — 2017
+Division Excellence — Top Division of Algerian Handball
 
-                        <br>
+</div>
 
-                        Division Excellence — Top Division of Algerian Handball
+</div>
 
-                    </div>
+</div>
 
-                </div>
+<div class="club">
 
-            </div>
+<div>
 
-            <div class="club">
+<div class="club-number">
 
-                <div>
+02
 
-                    <div class="club-number">
+</div>
 
-                        02
+<div
 
-                    </div>
+class="club-logo"
 
-                    <div
+style="
 
-                        class="club-logo"
+--club-deep:#03080f;
 
-                        style="
+--club-mid:#15588d;
 
-                            --club-deep:#03080f;
+--club-light:#e7f1f8">
 
-                            --club-mid:#15588d;
+<div class="club-identity">
 
-                            --club-light:#e7f1f8
+<span class="club-code">
 
-                        "
+HANDBALL CLUB
 
-                    >
+</span>
 
-                        <div class="club-identity">
+<div class="club-title">
 
-                            <span class="club-code">
+MBT
 
-                                HANDBALL CLUB
+</div>
 
-                            </span>
+<div class="club-subtitle">
 
-                            <div class="club-title">
+TADJENANET
 
-                                MBT
+</div>
 
-                            </div>
+</div>
 
-                            <div class="club-subtitle">
+</div>
 
-                                TADJENANET
+</div>
 
-                            </div>
+<div>
 
-                        </div>
+<div class="club-name">
 
-                    </div>
+MBT Tadjenanet
 
-                </div>
+</div>
 
-                <div>
+<div class="club-level">
 
-                    <div class="club-name">
+2017 — 2021
 
-                        MBT Tadjenanet
+<br>
 
-                    </div>
+Division Excellence — Top Division of Algerian Handball
 
-                    <div class="club-level">
+</div>
 
-                        2017 — 2021
+</div>
 
-                        <br>
+</div>
 
-                        Division Excellence — Top Division of Algerian Handball
+<div class="club">
 
-                    </div>
+<div>
 
-                </div>
+<div class="club-number">
 
-            </div>
+03
 
-            <div class="club">
+</div>
 
-                <div>
+<div
 
-                    <div class="club-number">
+class="club-logo"
 
-                        03
+style="
 
-                    </div>
+--club-deep:#120103;
 
-                    <div
+--club-mid:#a91420;
 
-                        class="club-logo"
+--club-light:#f05a62">
 
-                        style="
+<div class="club-identity">
 
-                            --club-deep:#120103;
+<span class="club-code">
 
-                            --club-mid:#a91420;
+CLUB SPORTIF
 
-                            --club-light:#f05a62
+</span>
 
-                        "
+<div class="club-title">
 
-                    >
+CRBM
 
-                        <div class="club-identity">
+</div>
 
-                            <span class="club-code">
+<div class="club-subtitle">
 
-                                CLUB SPORTIF
+MILA
 
-                            </span>
+</div>
 
-                            <div class="club-title">
+</div>
 
-                                CRBM
+</div>
 
-                            </div>
+</div>
 
-                            <div class="club-subtitle">
+<div>
 
-                                MILA
+<div class="club-name">
 
-                            </div>
+CRBM Mila
 
-                        </div>
+</div>
 
-                    </div>
+<div class="club-level">
 
-                </div>
+2021 — 2022
 
-                <div>
+<br>
 
-                    <div class="club-name">
+Division Excellence — Top Division of Algerian Handball
 
-                        CRBM Mila
+</div>
 
-                    </div>
+</div>
 
-                    <div class="club-level">
+</div>
 
-                        2021 — 2022
+<div class="club">
 
-                        <br>
+<div>
 
-                        Division Excellence — Top Division of Algerian Handball
+<div class="club-number">
 
-                    </div>
+04
 
-                </div>
+</div>
 
-            </div>
+<div
 
-            <div class="club">
+class="club-logo"
 
-                <div>
+style="
 
-                    <div class="club-number">
+--club-deep:#02050d;
 
-                        04
+--club-mid:#0b3f7a;
 
-                    </div>
+--club-light:#176bc2">
 
-                    <div
+<div class="club-identity">
 
-                        class="club-logo"
+<span class="club-code">
 
-                        style="
+CLUB HANDBALL
 
-                            --club-deep:#02050d;
+</span>
 
-                            --club-mid:#0b3f7a;
+<div class="club-title">
 
-                            --club-light:#176bc2
+CHBZY
 
-                        "
+</div>
 
-                    >
+<div class="club-subtitle">
 
-                        <div class="club-identity">
+ZIGHOUD YOUCEF
 
-                            <span class="club-code">
+</div>
 
-                                CLUB HANDBALL
+</div>
 
-                            </span>
+</div>
 
-                            <div class="club-title">
+</div>
 
-                                CHBZY
+<div>
 
-                            </div>
+<div class="club-name">
 
-                            <div class="club-subtitle">
+CHBZY — Zighoud Youcef
 
-                                ZIGHOUD YOUCEF
+</div>
 
-                            </div>
+<div class="club-level">
 
-                        </div>
+2022 — 2023
 
-                    </div>
+<br>
 
-                </div>
+Division Excellence — Top Division of Algerian Handball
 
-                <div>
+</div>
 
-                    <div class="club-name">
+</div>
 
-                        CHBZY — Zighoud Youcef
+</div>
 
-                    </div>
+<div class="club">
 
-                    <div class="club-level">
+<div>
 
-                        2022 — 2023
+<div class="club-number">
 
-                        <br>
+05
 
-                        Division Excellence — Top Division of Algerian Handball
+</div>
 
-                    </div>
+<div
 
-                </div>
+class="club-logo"
 
-            </div>
+style="
 
-            <div class="club">
+--club-deep:#050b13;
 
-                <div>
+--club-mid:#145c91;
 
-                    <div class="club-number">
+--club-light:#f0c51b">
 
-                        05
+<div class="club-identity">
 
-                    </div>
+<span class="club-code">
 
-                    <div
+MOULOUDIA
 
-                        class="club-logo"
+</span>
 
-                        style="
+<div class="club-title">
 
-                            --club-deep:#050b13;
+MBBA
 
-                            --club-mid:#145c91;
+</div>
 
-                            --club-light:#f0c51b
+<div class="club-subtitle">
 
-                        "
+BORDJ BOU ARRERIDJ
 
-                    >
+</div>
 
-                        <div class="club-identity">
+</div>
 
-                            <span class="club-code">
+</div>
 
-                                MOULOUDIA
+</div>
 
-                            </span>
+<div>
 
-                            <div class="club-title">
+<div class="club-name">
 
-                                MBBA
+MBBA — Mouloudia Bordj Bou Arreridj
 
-                            </div>
+</div>
 
-                            <div class="club-subtitle">
+<div class="club-level">
 
-                                BORDJ BOU ARRERIDJ
+2023 — 2024
 
-                            </div>
+<br>
 
-                        </div>
+Division Excellence — Top Division of Algerian Handball
 
-                    </div>
+</div>
 
-                </div>
+</div>
 
-                <div>
+</div>
 
-                    <div class="club-name">
+<div class="club">
 
-                        MBBA — Mouloudia Bordj Bou Arreridj
+<div>
 
-                    </div>
+<div class="club-number">
 
-                    <div class="club-level">
+06
 
-                        2023 — 2024
+</div>
 
-                        <br>
+<div
 
-                        Division Excellence — Top Division of Algerian Handball
+class="club-logo"
 
-                    </div>
+style="
 
-                </div>
+--club-deep:#03070c;
 
-            </div>
+--club-mid:#155f91;
 
-            <div class="club">
+--club-light:#e7f1f7">
 
-                <div>
+<div class="club-identity">
 
-                    <div class="club-number">
+<span class="club-code">
 
-                        06
+OLYMPIQUE MADINET
 
-                    </div>
+</span>
 
-                    <div
+<div class="club-title">
 
-                        class="club-logo"
+OMA
 
-                        style="
+</div>
 
-                            --club-deep:#03070c;
+<div class="club-subtitle">
 
-                            --club-mid:#155f91;
+ANNABA
 
-                            --club-light:#e7f1f7
+</div>
 
-                        "
+</div>
 
-                    >
+</div>
 
-                        <div class="club-identity">
+</div>
 
-                            <span class="club-code">
+<div>
 
-                                OLYMPIQUE MADINET
+<div class="club-name">
 
-                            </span>
+OMA Annaba
 
-                            <div class="club-title">
+</div>
 
-                                OMA
+<div class="club-level">
 
-                            </div>
+2024 — Present
 
-                            <div class="club-subtitle">
+<br>
 
-                                ANNABA
+Division Excellence — Top Division of Algerian Handball
 
-                            </div>
+</div>
 
-                        </div>
+</div>
 
-                    </div>
+</div>
 
-                </div>
+</div>
 
-                <div>
-
-                    <div class="club-name">
-
-                        OMA Annaba
-
-                    </div>
-
-                    <div class="club-level">
-
-                        2024 — Present
-
-                        <br>
-
-                        Division Excellence — Top Division of Algerian Handball
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
-<!-- =========================================================
+<!-- =====================================================
 
      MEDIA
 
-     ========================================================= -->
+     ===================================================== -->
 
 <section id="media">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-label">
+<div class="section-label">
 
-            06 — Media
+06 — Media
 
-        </div>
+</div>
 
-        <h2>
+<h2>
 
-            Selected Media
+Selected Media
 
-        </h2>
+</h2>
 
-        <div class="media">
+<div class="media">
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9042.jpeg" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9042.jpeg" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9047.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9289.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9300.jpeg" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9047.jpeg" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9308.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9539.png" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9540.png" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9289.jpeg" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9541.png" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9726.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9685.png" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9300.jpeg" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9686.png" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9690.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9693.jpeg" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9308.jpeg" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9695.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9696.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9702.jpeg" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9539.png" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9703.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9704.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9707.png" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9540.png" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9710.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9712.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9713.jpeg" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9541.png" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9714.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9718.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9721.jpeg" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9726.jpeg" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9723.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9799.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9798.jpeg" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9685.png" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9797.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9796.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9830.jpeg" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9686.png" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9828.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9827.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9825.jpeg" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9690.jpeg" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9824.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9823.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9822.jpeg" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9693.jpeg" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9821.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9814.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9706.jpeg" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9695.jpeg" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9694.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9705.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9697.jpeg" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9696.jpeg" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9687.png" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9688.png" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+<div class="media-card"><img src="IMG_9751.jpeg" alt="SEGUENI Abderraouf"></div>
 
-                <img src="IMG_9702.jpeg" alt="SEGUENI Abderraouf">
+<div class="media-card"><img src="IMG_9793.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            </div>
+<div class="media-card"><img src="IMG_9819.jpeg" alt="SEGUENI Abderraouf"></div>
 
-            <div class="media-card">
+</div>
 
-                <img src="IMG_9703.jpeg" alt="SEGUENI Abderraouf">
+<div class="video-section-title">
 
-            </div>
+Videos
 
-            <div class="media-card">
+</div>
 
-                <img src="IMG_9704.jpeg" alt="SEGUENI Abderraouf">
+<div class="videos">
 
-            </div>
+<a
 
-            <div class="media-card">
+class="video-card"
 
-                <img src="IMG_9707.png" alt="SEGUENI Abderraouf">
+href="https://www.facebook.com/share/v/1QU5F6M8tT/?mibextid=wwXIfr"
 
-            </div>
+target="_blank"
 
-            <div class="media-card">
+rel="noopener noreferrer">
 
-                <img src="IMG_9710.jpeg" alt="SEGUENI Abderraouf">
+<div class="video-preview">
 
-            </div>
+<img
 
-            <div class="media-card">
+src="IMG_9042.jpeg"
 
-                <img src="IMG_9712.jpeg" alt="SEGUENI Abderraouf">
+alt="SEGUENI Abderraouf — Video 01">
 
-            </div>
+<span class="play-button">
 
-            <div class="media-card">
+▶
 
-                <img src="IMG_9713.jpeg" alt="SEGUENI Abderraouf">
+</span>
 
-            </div>
+</div>
 
-            <div class="media-card">
+<div class="video-info">
 
-                <img src="IMG_9714.jpeg" alt="SEGUENI Abderraouf">
+<span class="video-number">
 
-            </div>
+VIDEO 01
 
-            <div class="media-card">
+</span>
 
-                <img src="IMG_9718.jpeg" alt="SEGUENI Abderraouf">
+<h3>
 
-            </div>
+SEGUENI Abderraouf
 
-            <div class="media-card">
+</h3>
 
-                <img src="IMG_9721.jpeg" alt="SEGUENI Abderraouf">
+<p>
 
-            </div>
+Watch on Facebook
 
-            <div class="media-card">
+</p>
 
-                <img src="IMG_9723.jpeg" alt="SEGUENI Abderraouf">
+</div>
 
-            </div>
+</a>
 
-            <div class="media-card">
+<a
 
-                <img src="IMG_9799.jpeg" alt="SEGUENI Abderraouf">
+class="video-card"
 
-            </div>
+href="https://www.facebook.com/share/v/1EjZMj5EjA/?mibextid=wwXIfr"
 
-            <div class="media-card">
+target="_blank"
 
-                <img src="IMG_9798.jpeg" alt="SEGUENI Abderraouf">
+rel="noopener noreferrer">
 
-            </div>
+<div class="video-preview">
 
-            <div class="media-card">
+<img
 
-                <img src="IMG_9797.jpeg" alt="SEGUENI Abderraouf">
+src="IMG_9047.jpeg"
 
-            </div>
+alt="SEGUENI Abderraouf — Video 02">
 
-            <div class="media-card">
+<span class="play-button">
 
-                <img src="IMG_9796.jpeg" alt="SEGUENI Abderraouf">
+▶
 
-            </div>
+</span>
 
-            <div class="media-card">
+</div>
 
-                <img src="IMG_9830.jpeg" alt="SEGUENI Abderraouf">
+<div class="video-info">
 
-            </div>
+<span class="video-number">
 
-            <div class="media-card">
+VIDEO 02
 
-                <img src="IMG_9828.jpeg" alt="SEGUENI Abderraouf">
+</span>
 
-            </div>
+<h3>
 
-            <div class="media-card">
+SEGUENI Abderraouf
 
-                <img src="IMG_9827.jpeg" alt="SEGUENI Abderraouf">
+</h3>
 
-            </div>
+<p>
 
-            <div class="media-card">
+Watch on Facebook
 
-                <img src="IMG_9825.jpeg" alt="SEGUENI Abderraouf">
+</p>
 
-            </div>
+</div>
 
-            <div class="media-card">
+</a>
 
-                <img src="IMG_9824.jpeg" alt="SEGUENI Abderraouf">
+<a
 
-            </div>
+class="video-card"
 
-            <div class="media-card">
+href="https://www.facebook.com/share/v/1JvLLiQvyj/?mibextid=wwXIfr"
 
-                <img src="IMG_9823.jpeg" alt="SEGUENI Abderraouf">
+target="_blank"
 
-            </div>
+rel="noopener noreferrer">
 
-            <div class="media-card">
+<div class="video-preview">
 
-                <img src="IMG_9822.jpeg" alt="SEGUENI Abderraouf">
+<img
 
-            </div>
+src="IMG_9289.jpeg"
 
-            <div class="media-card">
+alt="SEGUENI Abderraouf — Video 03">
 
-                <img src="IMG_9821.jpeg" alt="SEGUENI Abderraouf">
+<span class="play-button">
 
-            </div>
+▶
 
-            <div class="media-card">
+</span>
 
-                <img src="IMG_9814.jpeg" alt="SEGUENI Abderraouf">
+</div>
 
-            </div>
+<div class="video-info">
 
-            <div class="media-card">
+<span class="video-number">
 
-                <img src="IMG_9706.jpeg" alt="SEGUENI Abderraouf">
+VIDEO 03
 
-            </div>
+</span>
 
-            <div class="media-card">
+<h3>
 
-                <img src="IMG_9694.jpeg" alt="SEGUENI Abderraouf">
+SEGUENI Abderraouf
 
-            </div>
+</h3>
 
-            <div class="media-card">
+<p>
 
-                <img src="IMG_9705.jpeg" alt="SEGUENI Abderraouf">
+Watch on Facebook
 
-            </div>
+</p>
 
-            <div class="media-card">
+</div>
 
-                <img src="IMG_9697.jpeg" alt="SEGUENI Abderraouf">
+</a>
 
-            </div>
+</div>
 
-            <div class="media-card">
-
-                <img src="IMG_9687.png" alt="SEGUENI Abderraouf">
-
-            </div>
-
-            <div class="media-card">
-
-                <img src="IMG_9688.png" alt="SEGUENI Abderraouf">
-
-            </div>
-
-            <div class="media-card">
-
-                <img src="IMG_9751.jpeg" alt="SEGUENI Abderraouf">
-
-            </div>
-
-            <div class="media-card">
-
-                <img src="IMG_9793.jpeg" alt="SEGUENI Abderraouf">
-
-            </div>
-
-            <div class="media-card">
-
-                <img src="IMG_9819.jpeg" alt="SEGUENI Abderraouf">
-
-            </div>
-
-        </div>
-
-        <div class="video-section-title">
-
-            Videos
-
-        </div>
-
-        <div class="videos">
-
-            <a
-
-                class="video-card"
-
-                href="https://www.facebook.com/share/v/1QU5F6M8tT/?mibextid=wwXIfr"
-
-                target="_blank"
-
-                rel="noopener noreferrer"
-
-            >
-
-                <div class="video-preview">
-
-                    <img
-
-                        src="IMG_9042.jpeg"
-
-                        alt="SEGUENI Abderraouf — Video 01"
-
-                    >
-
-                    <span class="play-button">
-
-                        ▶
-
-                    </span>
-
-                </div>
-
-                <div class="video-info">
-
-                    <span class="video-number">
-
-                        VIDEO 01
-
-                    </span>
-
-                    <h3>
-
-                        SEGUENI Abderraouf
-
-                    </h3>
-
-                    <p>
-
-                        Watch on Facebook
-
-                    </p>
-
-                </div>
-
-            </a>
-
-            <a
-
-                class="video-card"
-
-                href="https://www.facebook.com/share/v/1EjZMj5EjA/?mibextid=wwXIfr"
-
-                target="_blank"
-
-                rel="noopener noreferrer"
-
-            >
-
-                <div class="video-preview">
-
-                    <img
-
-                        src="IMG_9047.jpeg"
-
-                        alt="SEGUENI Abderraouf — Video 02"
-
-                    >
-
-                    <span class="play-button">
-
-                        ▶
-
-                    </span>
-
-                </div>
-
-                <div class="video-info">
-
-                    <span class="video-number">
-
-                        VIDEO 02
-
-                    </span>
-
-                    <h3>
-
-                        SEGUENI Abderraouf
-
-                    </h3>
-
-                    <p>
-
-                        Watch on Facebook
-
-                    </p>
-
-                </div>
-
-            </a>
-
-            <a
-
-                class="video-card"
-
-                href="https://www.facebook.com/share/v/1JvLLiQvyj/?mibextid=wwXIfr"
-
-                target="_blank"
-
-                rel="noopener noreferrer"
-
-            >
-
-                <div class="video-preview">
-
-                    <img
-
-                        src="IMG_9289.jpeg"
-
-                        alt="SEGUENI Abderraouf — Video 03"
-
-                    >
-
-                    <span class="play-button">
-
-                        ▶
-
-                    </span>
-
-                </div>
-
-                <div class="video-info">
-
-                    <span class="video-number">
-
-                        VIDEO 03
-
-                    </span>
-
-                    <h3>
-
-                        SEGUENI Abderraouf
-
-                    </h3>
-
-                    <p>
-
-                        Watch on Facebook
-
-                    </p>
-
-                </div>
-
-            </a>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
-<!-- =========================================================
+<!-- =====================================================
 
      SIGNATURE
 
-     ========================================================= -->
+     ===================================================== -->
 
 <section class="signature-section">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-label">
+<div class="section-label">
 
-            07 — Signature
+07 — Signature
 
-        </div>
+</div>
 
-        <h2>
+<h2>
 
-            SEGUENI Abderraouf
+SEGUENI Abderraouf
 
-        </h2>
+</h2>
 
-        <div class="signature-wrap">
+<div class="signature-wrap">
 
-            <div class="signature-name">
+<div class="signature-name">
 
-                A. Segueni
+A. Segueni
 
-            </div>
+</div>
 
-            <div class="signature-line"></div>
+<div class="signature-line"></div>
 
-            <img
+<img
 
-                class="end-ihf"
+class="end-ihf"
 
-                src="https://www.ihf.info/sites/default/files/inline-images/IHF%20Logo_1440x300.jpg"
+src="https://www.ihf.info/sites/default/files/inline-images/IHF%20Logo_1440x300.jpg"
 
-                alt="International Handball Federation"
+alt="International Handball Federation">
 
-            >
+<div class="fahb-signature">
 
-            <div class="fahb-signature">
+Fédération Algérienne De Handball
 
-                Fédération Algérienne De Handball
+</div>
 
-            </div>
+<div class="as18">
 
-            <div class="as18">
+AS 18
 
-                AS 18
+</div>
 
-            </div>
+<div class="signature-caption">
 
-            <div class="signature-caption">
+International Handball Player · Pivot · #18
 
-                International Handball Player · Pivot · #18
+</div>
 
-            </div>
+<div class="contact">
 
-            <div class="contact">
+<a
 
-                <a
+class="contact-link"
 
-                    class="contact-link"
+href="mailto:segueniabderraouf001@gmail.com">
 
-                    href="mailto:segueniabderraouf001@gmail.com"
+<span class="contact-icon">
 
-                >
+✉
 
-                    <span class="contact-icon">
+</span>
 
-                        ✉
+<span>
 
-                    </span>
+<span class="contact-label">
 
-                    <span>
+Email
 
-                        <span class="contact-label">
+</span>
 
-                            Email
+&nbsp;
 
-                        </span>
+segueniabderraouf001@gmail.com
 
-                        &nbsp;
+</span>
 
-                        segueniabderraouf001@gmail.com
+</a>
 
-                    </span>
+<a
 
-                </a>
+class="contact-link"
 
-                <a
+href="https://www.instagram.com/aymenseg18/"
 
-                    class="contact-link"
+target="_blank"
 
-                    href="https://www.instagram.com/aymenseg18/"
+rel="noopener noreferrer">
 
-                    target="_blank"
+<span class="contact-icon">
 
-                    rel="noopener noreferrer"
+◎
 
-                >
+</span>
 
-                    <span class="contact-icon">
+<span>
 
-                        ◎
+<span class="contact-label">
 
-                    </span>
+Instagram
 
-                    <span>
+</span>
 
-                        <span class="contact-label">
+&nbsp;
 
-                            Instagram
+@aymenseg18
 
-                        </span>
+</span>
 
-                        &nbsp;
+</a>
 
-                        @aymenseg18
+<a
 
-                    </span>
+class="contact-link"
 
-                </a>
+href="https://www.facebook.com/share/1MWFu4s94c/?mibextid=wwXIfr"
 
-                <a
+target="_blank"
 
-                    class="contact-link"
+rel="noopener noreferrer">
 
-                    href="https://www.facebook.com/share/1MWFu4s94c/?mibextid=wwXIfr"
+<span class="contact-icon">
 
-                    target="_blank"
+f
 
-                    rel="noopener noreferrer"
+</span>
 
-                >
+<span>
 
-                    <span class="contact-icon">
+<span class="contact-label">
 
-                        f
+Facebook
 
-                    </span>
+</span>
 
-                    <span>
+&nbsp;
 
-                        <span class="contact-label">
+SEGUENI Abderraouf
 
-                            Facebook
+</span>
 
-                        </span>
+</a>
 
-                        &nbsp;
+<a
 
-                        SEGUENI Abderraouf
+class="contact-link"
 
-                    </span>
+href="https://wa.me/213559067688"
 
-                </a>
+target="_blank"
 
-                <a
+rel="noopener noreferrer">
 
-                    class="contact-link"
+<span class="contact-icon">
 
-                    href="https://wa.me/213559067688"
+◉
 
-                    target="_blank"
+</span>
 
-                    rel="noopener noreferrer"
+<span>
 
-                >
+<span class="contact-label">
 
-                    <span class="contact-icon">
+WhatsApp
 
-                        ◉
+</span>
 
-                    </span>
+&nbsp;
 
-                    <span>
+0559 06 76 88
 
-                        <span class="contact-label">
+</span>
 
-                            WhatsApp
+</a>
 
-                        </span>
+</div>
 
-                        &nbsp;
+<div class="algeria">
 
-                        0559 06 76 88
+<span class="algeria-flag">
 
-                    </span>
+🇩🇿
 
-                </a>
+</span>
 
-            </div>
+</div>
 
-            <div class="algeria">
+</div>
 
-                <span class="algeria-flag">
-
-                    🇩🇿
-
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 </main>
 
-<!-- =========================================================
-
-     FOOTER
-
-     ========================================================= -->
-
 <footer>
 
-    <div class="container footer">
+<div class="container footer">
 
-        <span>
+<span>
 
-            SEGUENI Abderraouf
+SEGUENI Abderraouf
 
-        </span>
+</span>
 
-        <span>
+<span>
 
-            International Handball Player · Pivot · #18
+International Handball Player · Pivot · #18
 
-        </span>
+</span>
 
-    </div>
+</div>
 
 </footer>
 
-<!-- =========================================================
-
-     JAVASCRIPT
-
-     ========================================================= -->
-
 <script>
 
-/* =========================================================
+window.addEventListener("load",function(){
 
-   CINEMATIC INTRO
+setTimeout(function(){
 
-   ========================================================= */
+document.body.classList.remove("intro-active");
 
-window.addEventListener(
+var intro=document.querySelector(".cinematic-intro");
 
-    "load",
+if(intro){
 
-    function(){
+intro.style.pointerEvents="none";
 
-        setTimeout(
+setTimeout(function(){
 
-            function(){
+intro.style.display="none";
 
-                document.body.classList.remove(
+},700);
 
-                    "intro-active"
+}
 
-                );
+},7000);
 
-                var intro =
+});
 
-                    document.querySelector(
+document.addEventListener("DOMContentLoaded",function(){
 
-                        ".cinematic-intro"
+const section=document.querySelector("#international"),
 
-                    );
+timeline=document.querySelector(".international-timeline"),
 
-                if(intro){
+entries=document.querySelectorAll(".international-entry"),
 
-                    intro.style.pointerEvents =
+visual=document.querySelector("#careerVisual");
 
-                        "none";
+if(!section||!timeline)return;
 
-                    setTimeout(
+/* REVEAL TIMELINE */
 
-                        function(){
+const reveal=new IntersectionObserver(
 
-                            intro.style.display =
+list=>list.forEach(item=>{
 
-                                "none";
+if(item.isIntersecting){
 
-                        },
+item.target.classList.add("is-visible");
 
-                        700
+}
 
-                    );
+}),
 
-                }
+{
 
-            },
+threshold:.14,
 
-            7000
+rootMargin:"0px 0px -8% 0px"
 
-        );
-
-    }
+}
 
 );
 
-/* =========================================================
+entries.forEach(e=>reveal.observe(e));
 
-   INTERNATIONAL EDITORIAL ENGINE
+/* TIMELINE LINE */
 
-   ========================================================= */
+const lineObs=new IntersectionObserver(
 
-document.addEventListener(
+list=>list.forEach(item=>{
 
-    "DOMContentLoaded",
+if(item.isIntersecting){
 
-    function(){
+timeline.classList.add("is-active");
 
-        const international =
+}
 
-            document.querySelector(
+}),
 
-                "#international"
+{
 
-            );
+threshold:.08
 
-        const items =
-
-            document.querySelectorAll(
-
-                ".international-career-item"
-
-            );
-
-        const imageStage =
-
-            document.querySelector(
-
-                "#internationalImageStage"
-
-            );
-
-        const giantWord =
-
-            document.querySelector(
-
-                ".international-giant-word"
-
-            );
-
-        const sideNumber =
-
-            document.querySelector(
-
-                "#internationalSideNumber"
-
-            );
-
-        if(!international){
-
-            return;
-
-        }
-
-        /* ---------------------------------------------------
-
-           MAIN SECTION REVEAL
-
-           --------------------------------------------------- */
-
-        const sectionObserver =
-
-            new IntersectionObserver(
-
-                function(entries){
-
-                    entries.forEach(
-
-                        function(entry){
-
-                            if(entry.isIntersecting){
-
-                                international.classList.add(
-
-                                    "international-active"
-
-                                );
-
-                            }
-
-                        }
-
-                    );
-
-                },
-
-                {
-
-                    threshold:.16,
-
-                    rootMargin:"0px 0px -10% 0px"
-
-                }
-
-            );
-
-        sectionObserver.observe(
-
-            international
-
-        );
-
-        /* ---------------------------------------------------
-
-           CAREER ITEMS REVEAL
-
-           --------------------------------------------------- */
-
-        const itemObserver =
-
-            new IntersectionObserver(
-
-                function(entries){
-
-                    entries.forEach(
-
-                        function(entry){
-
-                            if(entry.isIntersecting){
-
-                                entry.target.classList.add(
-
-                                    "is-visible"
-
-                                );
-
-                            }
-
-                        }
-
-                    );
-
-                },
-
-                {
-
-                    threshold:.17,
-
-                    rootMargin:"0px 0px -8% 0px"
-
-                }
-
-            );
-
-        items.forEach(
-
-            function(item){
-
-                itemObserver.observe(
-
-                    item
-
-                );
-
-            }
-
-        );
-
-        /* ---------------------------------------------------
-
-           SCROLL PARALLAX
-
-           --------------------------------------------------- */
-
-        let ticking =
-
-            false;
-
-        function updateParallax(){
-
-            if(ticking){
-
-                return;
-
-            }
-
-            ticking =
-
-                true;
-
-            requestAnimationFrame(
-
-                function(){
-
-                    const rect =
-
-                        international.getBoundingClientRect();
-
-                    const viewportHeight =
-
-                        window.innerHeight;
-
-                    const progress =
-
-                        (
-
-                            viewportHeight / 2 -
-
-                            (
-
-                                rect.top +
-
-                                rect.height / 2
-
-                            )
-
-                        );
-
-                    let visualY =
-
-                        progress * .045;
-
-                    let visualX =
-
-                        progress * .008;
-
-                    let giantY =
-
-                        progress * .018;
-
-                    let numberY =
-
-                        progress * .025;
-
-                    visualY =
-
-                        Math.max(
-
-                            -30,
-
-                            Math.min(
-
-                                30,
-
-                                visualY
-
-                            )
-
-                        );
-
-                    visualX =
-
-                        Math.max(
-
-                            -8,
-
-                            Math.min(
-
-                                8,
-
-                                visualX
-
-                            )
-
-                        );
-
-                    giantY =
-
-                        Math.max(
-
-                            -35,
-
-                            Math.min(
-
-                                35,
-
-                                giantY
-
-                            )
-
-                        );
-
-                    numberY =
-
-                        Math.max(
-
-                            -45,
-
-                            Math.min(
-
-                                45,
-
-                                numberY
-
-                            )
-
-                        );
-
-                    if(imageStage){
-
-                        imageStage.style.setProperty(
-
-                            "--visual-y",
-
-                            visualY + "px"
-
-                        );
-
-                        imageStage.style.setProperty(
-
-                            "--visual-x",
-
-                            visualX + "px"
-
-                        );
-
-                    }
-
-                    if(giantWord){
-
-                        giantWord.style.setProperty(
-
-                            "--giant-y",
-
-                            giantY + "px"
-
-                        );
-
-                    }
-
-                    if(sideNumber){
-
-                        sideNumber.style.setProperty(
-
-                            "--number-y",
-
-                            numberY + "px"
-
-                        );
-
-                    }
-
-                    ticking =
-
-                        false;
-
-                }
-
-            );
-
-        }
-
-        window.addEventListener(
-
-            "scroll",
-
-            updateParallax,
-
-            {
-
-                passive:true
-
-            }
-
-        );
-
-        window.addEventListener(
-
-            "resize",
-
-            updateParallax
-
-        );
-
-        updateParallax();
-
-        /* ---------------------------------------------------
-
-           MOUSE 3D
-
-           --------------------------------------------------- */
-
-        if(
-
-            window.matchMedia(
-
-                "(pointer:fine)"
-
-            ).matches
-
-        ){
-
-            international.addEventListener(
-
-                "mousemove",
-
-                function(event){
-
-                    const rect =
-
-                        international.getBoundingClientRect();
-
-                    const x =
-
-                        (
-
-                            event.clientX -
-
-                            rect.left
-
-                        ) /
-
-                        rect.width -
-
-                        .5;
-
-                    const y =
-
-                        (
-
-                            event.clientY -
-
-                            rect.top
-
-                        ) /
-
-                        rect.height -
-
-                        .5;
-
-                    if(imageStage){
-
-                        imageStage.style.setProperty(
-
-                            "--mouse-x",
-
-                            x
-
-                        );
-
-                        imageStage.style.setProperty(
-
-                            "--mouse-y",
-
-                            y
-
-                        );
-
-                        imageStage.style.transform =
-
-                            `
-
-                            translate3d(
-
-                                var(--visual-x,0px),
-
-                                var(--visual-y,0px),
-
-                                0
-
-                            )
-
-                            rotateY(${x * -4 - 5}deg)
-
-                            rotateX(${y * 2}deg)
-
-                            rotateZ(${x * 1.2}deg)
-
-                            `;
-
-                    }
-
-                }
-
-            );
-
-            international.addEventListener(
-
-                "mouseleave",
-
-                function(){
-
-                    if(imageStage){
-
-                        imageStage.style.transform =
-
-                            "";
-
-                    }
-
-                }
-
-            );
-
-        }
-
-        /* ---------------------------------------------------
-
-           INITIAL PARALLAX
-
-           --------------------------------------------------- */
-
-        updateParallax();
-
-    }
+}
 
 );
+
+lineObs.observe(timeline);
+
+/* IMAGE REVEAL */
+
+const visualObs=new IntersectionObserver(
+
+list=>list.forEach(item=>{
+
+if(item.isIntersecting){
+
+visual.classList.add("is-visible");
+
+}
+
+}),
+
+{
+
+threshold:.18
+
+}
+
+);
+
+if(visual){
+
+visualObs.observe(visual);
+
+}
+
+/* PARALLAX */
+
+let ticking=false;
+
+function parallax(){
+
+if(ticking)return;
+
+ticking=true;
+
+requestAnimationFrame(()=>{
+
+const r=section.getBoundingClientRect(),
+
+vh=innerHeight,
+
+center=vh/2,
+
+sectionCenter=r.top+r.height/2;
+
+let d=(sectionCenter-center)*-.035;
+
+d=Math.max(-18,Math.min(18,d));
+
+timeline.style.setProperty(
+
+"--parallax-y",
+
+d+"px"
+
+);
+
+if(visual){
+
+let v=
+
+(center-
+
+(
+
+visual.getBoundingClientRect().top+
+
+visual.offsetHeight/2
+
+)
+
+)*.045;
+
+v=Math.max(-22,Math.min(22,v));
+
+visual.style.setProperty(
+
+"--visual-y",
+
+v+"px"
+
+);
+
+}
+
+ticking=false;
+
+});
+
+}
+
+addEventListener(
+
+"scroll",
+
+parallax,
+
+{passive:true}
+
+);
+
+addEventListener(
+
+"resize",
+
+parallax
+
+);
+
+parallax();
+
+/* DESKTOP 3D MOUSE MOTION */
+
+if(matchMedia("(pointer:fine)").matches){
+
+entries.forEach(entry=>{
+
+entry.addEventListener(
+
+"mousemove",
+
+e=>{
+
+if(!entry.classList.contains("is-visible"))return;
+
+const r=entry.getBoundingClientRect(),
+
+x=(e.clientX-r.left)/r.width-.5,
+
+y=(e.clientY-r.top)/r.height-.5;
+
+entry.style.transform=
+
+`translate3d(0,0,0)
+
+rotateX(${y*-1.1}deg)
+
+rotateY(${x*1.6}deg)`;
+
+});
+
+entry.addEventListener(
+
+"mouseleave",
+
+()=>{
+
+entry.style.transform="";
+
+});
+
+});
+
+}
+
+});
 
 </script>
 
