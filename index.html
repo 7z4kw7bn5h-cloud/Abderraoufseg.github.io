@@ -1662,7 +1662,16 @@ h2{
 
 /* PROFILE */
 
-/* IHF */
+
+/* SCOUTING */
+
+.ai-scouting-box{
+/* =========================================================
+
+   PLAYER PROFILE — EDITORIAL MOTION
+
+   ========================================================= */
+
 .profile-layout{
 
     display:grid;
@@ -1671,31 +1680,91 @@ h2{
 
     gap:20px;
 
-}
-
-.profile-box,.ihf-box{
-
-    background:#101318;
-
-    border:1px solid #292d34;
-
-    padding:32px;
+    align-items:stretch;
 
 }
 
-/* PLAYER PROFILE — GHOSTED IMAGE */
+/* ---------------------------------------------------------
+
+   MAIN PROFILE
+
+   --------------------------------------------------------- */
 
 .profile-box{
 
     position:relative;
 
+    min-height:620px;
+
+    padding:42px;
+
     overflow:hidden;
+
+    background:
+
+        radial-gradient(
+
+            circle at 85% 20%,
+
+            rgba(214,179,106,.08),
+
+            transparent 30%
+
+        ),
+
+        #101318;
+
+    border:1px solid #292d34;
 
     isolation:isolate;
 
+    transition:
+
+        border-color .6s ease,
+
+        transform .6s cubic-bezier(.22,1,.36,1);
+
 }
 
-/* صورة اللاعب */
+/* Subtle editorial line */
+
+.profile-box::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:1px;
+
+    height:0;
+
+    background:#d6b36a;
+
+    opacity:.8;
+
+    transition:
+
+        height 1.2s cubic-bezier(.22,1,.36,1);
+
+    z-index:5;
+
+}
+
+.profile-box.is-visible::after{
+
+    height:100%;
+
+}
+
+/* ---------------------------------------------------------
+
+   FLOATING PLAYER IMAGE
+
+   --------------------------------------------------------- */
 
 .profile-box::before{
 
@@ -1703,13 +1772,13 @@ h2{
 
     position:absolute;
 
-    top:0;
+    right:-4%;
 
-    right:0;
+    top:7%;
 
-    width:65%;
+    width:46%;
 
-    height:100%;
+    height:72%;
 
     background-image:url("./IMG_9824.jpeg");
 
@@ -1719,113 +1788,219 @@ h2{
 
     background-repeat:no-repeat;
 
-    opacity:.30;
+    /*
 
-    filter:grayscale(100%) contrast(1.15) brightness(.65);
+       This is intentionally NOT a ghost/background image.
 
-    z-index:0;
+       It behaves visually like a separate editorial image card.
 
-    pointer-events:none;
+    */
 
-    -webkit-mask-image:linear-gradient(
+    border:1px solid rgba(255,255,255,.12);
 
-        90deg,
+    clip-path:polygon(
 
-        transparent 0%,
+        9% 0,
 
-        rgba(0,0,0,.25) 20%,
+        100% 0,
 
-        #000 55%,
+        100% 91%,
 
-        transparent 100%
+        91% 100%,
 
-    );
+        0 100%,
 
-    mask-image:linear-gradient(
-
-        90deg,
-
-        transparent 0%,
-
-        rgba(0,0,0,.25) 20%,
-
-        #000 55%,
-
-        transparent 100%
+        0 9%
 
     );
 
-}
+    opacity:0;
 
-/* طبقة دمج الصورة مع الخلفية */
+    transform:
 
-.profile-box::after{
+        translate3d(80px,45px,0)
 
-    content:"";
+        scale(1.08);
 
-    position:absolute;
+    filter:
 
-    inset:0;
+        saturate(.88)
 
-    background:linear-gradient(
+        contrast(1.05);
 
-        90deg,
+    box-shadow:
 
-        #101318 0%,
-
-        rgba(16,19,24,.95) 25%,
-
-        rgba(16,19,24,.55) 55%,
-
-        rgba(16,19,24,.15) 100%
-
-    );
+        0 35px 80px rgba(0,0,0,.42);
 
     z-index:1;
 
-    pointer-events:none;
+    transition:
+
+        opacity 1s cubic-bezier(.22,1,.36,1),
+
+        transform 1.25s cubic-bezier(.22,1,.36,1),
+
+        filter 1s ease;
 
 }
 
-/* المحتوى فوق الصورة */
+/* Image appears when section enters viewport */
+
+.profile-box.is-visible::before{
+
+    opacity:1;
+
+    transform:
+
+        translate3d(0,0,0)
+
+        scale(1);
+
+}
+
+/* ---------------------------------------------------------
+
+   CONTENT LAYER
+
+   --------------------------------------------------------- */
 
 .profile-box > *{
 
     position:relative;
 
-    z-index:2;
+    z-index:3;
 
 }
 
+/*
+
+   Give the left content its own editorial space
+
+   so the image can overlap visually.
+
+*/
+
 .profile-box h3{
 
-    font-size:28px;
+    position:relative;
 
-    margin-bottom:10px;
+    max-width:52%;
+
+    font-size:clamp(30px,4vw,52px);
+
+    line-height:.98;
+
+    letter-spacing:-2px;
+
+    margin-bottom:16px;
+
+    transform:
+
+        translateY(35px);
+
+    opacity:0;
+
+    transition:
+
+        opacity .9s ease .15s,
+
+        transform 1s cubic-bezier(.22,1,.36,1) .15s;
+
+}
+
+.profile-box.is-visible h3{
+
+    opacity:1;
+
+    transform:
+
+        translateY(0);
 
 }
 
 .profile-box p{
 
+    position:relative;
+
+    max-width:48%;
+
     color:#b9bec6;
 
-    max-width:700px;
+    line-height:1.75;
+
+    transform:
+
+        translateY(35px);
+
+    opacity:0;
+
+    transition:
+
+        opacity .9s ease .25s,
+
+        transform 1s cubic-bezier(.22,1,.36,1) .25s;
 
 }
 
+.profile-box.is-visible p{
+
+    opacity:1;
+
+    transform:
+
+        translateY(0);
+
+}
+
+/* ---------------------------------------------------------
+
+   PROFILE INFORMATION
+
+   --------------------------------------------------------- */
+
 .profile-info-grid{
 
-    margin-top:28px;
+    position:relative;
+
+    width:58%;
+
+    margin-top:34px;
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:
+
+        repeat(3,1fr);
 
     gap:1px;
 
     background:#292d34;
 
     border:1px solid #292d34;
+
+    transform:
+
+        translateY(40px);
+
+    opacity:0;
+
+    transition:
+
+        opacity .9s ease .4s,
+
+        transform 1s cubic-bezier(.22,1,.36,1) .4s;
+
+    z-index:4;
+
+}
+
+.profile-box.is-visible .profile-info-grid{
+
+    opacity:1;
+
+    transform:
+
+        translateY(0);
 
 }
 
@@ -1842,6 +2017,22 @@ h2{
     flex-direction:column;
 
     justify-content:center;
+
+    transition:
+
+        background .35s ease,
+
+        transform .35s ease;
+
+}
+
+.profile-info:hover{
+
+    background:#12161c;
+
+    transform:
+
+        translateY(-4px);
 
 }
 
@@ -1877,9 +2068,61 @@ h2{
 
 }
 
-/* IHF */
+/* ---------------------------------------------------------
+
+   IMAGE MOTION
+
+   --------------------------------------------------------- */
+
+/*
+
+   A second subtle movement while hovering the profile.
+
+   This makes the section feel alive without being excessive.
+
+*/
+
+.profile-box:hover::before{
+
+    transform:
+
+        translate3d(-8px,-5px,0)
+
+        scale(1.025);
+
+    filter:
+
+        saturate(1)
+
+        contrast(1.06);
+
+}
+
+/* ---------------------------------------------------------
+
+   SMALL EDITORIAL NUMBER
+
+   --------------------------------------------------------- */
+
+.profile-box::marker{
+
+    display:none;
+
+}
+
+/* ---------------------------------------------------------
+
+   IHF BOX — KEEP EXISTING STRUCTURE
+
+   --------------------------------------------------------- */
 
 .ihf-box{
+
+    background:#101318;
+
+    border:1px solid #292d34;
+
+    padding:32px;
 
     display:flex;
 
@@ -1924,57 +2167,194 @@ h2{
     font-size:12px;
 
 }
-.ihf-box{
 
-    display:flex;
+/* =========================================================
 
-    flex-direction:column;
+   MOBILE
 
-    align-items:center;
+   ========================================================= */
 
-    justify-content:center;
+@media (max-width:900px){
 
-    text-align:center
+    .profile-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .profile-box{
+
+        min-height:auto;
+
+        padding:30px 24px;
+
+        display:flex;
+
+        flex-direction:column;
+
+    }
+
+    /*
+
+       On mobile the image becomes a real editorial block
+
+       between the title/text and information.
+
+    */
+
+    .profile-box::before{
+
+        position:relative;
+
+        right:auto;
+
+        top:auto;
+
+        order:2;
+
+        width:100%;
+
+        height:430px;
+
+        margin:
+
+            30px 0
+
+            10px;
+
+        clip-path:polygon(
+
+            4% 0,
+
+            100% 0,
+
+            100% 94%,
+
+            96% 100%,
+
+            0 100%,
+
+            0 6%
+
+        );
+
+        transform:
+
+            translate3d(0,45px,0)
+
+            scale(1.04);
+
+    }
+
+    .profile-box.is-visible::before{
+
+        transform:
+
+            translate3d(0,0,0)
+
+            scale(1);
+
+    }
+
+    .profile-box h3{
+
+        max-width:100%;
+
+        order:1;
+
+    }
+
+    .profile-box p{
+
+        max-width:100%;
+
+        order:1;
+
+    }
+
+    .profile-info-grid{
+
+        width:100%;
+
+        order:3;
+
+        grid-template-columns:
+
+            repeat(2,1fr);
+
+    }
 
 }
 
-.ihf-logo{
+/* ---------------------------------------------------------
 
-    width:min(330px,100%);
+   SMALL MOBILE
 
-    height:auto;
+   --------------------------------------------------------- */
 
-    display:block;
+@media (max-width:560px){
 
-    margin-bottom:22px;
+    .profile-box{
 
-    background:#fff
+        padding:24px 18px;
+
+    }
+
+    .profile-box h3{
+
+        font-size:34px;
+
+        letter-spacing:-1.5px;
+
+    }
+
+    .profile-box::before{
+
+        height:350px;
+
+    }
+
+    .profile-info-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .profile-info{
+
+        min-height:72px;
+
+    }
 
 }
 
-.ihf-title{
+/* ---------------------------------------------------------
 
-    font-size:20px;
+   REDUCED MOTION ACCESSIBILITY
 
-    font-weight:800
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion:reduce){
+
+    .profile-box::before,
+
+    .profile-box::after,
+
+    .profile-box h3,
+
+    .profile-box p,
+
+    .profile-info-grid{
+
+        transition:none !important;
+
+        transform:none !important;
+
+        opacity:1 !important;
+
+    }
 
 }
-
-.ihf-subtitle{
-
-    margin-top:6px;
-
-    color:#949aa3;
-
-    font-size:12px
-
-}
-
-.
-/* SCOUTING */
-
-.ai-scouting-box{
-
     background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(255,255,255,0)),#0d1014;
 
     border:1px solid #292d34;
